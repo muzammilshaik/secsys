@@ -3,7 +3,7 @@ author: [muju]
 title: "Bitwarden"
 description: ""
 categories: ["Docker"]
-image: /assets/docker/vault/Vaultwarden-light.png
+image: /assets/docker/vault/vaultwarden-light.png
 #toc: false
 ---
 
@@ -144,7 +144,7 @@ If all is well, you can locally view your Bitwarden Server by navigating to http
 
 You should see something that looks like the following.
 
-![web](/assets/docker/vault/web.png){: width="800" height="500" }
+![web](/assets/docker/vault/Web.png){: width="800" height="500" }
 
 Finally, you'll just need to register for an account on your new hosted instance.
 
