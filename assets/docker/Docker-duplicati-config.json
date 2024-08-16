@@ -1,0 +1,132 @@
+{
+  "CreatedByVersion": "2.0.7.1",
+  "Schedule": {
+    "ID": 1,
+    "Tags": [
+      "ID=1"
+    ],
+    "Time": "2024-04-11T06:30:00Z",
+    "Repeat": "1h",
+    "LastRun": "2024-04-11T05:39:00Z",
+    "Rule": "AllowedWeekDays=Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday",
+    "AllowedDays": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ]
+  },
+  "Backup": {
+    "ID": "1",
+    "Name": "Docker",
+    "Description": "",
+    "Tags": [],
+    "TargetURL": "ssh://10.10.10.10:22/backup?auth-username=root&auth-password=QgLXYpALZX83W6VKksKD&ssh-fingerprint=ssh-ed25519%2032%20A0%3ACC%3AA5%3A2C%3ABE%3A74%3A18%3A1A%3AC5%3AE9%3A08%3A7F%3AF7%3A8A%3AF2%3AB3",
+    "DBPath": "/config/CDATXERRIL.sqlite",
+    "Sources": [
+      "/docker/"
+    ],
+    "Settings": [
+      {
+        "Filter": "",
+        "Name": "encryption-module",
+        "Value": "aes",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "compression-module",
+        "Value": "zip",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "dblock-size",
+        "Value": "50mb",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "passphrase",
+        "Value": "BW5ZgEqT3n6dBJQM97or",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "retention-policy",
+        "Value": "24h:1h,7D:1D,4W:1W,3M:1M",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "--send-http-url",
+        "Value": "http://10.10.10.231:5000/report?name=Docker&webhook=https://discord.com/api/webhooks/1204458510306508901/Ztr11wj1xbXTExAW9YWaheW14XJXzvs2V8Se4aA0MYSkZ-RoloAHpmueHUMIZ1WzZHKM",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "--exclude-files-attributes",
+        "Value": "temporary,system,hidden",
+        "Argument": null
+      }
+    ],
+    "Filters": [
+      {
+        "Order": 0,
+        "Include": false,
+        "Expression": ".log"
+      },
+      {
+        "Order": 1,
+        "Include": false,
+        "Expression": "[/docker/linkace/data/db/*]"
+      },
+      {
+        "Order": 2,
+        "Include": false,
+        "Expression": "[/docker/depreciated/*]"
+      },
+      {
+        "Order": 3,
+        "Include": false,
+        "Expression": "[/docker/*/data/logs/*]"
+      },
+      {
+        "Order": 4,
+        "Include": false,
+        "Expression": "/docker/authelia/redis/dump.rdb"
+      }
+    ],
+    "Metadata": {
+      "LastErrorDate": "20240406T070831Z",
+      "LastErrorMessage": "The database file is locked\r\ndatabase is locked",
+      "LastBackupDate": "20240411T053903Z",
+      "BackupListCount": "11",
+      "TotalQuotaSpace": "0",
+      "FreeQuotaSpace": "0",
+      "AssignedQuotaSpace": "-1",
+      "TargetFilesSize": "1764089867",
+      "TargetFilesCount": "151",
+      "TargetSizeString": "1.64 GB",
+      "SourceFilesSize": "357533744",
+      "SourceFilesCount": "1928",
+      "SourceSizeString": "340.97 MB",
+      "LastBackupStarted": "20240411T053900Z",
+      "LastBackupFinished": "20240411T053954Z",
+      "LastBackupDuration": "00:00:53.5411540",
+      "LastCompactDuration": "00:00:00.1808760",
+      "LastCompactStarted": "20240405T003051Z",
+      "LastCompactFinished": "20240405T003051Z",
+      "LastRestoreDuration": "00:00:06.4881370",
+      "LastRestoreStarted": "20240220T160619Z",
+      "LastRestoreFinished": "20240220T160625Z"
+    },
+    "IsTemporary": false
+  },
+  "DisplayNames": {
+    "/docker/": "docker"
+  }
+}
