@@ -19,8 +19,8 @@ Portainer's primary goal is to simplify the management of containerized environm
 
 ## Prerequisites
 
-1. [Docker]({% post_url 2023-01-15-docker %}) Engine and [Docker]({% post_url 2023-01-15-docker %}) Compose packages are installed and running
-2. A non-root user with [Docker]({% post_url 2023-01-15-docker %}) privileges
+1. [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} Engine and [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} Compose packages are installed and running
+2. A non-root user with [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} privileges
 
 ## Setting up the portainer Server
 
@@ -103,9 +103,10 @@ docker logs $container (OR) docker compose logs -f
 
 If all is well, you can locally view your portainer Server by navigating to http://localhost:9443. You should see something that looks like the following. The first time you access Portainer, the system asks to create a password for the admin user. Type the password twice and select the Create user button. once you login you can able to access the portainer 
 
-![portainer](/assets/docker/ptnr/portainer1.png) || ![portainer](/assets/docker/ptnr/portainer2.png)
+![portainer](/assets/docker/ptnr/portainer1.png){: width="500" height="500" }
+![portainer](/assets/docker/ptnr/portainer2.png){: width="800" height="500" }
 
-For a more detailed guide, you can check the official documentation at [Portainer Documentation.](https://docs.portainer.io/)
+For a more detailed guide, you can check the official documentation at [Portainer Documentation.](https://docs.portainer.io/){:target="_blank"}
 
 ## Launching the nginx container
 
@@ -115,15 +116,15 @@ To get started, access the Portainer dashboard by navigating to http://localhost
 
 In the dashboard, go to the Containers section and click Add Container. Name the container nginx and set the image to nginx:latest, which will pull the latest Nginx image from Docker Hub. For port configuration, map port 80 in the container to port 8080 on your host by entering 8080:80.
 
-![test](/assets/docker/ptnr/test1.png)
+![test](/assets/docker/ptnr/test1.png){: width="800" height="500" }
 
 After configuring the settings, deploy the container. Once deployed, open a new browser tab and visit http://localhost:8080 or http://serverIp:8080. If the deployment is successful, the default Nginx welcome page will appear.
 
-![test](/assets/docker/ptnr/test2.png)
+![test](/assets/docker/ptnr/test2.png){: width="800" height="500" }
 
 This simple test confirms that Portainer is correctly managing your Docker containers. If issues arise, check the container logs within the Portainer interface by selecting the container and navigating to the Logs tab.
 
-![test](/assets/docker/ptnr/test3.png)
+![test](/assets/docker/ptnr/test3.png){: width="800" height="500" }
 
 After following the steps in this tutorial, you should now have a fully functional Portainer setup to manage Docker containers on your Linux system. The tutorial guided you through installing the Portainer Server, configuring it, and testing the setup by deploying an Nginx container.
 

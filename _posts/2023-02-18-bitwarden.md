@@ -15,8 +15,8 @@ Having Bitwarden as a public endpoint means that I can connect to my password va
 
 ## Prerequisites
 
-1. [Docker]({% post_url 2023-01-15-docker %}) Engine and [Docker]({% post_url 2023-01-15-docker %}) Compose packages are installed and running
-2. A non-root user with [Docker]({% post_url 2023-01-15-docker %}) privileges
+1. [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} Engine and [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} Compose packages are installed and running
+2. A non-root user with [Docker]({% post_url 2023-01-15-docker %}){:target="_blank"} privileges
 
 ## Setting up the Bitwarden Server
 
@@ -156,9 +156,9 @@ Then fill out your details. If you have an existing Bitwarden account, you'll st
 
 Browsers like chrome, firefox ... also has the inbuilt vaults to store the credentials you can also export the credentials in a csv/json format and export 
 
-You can use the [Nginx proxy manager]({% post_url 2023-01-19-npm %}) to create the reverse proxy and configure the lets-encrypt SSL certificate to remove the SSL warnings
+You can use the [Nginx proxy manager]({% post_url 2023-01-19-npm %}){:target="_blank"} to create the reverse proxy and configure the lets-encrypt SSL certificate to remove the SSL warnings
 
-you can use the bitwarden clients applications/browser extensions to access the stored credentials [Application](https://bitwarden.com/download/) [firefox extension](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) [chrome extension](https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)
+you can use the bitwarden clients applications/browser extensions to access the stored credentials [Application](https://bitwarden.com/download/){:target="_blank"} [firefox extension](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search){:target="_blank"} [chrome extension](https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb){:target="_blank"}
 
-> For More details please check the [github issues](https://github.com/dani-garcia/vaultwarden/discussions) [discussions](https://vaultwarden.discourse.group/)
+> For More details please check the [github issues](https://github.com/dani-garcia/vaultwarden/discussions){:target="_blank"} [discussions](https://vaultwarden.discourse.group/){:target="_blank"}
 {: .prompt-info}
