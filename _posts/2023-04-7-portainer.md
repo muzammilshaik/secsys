@@ -99,7 +99,7 @@ If something goes wrong, you can check the logs for each container using the doc
 docker logs $container (OR) docker compose logs -f
 ```
 
-## Accessing the Adguard dashboard
+## Accessing the Portainer dashboard
 
 If all is well, you can locally view your portainer Server by navigating to http://localhost:9443. You should see something that looks like the following. The first time you access Portainer, the system asks to create a password for the admin user. Type the password twice and select the Create user button. once you login you can able to access the portainer 
 
