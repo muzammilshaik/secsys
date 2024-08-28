@@ -3,7 +3,9 @@ author: [muju]
 title: "Bitwarden"
 description: ""
 categories: ["Docker"]
-image: /assets/docker/vault/vaultwarden-light.png
+image: 
+  path: /assets/docker/vault/vaultwarden-light.webp
+  lqip: data:image/webp;base64,UklGRm4BAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSCEBAAABgCNt/xrlm90D4FKF/6TF1tot9wjYEbxzUuLeu7u7u7SMu0vtkOGfzYfDESJCIEBwwAW+KWxaerpmE/hFl9A3eXfHTV24vmMJ6JA0r0pKrkzKjgDLF/6G5Ihira62KkOUhj8AV4ckp/DNMVJ2uAAh5RaN0C+C3rglpYDQORRHpn2RSMYNURe2zZh59Z7rXyzzXp2P2bRpPGvxaaCpAmEmG3xazqilcxDwkLlAJukBBpmezgHAesttYIO3VmCA6Rq3AFSQUeFkBYAtarZNUwGcZFEe6QQUc9MmdFYB2OPJEfcAVFEXEFK6Q301ktR8Q91Sim9Nvb0dqkmaamev91tT+BuvCbvKKrmq7Ca8Gv6/PXogH74/+vUlyU1dOAHgX88BAFZQOCAmAAAA0AIAnQEqFAAUAD6RRJ1KpaOioagIALASCWkAAD2joAD++E0AAAA=
 #toc: false
 ---
 

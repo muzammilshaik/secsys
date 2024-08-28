@@ -3,7 +3,9 @@ author: [muju]
 title: "Duplicati"
 description: "A comprehensive guide to setting up Duplicati for backups using Docker, including core features, prerequisites, and configuration steps."
 categories: ["Docker"]
-image: /assets/docker/duplicati/duplicati.png
+image: 
+  path: /assets/docker/duplicati/duplicati.webp
+  lqip: data:image/webp;base64,UklGRmQBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSGgAAAABcFpt27I8v8bv/P3f4OuM4UyhW9DYzC2ROFTr7q8hA0TEBIB2Ge9A+8VduvDE4C7vEzfFlbhr/1BerFRUtcPdcH033NwNbw3dvlOAbgUYLAHcVD0AA8FhMpkMuikAv2A2dUhdRoYQAlZQOCDWAAAAEAYAnQEqFAAUAD6ROpdHpaMiITAIALASCWwAeDYQV4HAA24Ap9vF3FwEJlFmDKCZtokwqaaQfigAAP7D/v6p3xJ4PUY+ppFLQGLaoQ20lpad9JfhJqTSHbYCzYIWwXYSvkZuZRGNyyuBvJSvq0UI5k901lR8bUFVMVcq/4y0KPJbHcpg5KICoTirWJMD6LO+pyOa7NVRuNQTqE7gggV/Q8V2rPJqWiP/dDlDDjJMWchUfcOEE/t9QhP75A9YgixzMcYlohclHQjjQ04v+ZChah9P6AAAAA==
 #toc: false
 ---
 

@@ -3,7 +3,9 @@ author: [muju]
 title: "Portainer"
 description: ""
 categories: ["Docker"]
-image: /assets/docker/ptnr/portainer.png
+image: 
+  path: /assets/docker/ptnr/portainer.webp
+  lqip: data:image/webp;base64,UklGRpgBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSNsAAAABgCsAkGFnXmzrN9LZNttUtm3b7GxXtm2nYplXxppgbvILETEBwIxNh/9KuvbvHve5SHJ0UkbDVEISVCNGk7UBwMDAwL7rItnQwKCs3sDAMOWy094gMOhvT1BPUPeQOIgMBDJDPwZCEq5A0NbLyMt9AXN4ZziGTz5RBryRg/qDTb9cK94ZjuHTIuawNKcWJxYXJherWCFIf+lxfBHxc2Ng7kGLI7uOdwm77/fNsT1NNQKgWF31ivS7I6W2idxWKgLZ85TVFwtVCHCbu3oR6gWm6dqbuMGmqNJbggIAVlA4IJYAAABwBQCdASoUABQAPok2lkelIyIhN/VYAKARCWwAeKnYBwgTYXn/ZAP4BIFHlAAT4Q2vqrNAAP7Y7v//wZM54Im+hz8ds3neRZzY7O///z+nyb+Mhml7P+Ul7meUF1/8yvZvQY+v/yb/89if//Q6oser8S+vpfqmKFsOrwFwj0VkgINTbbTdZUnWEpPBrP37Albj7/uAAAA=
 #toc: false
 ---
 
