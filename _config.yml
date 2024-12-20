@@ -203,3 +203,10 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      hidden: false
