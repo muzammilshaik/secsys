@@ -1,0 +1,226 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Secsys</title>
+  <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
+  <updated>2024-12-20T17:31:38+05:30</updated>
+  <author>
+    <name>muzammil shaik</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024 muzammil shaik </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>sed cheat sheet</title>
+    <link href="http://localhost:4000/posts/sed/" rel="alternate" type="text/html" title="sed cheat sheet" />
+    <published>2024-12-20T00:00:00+05:30</published>
+  
+    <updated>2024-12-20T16:28:04+05:30</updated>
+  
+    <id>http://localhost:4000/posts/sed/</id>
+    <content src="http://localhost:4000/posts/sed/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Regular expressions.
+
+  Replace the first occurrence of a string in a file, and print the result:
+    sed 's/find/replace/' filename
+    
+  
+  Replace only on lines matching the line pattern:
+    sed '/line_pattern/s/find/replace/'
+    
+  
+  Replace all occurrences of a string in a file, overwriting the file (i.e. in-place):
+    sed -i 's/find/replace/g' filename
+    
+  
+  Replace all occurrenc...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>lxd cheat sheet</title>
+    <link href="http://localhost:4000/posts/lxdcs/" rel="alternate" type="text/html" title="lxd cheat sheet" />
+    <published>2024-12-20T00:00:00+05:30</published>
+  
+    <updated>2024-12-20T15:46:30+05:30</updated>
+  
+    <id>http://localhost:4000/posts/lxdcs/</id>
+    <content src="http://localhost:4000/posts/lxdcs/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Useful LXD commands
+List available containers
+lxc image list ubuntu:        # ubuntu: is officially supported image source
+lxc image list images:        # images: is an unsupported source
+lxc image alias list images:  # lists user-friendly names
+
+Launch a container
+This creates and starts a container.
+lxc launch ubuntu:14.04 CONTAINERNAME   # image and container names are optional 
+lxc launch u...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>lxconsole</title>
+    <link href="http://localhost:4000/posts/lxconsole/" rel="alternate" type="text/html" title="lxconsole" />
+    <published>2024-12-20T00:00:00+05:30</published>
+  
+    <updated>2024-12-20T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/lxconsole/</id>
+    <content src="http://localhost:4000/posts/lxconsole/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Virtualization" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      LXConsole is an open-source web-based application designed to simplify the management of LXD servers. It offers a convenient graphical user interface that allows users to manage multiple Incus (LXD’s fork) and LXD containers. In this blog, we will guide you through the entire process of setting up and using LXConsole, from launching a Debian instance to managing LXD containers seamlessly throug...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Disk Management on proxmoxVM</title>
+    <link href="http://localhost:4000/posts/Diskmanagement/" rel="alternate" type="text/html" title="Disk Management on proxmoxVM" />
+    <published>2024-12-09T00:00:00+05:30</published>
+  
+    <updated>2024-12-09T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/Diskmanagement/</id>
+    <content src="http://localhost:4000/posts/Diskmanagement/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Virtualization" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      In this blog post, we will explore the process of increasing disk space for a Debian virtual machine (VM) running on Proxmox. This guide will detail the commands used and the output received during the resizing operation, providing a comprehensive overview for users looking to expand their VM’s storage capacity.
+
+Step 1: Resize Disk in Proxmox
+
+First, you need to increase the disk size from the...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Jenkins LXC on proxmox</title>
+    <link href="http://localhost:4000/posts/jenkins/" rel="alternate" type="text/html" title="Jenkins LXC on proxmox" />
+    <published>2024-10-04T00:00:00+05:30</published>
+  
+    <updated>2024-10-04T23:03:54+05:30</updated>
+  
+    <id>http://localhost:4000/posts/jenkins/</id>
+    <content src="http://localhost:4000/posts/jenkins/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Virtualization" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      In this blog post, we will go through the steps to install Jenkins in Proxmox using the TurnKey image. This method is quite simple and efficient for setting up Jenkins in a containerized environment.
+
+Download Jenkins TurnKey Image
+
+First, we need to download the Jenkins TurnKey image for Proxmox. Open your terminal and run the following command:
+
+❯ pveam download $storage debian-12-turnkey-jen...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+

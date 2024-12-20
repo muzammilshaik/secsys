@@ -204,9 +204,9 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      hidden: false
+#defaults:
+#  - scope:
+#      path: ""
+#      type: "posts"
+#    values:
+#      hidden: false
