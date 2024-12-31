@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://secsys.pro/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2024-12-20T17:31:38+05:30</updated>
+  <updated>2024-12-20T17:41:08+05:30</updated>
   <author>
     <name>muzammil shaik</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://secsys.pro/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://secsys.pro/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="https://secsys.pro/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
   <rights> © 2024 muzammil shaik </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>sed cheat sheet</title>
-    <link href="http://localhost:4000/posts/sed/" rel="alternate" type="text/html" title="sed cheat sheet" />
+    <link href="https://secsys.pro/posts/sed/" rel="alternate" type="text/html" title="sed cheat sheet" />
     <published>2024-12-20T00:00:00+05:30</published>
   
-    <updated>2024-12-20T16:28:04+05:30</updated>
+    <updated>2024-12-20T17:33:41+05:30</updated>
   
-    <id>http://localhost:4000/posts/sed/</id>
-    <content src="http://localhost:4000/posts/sed/" />
+    <id>https://secsys.pro/posts/sed/</id>
+    <content src="https://secsys.pro/posts/sed/" />
     <author>
       <name>muju</name>
     </author>
@@ -69,13 +69,13 @@
   
   <entry>
     <title>lxd cheat sheet</title>
-    <link href="http://localhost:4000/posts/lxdcs/" rel="alternate" type="text/html" title="lxd cheat sheet" />
+    <link href="https://secsys.pro/posts/lxdcs/" rel="alternate" type="text/html" title="lxd cheat sheet" />
     <published>2024-12-20T00:00:00+05:30</published>
   
-    <updated>2024-12-20T15:46:30+05:30</updated>
+    <updated>2024-12-20T17:33:41+05:30</updated>
   
-    <id>http://localhost:4000/posts/lxdcs/</id>
-    <content src="http://localhost:4000/posts/lxdcs/" />
+    <id>https://secsys.pro/posts/lxdcs/</id>
+    <content src="https://secsys.pro/posts/lxdcs/" />
     <author>
       <name>muju</name>
     </author>
@@ -112,13 +112,13 @@ lxc launch u...
   
   <entry>
     <title>lxconsole</title>
-    <link href="http://localhost:4000/posts/lxconsole/" rel="alternate" type="text/html" title="lxconsole" />
+    <link href="https://secsys.pro/posts/lxconsole/" rel="alternate" type="text/html" title="lxconsole" />
     <published>2024-12-20T00:00:00+05:30</published>
   
-    <updated>2024-12-20T00:00:00+05:30</updated>
+    <updated>2024-12-20T17:33:41+05:30</updated>
   
-    <id>http://localhost:4000/posts/lxconsole/</id>
-    <content src="http://localhost:4000/posts/lxconsole/" />
+    <id>https://secsys.pro/posts/lxconsole/</id>
+    <content src="https://secsys.pro/posts/lxconsole/" />
     <author>
       <name>muju</name>
     </author>
@@ -146,13 +146,13 @@ lxc launch u...
   
   <entry>
     <title>Disk Management on proxmoxVM</title>
-    <link href="http://localhost:4000/posts/Diskmanagement/" rel="alternate" type="text/html" title="Disk Management on proxmoxVM" />
+    <link href="https://secsys.pro/posts/Diskmanagement/" rel="alternate" type="text/html" title="Disk Management on proxmoxVM" />
     <published>2024-12-09T00:00:00+05:30</published>
   
-    <updated>2024-12-09T00:00:00+05:30</updated>
+    <updated>2024-12-20T17:33:41+05:30</updated>
   
-    <id>http://localhost:4000/posts/Diskmanagement/</id>
-    <content src="http://localhost:4000/posts/Diskmanagement/" />
+    <id>https://secsys.pro/posts/Diskmanagement/</id>
+    <content src="https://secsys.pro/posts/Diskmanagement/" />
     <author>
       <name>muju</name>
     </author>
@@ -184,13 +184,13 @@ First, you need to increase the disk size from the...
   
   <entry>
     <title>Jenkins LXC on proxmox</title>
-    <link href="http://localhost:4000/posts/jenkins/" rel="alternate" type="text/html" title="Jenkins LXC on proxmox" />
+    <link href="https://secsys.pro/posts/jenkins/" rel="alternate" type="text/html" title="Jenkins LXC on proxmox" />
     <published>2024-10-04T00:00:00+05:30</published>
   
-    <updated>2024-10-04T23:03:54+05:30</updated>
+    <updated>2024-12-20T17:33:41+05:30</updated>
   
-    <id>http://localhost:4000/posts/jenkins/</id>
-    <content src="http://localhost:4000/posts/jenkins/" />
+    <id>https://secsys.pro/posts/jenkins/</id>
+    <content src="https://secsys.pro/posts/jenkins/" />
     <author>
       <name>muju</name>
     </author>
