@@ -35,19 +35,19 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let’s connect and elevate together! 🚀" />
 <meta property="og:description" content="Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let’s connect and elevate together! 🚀" />
-<link rel="canonical" href="https://secsys.pro/posts/lxconsole/" />
-<meta property="og:url" content="https://secsys.pro/posts/lxconsole/" />
+<link rel="canonical" href="http://localhost:4000/posts/lxconsole/" />
+<meta property="og:url" content="http://localhost:4000/posts/lxconsole/" />
 <meta property="og:site_name" content="Secsys" />
-<meta property="og:image" content="https://secsys.pro/assets/vm/ct/lxconsole/logo1.webp" />
+<meta property="og:image" content="http://localhost:4000/assets/vm/ct/lxconsole/logo1.webp" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-12-20T00:00:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://secsys.pro/assets/vm/ct/lxconsole/logo1.webp" />
+<meta property="twitter:image" content="http://localhost:4000/assets/vm/ct/lxconsole/logo1.webp" />
 <meta property="twitter:title" content="lxconsole" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@https://twitter.com/" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Muzammil Shaik","url":"https://github.com/"},"dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-12-20T00:00:00+05:30","description":"Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let’s connect and elevate together! 🚀","headline":"lxconsole","image":{"lqip":"data:image/webp;base64,UklGRuIBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSIoAAAABgFvbtqrq4JY6FOBeAmTQhEdQhWsRhN6CO1TgEtt3l+daQURMAFCaOm0TMBQlnxDkKSWi5ZohpAsPlSLjVD+VFQkgS1C+xgCUNf+EaYNwxlh8eGJDeSVlTe+fPPngY1Xc5fZ0AaC8IXePSEEANDU/mnU9UDpX5Mdg0BXnv5EkJ+qChhaBysfUAJWUDggMgEAANAGAJ0BKhQAFAA+kUCYSaWjoiEoCqiwEglsAIAMIN47vATYO8AyQDpUSIa52YMuCRV1cWT+alJG2UtczR6AqAD+8HmDSgFKt0r6eJWPeR89FIUCkQF9Zi0oFoyHaW15a5t1EbKRq6RDW5vIPaoa1q2RJK+hD6YQf0VejW570t+hzrbvLsYtQeQoX/W8imzbFZ3jR6u6SpP66xI+mzVmb3eYciZQAPwNU8Po7xl7Xm6dtshCJmLumHpT02Pn6Rrb2mTpTFliMaCixbqkAf+LELBSnowYD5+jMZ377H+nE+OjcHWIfn1OqDbj9kEblRoDkwRWUYxoiQLCarqnTCc4LrxRid7tU3GnrNp1BcP+TiDX+KgNi7ZTI0A8Yx38CBvtZvu67QfdYAkQAAA==","url":"https://secsys.pro/assets/vm/ct/lxconsole/logo1.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://secsys.pro/posts/lxconsole/"},"url":"https://secsys.pro/posts/lxconsole/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Muzammil Shaik","url":"https://github.com/"},"dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-12-20T00:00:00+05:30","description":"Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let’s connect and elevate together! 🚀","headline":"lxconsole","image":{"lqip":"data:image/webp;base64,UklGRuIBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSIoAAAABgFvbtqrq4JY6FOBeAmTQhEdQhWsRhN6CO1TgEtt3l+daQURMAFCaOm0TMBQlnxDkKSWi5ZohpAsPlSLjVD+VFQkgS1C+xgCUNf+EaYNwxlh8eGJDeSVlTe+fPPngY1Xc5fZ0AaC8IXePSEEANDU/mnU9UDpX5Mdg0BXnv5EkJ+qChhaBysfUAJWUDggMgEAANAGAJ0BKhQAFAA+kUCYSaWjoiEoCqiwEglsAIAMIN47vATYO8AyQDpUSIa52YMuCRV1cWT+alJG2UtczR6AqAD+8HmDSgFKt0r6eJWPeR89FIUCkQF9Zi0oFoyHaW15a5t1EbKRq6RDW5vIPaoa1q2RJK+hD6YQf0VejW570t+hzrbvLsYtQeQoX/W8imzbFZ3jR6u6SpP66xI+mzVmb3eYciZQAPwNU8Po7xl7Xm6dtshCJmLumHpT02Pn6Rrb2mTpTFliMaCixbqkAf+LELBSnowYD5+jMZ377H+nE+OjcHWIfn1OqDbj9kEblRoDkwRWUYxoiQLCarqnTCc4LrxRid7tU3GnrNp1BcP+TiDX+KgNi7ZTI0A8Yx38CBvtZvu67QfdYAkQAAA==","url":"http://localhost:4000/assets/vm/ct/lxconsole/logo1.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/lxconsole/"},"url":"http://localhost:4000/posts/lxconsole/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1090,10 +1090,118 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1218,9 +1326,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1838 words"
+  title="2258 words"
 >
-  <em>10 min</em> read</span>
+  <em>12 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -1231,7 +1339,7 @@
   <div class="content">
     <p>LXConsole is an open-source web-based application designed to simplify the management of LXD servers. It offers a convenient graphical user interface that allows users to manage multiple Incus (LXD’s fork) and LXD containers. In this blog, we will guide you through the entire process of setting up and using LXConsole, from launching a Debian instance to managing LXD containers seamlessly through a web interface.</p>
 
-<h1 id="stpe1-launching-the-debian-instance">Stpe1: Launching the Debian instance</h1>
+<h2 id="stpe1-launching-the-debian-instance"><span class="me-2">Stpe1: Launching the Debian instance</span><a href="#stpe1-launching-the-debian-instance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>To begin with, you need a Debian instance. This can be easily achieved using Proxmox helper scripts. These scripts automate the setup process, saving you time and effort. To launch the Debian instance, execute the following command:</p>
 
@@ -1333,7 +1441,7 @@
   🚀  Debian setup has been successfully initialized!
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="step2-configuring-the-lxconsole">Step2: Configuring the LXconsole</h1>
+<h3 id="step2-configuring-the-lxconsole"><span class="me-2">Step2: Configuring the LXconsole</span><a href="#step2-configuring-the-lxconsole" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Once your server has booted and is running, you can connect to the server and start configuring LXConsole. To do this, use the LXC console to access your Debian server.</p>
 
@@ -1411,7 +1519,7 @@ root@lxconsole:~# cd lxconsole &amp;&amp; pip3 install -r requirements.txt
 </pre></td><td class="rouge-code"><pre>python3 run.py
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="step3-creating-the-systemd-file">Step3: Creating the systemd file</h1>
+<h2 id="step3-creating-the-systemd-file"><span class="me-2">Step3: Creating the systemd file</span><a href="#step3-creating-the-systemd-file" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>To ensure LXConsole starts automatically when the system boots up, you need to create a systemd service file. This will configure LXConsole to launch as a service during system startup.</p>
 
@@ -1467,7 +1575,7 @@ systemctl restart lxconsole.service
 
 <p>This ensures that LXConsole will run on startup and be ready to manage your LXD containers.</p>
 
-<h1 id="step4-installing-the-lxd">Step4: Installing the lxd</h1>
+<h2 id="step4-installing-the-lxd"><span class="me-2">Step4: Installing the lxd</span><a href="#step4-installing-the-lxd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>If you dont have lxd server preconfigured you can install the lxd server by using the following steps</p>
 
@@ -1523,7 +1631,7 @@ root@lxconsole:~/lxd#
 
 <p>Once you complete the configuration, LXD will be set up and ready to use.</p>
 
-<h1 id="step5-accessing-the-lxconsole">Step5: Accessing the lxconsole</h1>
+<h2 id="step5-accessing-the-lxconsole"><span class="me-2">Step5: Accessing the lxconsole</span><a href="#step5-accessing-the-lxconsole" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Now that LXConsole is installed and running, you can access the web-based user interface. Open your browser and navigate to:</p>
 
@@ -1537,7 +1645,7 @@ root@lxconsole:~/lxd#
 
 <p><a href="/assets/vm/ct/lxconsole/lxconsole.png" class="popup img-link  shimmer"><img src="/assets/vm/ct/lxconsole/lxconsole.png" alt="lxconsole" width="800" height="500" loading="lazy"></a></p>
 
-<h1 id="step6-adding-the-lxd-server-to-the-lxconsole">Step6: Adding the lxd server to the lxconsole</h1>
+<h2 id="step6-adding-the-lxd-server-to-the-lxconsole"><span class="me-2">Step6: Adding the lxd server to the lxconsole</span><a href="#step6-adding-the-lxd-server-to-the-lxconsole" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Once you loged in add the existing lxd container to the lxconsole to connect and manage the lxd conatiners</p>
 
@@ -1569,7 +1677,7 @@ root@lxconsole:~/lxd# lxc config <span class="nb">set </span>core.https_address 
 
 <p><a href="/assets/vm/ct/lxconsole/lxconsole1126.png" class="popup img-link  shimmer"><img src="/assets/vm/ct/lxconsole/lxconsole1126.png" alt="lxconsole" width="800" height="500" loading="lazy"></a></p>
 
-<h1 id="step7-launching-the-lxd-container">step7: Launching the lxd container</h1>
+<h2 id="step7-launching-the-lxd-container-alpine"><span class="me-2">step7: Launching the lxd container (alpine)</span><a href="#step7-launching-the-lxd-container-alpine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>As we have configured lxd and lxconsole lets launch the alpine lxd container. Start by searching for available LXD images Then, launch a container using a specific image by executing the following command for example, to launch an Alpine Linux container, you can use:</p>
 
@@ -1739,6 +1847,62 @@ BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
 ~ # 
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="launching-the-debian-container"><span class="me-2">launching the Debian container</span><a href="#launching-the-debian-container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Here’s an elaboration of the section:</p>
+
+<p>Let’s launch the Debian container in the same way we did with the Alpine container. To do this, we first need to filter out the specific image we intend to use from the list of available images. In this case, we’re opting for the “debian/12/cloud” image, which is a cloud-specific version of Debian 12. This image is optimized for cloud environments, making it ideal for container deployment.</p>
+
+<p>To select the image, we can run the <code class="language-plaintext highlighter-rouge">lxc image list</code> command, which will display a list of available images from various sources. We can use the grep command to filter through the output and narrow down the list to only the Debian 12 cloud images.</p>
+
+<p>Once we have the correct image identified, we can proceed to launch the container. The command we’ll use is <code class="language-plaintext highlighter-rouge">lxc launch</code>, followed by the image reference (images:debian/12/cloud). This will create and start the container, naming it “debian” in the process. The container will then be accessible for further management or use.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;</span> root@lxconsole:~# lxc image list images: | <span class="nb">grep </span>debian/12
+| debian/12 <span class="o">(</span>7 more<span class="o">)</span>                       | 13829fee748c | <span class="nb">yes</span>    | Debian bookworm amd64 <span class="o">(</span>20250102_0002<span class="o">)</span>     | x86_64       | CONTAINER       | 96.04MB   | Jan 2, 2025 at 12:00am <span class="o">(</span>UTC<span class="o">)</span>  |
+| debian/12 <span class="o">(</span>7 more<span class="o">)</span>                       | ec5f73713766 | <span class="nb">yes</span>    | Debian bookworm amd64 <span class="o">(</span>20250102_0002<span class="o">)</span>     | x86_64       | VIRTUAL-MACHINE | 351.38MB  | Jan 2, 2025 at 12:00am <span class="o">(</span>UTC<span class="o">)</span>  |
+| debian/12/arm64 <span class="o">(</span>3 more<span class="o">)</span>                 | 7f5fbadc7060 | <span class="nb">yes</span>    | Debian bookworm arm64 <span class="o">(</span>20241230_0004<span class="o">)</span>     | aarch64      | CONTAINER       | 93.10MB   | Dec 30, 2024 at 12:00am <span class="o">(</span>UTC<span class="o">)</span> |
+| debian/12/cloud <span class="o">(</span>3 more<span class="o">)</span>                 | 9e3c8ec9bab8 | <span class="nb">yes</span>    | Debian bookworm amd64 <span class="o">(</span>20250102_0002<span class="o">)</span>     | x86_64       | VIRTUAL-MACHINE | 394.74MB  | Jan 2, 2025 at 12:00am <span class="o">(</span>UTC<span class="o">)</span>  |
+| debian/12/cloud <span class="o">(</span>3 more<span class="o">)</span>                 | b7ef0541b199 | <span class="nb">yes</span>    | Debian bookworm amd64 <span class="o">(</span>20250102_0002<span class="o">)</span>     | x86_64       | CONTAINER       | 122.26MB  | Jan 2, 2025 at 12:00am <span class="o">(</span>UTC<span class="o">)</span>  |
+| debian/12/cloud/arm64 <span class="o">(</span>1 more<span class="o">)</span>           | 29ec992650ff | <span class="nb">yes</span>    | Debian bookworm arm64 <span class="o">(</span>20241230_0004<span class="o">)</span>     | aarch64      | CONTAINER       | 118.60MB  | Dec 30, 2024 at 12:00am <span class="o">(</span>UTC<span class="o">)</span> |
+
+<span class="o">&gt;</span> root@lxconsole:~# lxc launch images:debian/12/cloud debian
+Creating debian
+Starting debian                           
+
+<span class="o">&gt;</span> root@lxconsole:~# lxc list
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+|  NAME  |  STATE  |         IPV4         |                     IPV6                      |   TYPE    | SNAPSHOTS |
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+| debian | RUNNING | 10.150.239.33 <span class="o">(</span>eth0<span class="o">)</span> | fd42:f569:921f:766a:216:3eff:fe0f:6cc6 <span class="o">(</span>eth0<span class="o">)</span> | CONTAINER | 0         |
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+
+<span class="o">&gt;</span> root@lxconsole:~# lxc <span class="nb">exec </span>debian /bin/bash
+<span class="o">&gt;</span> root@debian:~#
+</pre></td></tr></tbody></table></code></div></div>
+
 <p>LXConsole allows you to manage the containers, view logs, and perform other administrative tasks from a central web interface, making it a powerful tool for container management.</p>
 
 <p><a href="/assets/vm/ct/lxconsole/lxconsole0822.png" class="popup img-link  shimmer"><img src="/assets/vm/ct/lxconsole/lxconsole0822.png" alt="lxconsole" width="800" height="500" loading="lazy"></a></p>
@@ -1793,28 +1957,28 @@ BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=lxconsole%20-%20Secsys&url=https%3A%2F%2Fsecsys.pro%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=lxconsole%20-%20Secsys&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=lxconsole%20-%20Secsys&u=https%3A%2F%2Fsecsys.pro%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=lxconsole%20-%20Secsys&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Flxconsole%2F&text=lxconsole%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flxconsole%2F&text=lxconsole%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flxconsole%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
@@ -2435,6 +2599,11 @@ BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
 
 
 
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2723,7 +2892,7 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2025</time>
 
     
       <a href="https://www.linkedin.com/in/shaikmuzammil55/">muzammil shaik</a>.
@@ -3420,9 +3589,16 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

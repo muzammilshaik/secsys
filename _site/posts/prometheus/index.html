@@ -34,18 +34,18 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="A detailed guide on installing and configuring Prometheus on Linux, setting up users, directories, and configuring services for effective monitoring." />
 <meta property="og:description" content="A detailed guide on installing and configuring Prometheus on Linux, setting up users, directories, and configuring services for effective monitoring." />
-<link rel="canonical" href="https://secsys.pro/posts/prometheus/" />
-<meta property="og:url" content="https://secsys.pro/posts/prometheus/" />
+<link rel="canonical" href="http://localhost:4000/posts/prometheus/" />
+<meta property="og:url" content="http://localhost:4000/posts/prometheus/" />
 <meta property="og:site_name" content="Secsys" />
-<meta property="og:image" content="https://secsys.pro/assets/linux/prometheus/prometheus.webp" />
+<meta property="og:image" content="http://localhost:4000/assets/linux/prometheus/prometheus.webp" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-07-20T00:00:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://secsys.pro/assets/linux/prometheus/prometheus.webp" />
+<meta property="twitter:image" content="http://localhost:4000/assets/linux/prometheus/prometheus.webp" />
 <meta property="twitter:title" content="Prometheus" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-07-20T00:00:00+05:30","description":"A detailed guide on installing and configuring Prometheus on Linux, setting up users, directories, and configuring services for effective monitoring.","headline":"Prometheus","image":{"lqip":"data:image/webp;base64,UklGRuwBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSAQBAAABkHPbtrG9wvdn+6vc2/4qW5WtOGVK27Zt20ml1rZtJ6u490lETIBMt6qlF+/fOjEuTv9ZeRPYC/zbHWNzmfYPuJ0Cf+BdoWUG8P7tQV25cA34ViCpHuDe8KUaNegEwNMQeT4wNsQ1Ki+l2WCWmjArvT0UG+J6zfjsv9346inJ3VWTDBruG1dkH2KZ8st46WIbbVn3G94dfltlcb98+TCw4Qn8TXAJt/j4azQwYz9w3lOO8V+A5l6Ap/ccPwI/Qv1eAZlynA2slHqB8d2Ox+B9hOSyEWBkX19f30bgT50keW4GBiS5nYQfLbK6DHrD7wW1befgUqqcAwYffv7nx801pS4yAVZQOCDCAAAA0AUAnQEqFAAUAD6RQJtJJaOioSgKqLASCWwAnTLVNF+d/jNwgXaB1GeoAegB0lnlAABUj3FZ4AD579HYOaNBwh5QVtxEBw4i/2Y4q+RbhWaRCmI//k2U6dxVuvavlpaMZPFOtcs7be+r8PqVKp0I60qk+tUh73rG6KGyc9Z/88pn9E/RqAGTdRDsPACpOKmUvCg19512OKBXEnM0Om+TSQLk7vDztE/6AM//FbmBfcTmgru5c4ZILCbDAUNjlEcbQAA=s","url":"https://secsys.pro/assets/linux/prometheus/prometheus.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://secsys.pro/posts/prometheus/"},"url":"https://secsys.pro/posts/prometheus/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-07-20T00:00:00+05:30","description":"A detailed guide on installing and configuring Prometheus on Linux, setting up users, directories, and configuring services for effective monitoring.","headline":"Prometheus","image":{"lqip":"data:image/webp;base64,UklGRuwBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSAQBAAABkHPbtrG9wvdn+6vc2/4qW5WtOGVK27Zt20ml1rZtJ6u490lETIBMt6qlF+/fOjEuTv9ZeRPYC/zbHWNzmfYPuJ0Cf+BdoWUG8P7tQV25cA34ViCpHuDe8KUaNegEwNMQeT4wNsQ1Ki+l2WCWmjArvT0UG+J6zfjsv9346inJ3VWTDBruG1dkH2KZ8st46WIbbVn3G94dfltlcb98+TCw4Qn8TXAJt/j4azQwYz9w3lOO8V+A5l6Ap/ccPwI/Qv1eAZlynA2slHqB8d2Ox+B9hOSyEWBkX19f30bgT50keW4GBiS5nYQfLbK6DHrD7wW1befgUqqcAwYffv7nx801pS4yAVZQOCDCAAAA0AUAnQEqFAAUAD6RQJtJJaOioSgKqLASCWwAnTLVNF+d/jNwgXaB1GeoAegB0lnlAABUj3FZ4AD579HYOaNBwh5QVtxEBw4i/2Y4q+RbhWaRCmI//k2U6dxVuvavlpaMZPFOtcs7be+r8PqVKp0I60qk+tUh73rG6KGyc9Z/88pn9E/RqAGTdRDsPACpOKmUvCg19512OKBXEnM0Om+TSQLk7vDztE/6AM//FbmBfcTmgru5c4ZILCbDAUNjlEcbQAA=s","url":"http://localhost:4000/assets/linux/prometheus/prometheus.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/prometheus/"},"url":"http://localhost:4000/posts/prometheus/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1502,28 +1502,28 @@ sudo </span>service prometheus status
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Prometheus%20-%20Secsys&url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Prometheus%20-%20Secsys&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Prometheus%20-%20Secsys&u=https%3A%2F%2Fsecsys.pro%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Prometheus%20-%20Secsys&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fprometheus%2F&text=Prometheus%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprometheus%2F&text=Prometheus%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprometheus%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
@@ -2349,7 +2349,7 @@ In this post, we’ll walk through the steps to install and configure Traefik as
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2025</time>
 
     
       <a href="https://www.linkedin.com/in/shaikmuzammil55/">muzammil shaik</a>.

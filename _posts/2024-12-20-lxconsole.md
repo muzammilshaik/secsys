@@ -6,14 +6,14 @@ categories: ["Virtualization"]
 image:
   path: /assets/vm/ct/lxconsole/logo1.webp
   lqip: data:image/webp;base64,UklGRuIBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSIoAAAABgFvbtqrq4JY6FOBeAmTQhEdQhWsRhN6CO1TgEtt3l+daQURMAFCaOm0TMBQlnxDkKSWi5ZohpAsPlSLjVD+VFQkgS1C+xgCUNf+EaYNwxlh8eGJDeSVlTe+fPPngY1Xc5fZ0AaC8IXePSEEANDU/mnU9UDpX5Mdg0BXnv5EkJ+qChhaBysfUAJWUDggMgEAANAGAJ0BKhQAFAA+kUCYSaWjoiEoCqiwEglsAIAMIN47vATYO8AyQDpUSIa52YMuCRV1cWT+alJG2UtczR6AqAD+8HmDSgFKt0r6eJWPeR89FIUCkQF9Zi0oFoyHaW15a5t1EbKRq6RDW5vIPaoa1q2RJK+hD6YQf0VejW570t+hzrbvLsYtQeQoX/W8imzbFZ3jR6u6SpP66xI+mzVmb3eYciZQAPwNU8Po7xl7Xm6dtshCJmLumHpT02Pn6Rrb2mTpTFliMaCixbqkAf+LELBSnowYD5+jMZ377H+nE+OjcHWIfn1OqDbj9kEblRoDkwRWUYxoiQLCarqnTCc4LrxRid7tU3GnrNp1BcP+TiDX+KgNi7ZTI0A8Yx38CBvtZvu67QfdYAkQAAA==
-#toc: false  #table of content
+toc: true  #table of content
 # https://www.cyberciti.biz/faq/how-to-install-lxd-on-debian-11-linux/
 # https://images.linuxcontainers.org
 ---
 
 LXConsole is an open-source web-based application designed to simplify the management of LXD servers. It offers a convenient graphical user interface that allows users to manage multiple Incus (LXD's fork) and LXD containers. In this blog, we will guide you through the entire process of setting up and using LXConsole, from launching a Debian instance to managing LXD containers seamlessly through a web interface.
 
-# Stpe1: Launching the Debian instance 
+## Stpe1: Launching the Debian instance 
 
 To begin with, you need a Debian instance. This can be easily achieved using Proxmox helper scripts. These scripts automate the setup process, saving you time and effort. To launch the Debian instance, execute the following command:
 
@@ -69,7 +69,7 @@ This command will download and execute a script that sets up a Debian container 
   🚀  Debian setup has been successfully initialized!
 ```
 
-# Step2: Configuring the LXconsole 
+### Step2: Configuring the LXconsole 
 
 Once your server has booted and is running, you can connect to the server and start configuring LXConsole. To do this, use the LXC console to access your Debian server.
 
@@ -117,7 +117,7 @@ Once the installation is complete, run LXConsole by executing the run.py file:
 python3 run.py
 ```
 
-# Step3: Creating the systemd file
+## Step3: Creating the systemd file
 
 To ensure LXConsole starts automatically when the system boots up, you need to create a systemd service file. This will configure LXConsole to launch as a service during system startup.
 
@@ -154,7 +154,7 @@ systemctl restart lxconsole.service
 
 This ensures that LXConsole will run on startup and be ready to manage your LXD containers.
 
-# Step4: Installing the lxd
+## Step4: Installing the lxd
 
 If you dont have lxd server preconfigured you can install the lxd server by using the following steps
 
@@ -189,7 +189,7 @@ root@lxconsole:~/lxd#
 
 Once you complete the configuration, LXD will be set up and ready to use.
 
-# Step5: Accessing the lxconsole
+## Step5: Accessing the lxconsole
 
 Now that LXConsole is installed and running, you can access the web-based user interface. Open your browser and navigate to:
 
@@ -201,7 +201,7 @@ During the first boot of LXConsole, you will be prompted to register and log in 
 
 ![lxconsole](/assets/vm/ct/lxconsole/lxconsole.png){: width="800" height="500" }
 
-# Step6: Adding the lxd server to the lxconsole
+## Step6: Adding the lxd server to the lxconsole
 
 Once you loged in add the existing lxd container to the lxconsole to connect and manage the lxd conatiners 
 
@@ -221,7 +221,7 @@ Once the server is added successfully, you can begin managing your LXD container
 
 ![lxconsole](/assets/vm/ct/lxconsole/lxconsole1126.png){: width="800" height="500" }
 
-# step7: Launching the lxd container
+## step7: Launching the lxd container (alpine)
 
 As we have configured lxd and lxconsole lets launch the alpine lxd container. Start by searching for available LXD images Then, launch a container using a specific image by executing the following command for example, to launch an Alpine Linux container, you can use:
 
@@ -311,6 +311,40 @@ PRETTY_NAME="Alpine Linux v3.20"
 HOME_URL="https://alpinelinux.org/"
 BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
 ~ # 
+```
+
+## launching the Debian container
+
+Here’s an elaboration of the section:
+
+Let’s launch the Debian container in the same way we did with the Alpine container. To do this, we first need to filter out the specific image we intend to use from the list of available images. In this case, we’re opting for the "debian/12/cloud" image, which is a cloud-specific version of Debian 12. This image is optimized for cloud environments, making it ideal for container deployment.
+
+To select the image, we can run the `lxc image list` command, which will display a list of available images from various sources. We can use the grep command to filter through the output and narrow down the list to only the Debian 12 cloud images.
+
+Once we have the correct image identified, we can proceed to launch the container. The command we’ll use is `lxc launch`, followed by the image reference (images:debian/12/cloud). This will create and start the container, naming it "debian" in the process. The container will then be accessible for further management or use.
+
+```bash
+> root@lxconsole:~# lxc image list images: | grep debian/12
+| debian/12 (7 more)                       | 13829fee748c | yes    | Debian bookworm amd64 (20250102_0002)     | x86_64       | CONTAINER       | 96.04MB   | Jan 2, 2025 at 12:00am (UTC)  |
+| debian/12 (7 more)                       | ec5f73713766 | yes    | Debian bookworm amd64 (20250102_0002)     | x86_64       | VIRTUAL-MACHINE | 351.38MB  | Jan 2, 2025 at 12:00am (UTC)  |
+| debian/12/arm64 (3 more)                 | 7f5fbadc7060 | yes    | Debian bookworm arm64 (20241230_0004)     | aarch64      | CONTAINER       | 93.10MB   | Dec 30, 2024 at 12:00am (UTC) |
+| debian/12/cloud (3 more)                 | 9e3c8ec9bab8 | yes    | Debian bookworm amd64 (20250102_0002)     | x86_64       | VIRTUAL-MACHINE | 394.74MB  | Jan 2, 2025 at 12:00am (UTC)  |
+| debian/12/cloud (3 more)                 | b7ef0541b199 | yes    | Debian bookworm amd64 (20250102_0002)     | x86_64       | CONTAINER       | 122.26MB  | Jan 2, 2025 at 12:00am (UTC)  |
+| debian/12/cloud/arm64 (1 more)           | 29ec992650ff | yes    | Debian bookworm arm64 (20241230_0004)     | aarch64      | CONTAINER       | 118.60MB  | Dec 30, 2024 at 12:00am (UTC) |
+
+> root@lxconsole:~# lxc launch images:debian/12/cloud debian
+Creating debian
+Starting debian                           
+
+> root@lxconsole:~# lxc list
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+|  NAME  |  STATE  |         IPV4         |                     IPV6                      |   TYPE    | SNAPSHOTS |
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+| debian | RUNNING | 10.150.239.33 (eth0) | fd42:f569:921f:766a:216:3eff:fe0f:6cc6 (eth0) | CONTAINER | 0         |
++--------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+
+> root@lxconsole:~# lxc exec debian /bin/bash
+> root@debian:~#
 ```
 
 LXConsole allows you to manage the containers, view logs, and perform other administrative tasks from a central web interface, making it a powerful tool for container management.

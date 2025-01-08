@@ -34,18 +34,18 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="A comprehensive guide on setting up and configuring Grafana on Linux. Learn how to install Grafana, connect data sources, and create visualizations to monitor your system performance effectively." />
 <meta property="og:description" content="A comprehensive guide on setting up and configuring Grafana on Linux. Learn how to install Grafana, connect data sources, and create visualizations to monitor your system performance effectively." />
-<link rel="canonical" href="https://secsys.pro/posts/grafana/" />
-<meta property="og:url" content="https://secsys.pro/posts/grafana/" />
+<link rel="canonical" href="http://localhost:4000/posts/grafana/" />
+<meta property="og:url" content="http://localhost:4000/posts/grafana/" />
 <meta property="og:site_name" content="Secsys" />
-<meta property="og:image" content="https://secsys.pro/assets/linux/grafana/grafana.webp" />
+<meta property="og:image" content="http://localhost:4000/assets/linux/grafana/grafana.webp" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-07-24T00:00:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://secsys.pro/assets/linux/grafana/grafana.webp" />
+<meta property="twitter:image" content="http://localhost:4000/assets/linux/grafana/grafana.webp" />
 <meta property="twitter:title" content="Grafana" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-07-24T00:00:00+05:30","description":"A comprehensive guide on setting up and configuring Grafana on Linux. Learn how to install Grafana, connect data sources, and create visualizations to monitor your system performance effectively.","headline":"Grafana","image":{"lqip":"data:image/webp;base64,UklGRhICAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSAQBAAABkHNb27HHoq/Ytlk5lW3btp30qGzbzti2PdPbtnkVnyJiAiBati0fkg+TBZKo5Pwl344k5i/4ChRvP7Oj9x1FzwjcpdArrZmx+SPPeVYOwAGBJ4EQKt/4fRJABsk31hDt8ckHkLpHFgJw3/Pq7YUaBSRvAbr/+E4eSPnzbOvYT94xxiZQRu4FlN9tKQJml3lFOlRmmuQs4P1XFwCMvjMGzSR5BHD6ISeA0+zGdYEf+sDBNmmBm1yA5uRvkqtSUGrZ1uEKu3/8Fw7oZX0nxxUhqH2D5BIAZP0j7zW56NpWPiZnouUFVH9TzDEpCLWimEsQKf/28ZyLZ0HDKzJGlGijrj4IAlZQOCDoAAAAMAYAnQEqFAAUAD6RQpxKJaOioagIALASCWwAnTKEdF+AfYBzY2gXc911W4AewBvC4BbbZawnCxBoCABU8sNquhij9cqVOKKOa+ErRgM/LhiFRQj7xhlkzwFDlqt3ucybqv43J+/Gnmn7af+PfAeIxXjXi/f+4zklqT6PjTaLRHNGa96Qm8yi8KNCrS6XUrSX8PDCcjjJ8n5qQNHYw3v3WE3ns6fT0f0WJ+wvL9B5nOdEYGEh3ibwjR/4EEQTnv/wIIgspfGZEh9mWMqecRB1tyvathsR9t9z+yCv1/dmM6PXFPx4lTUAAA==r","url":"https://secsys.pro/assets/linux/grafana/grafana.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://secsys.pro/posts/grafana/"},"url":"https://secsys.pro/posts/grafana/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T17:33:41+05:30","datePublished":"2024-07-24T00:00:00+05:30","description":"A comprehensive guide on setting up and configuring Grafana on Linux. Learn how to install Grafana, connect data sources, and create visualizations to monitor your system performance effectively.","headline":"Grafana","image":{"lqip":"data:image/webp;base64,UklGRhICAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSAQBAAABkHNb27HHoq/Ytlk5lW3btp30qGzbzti2PdPbtnkVnyJiAiBati0fkg+TBZKo5Pwl344k5i/4ChRvP7Oj9x1FzwjcpdArrZmx+SPPeVYOwAGBJ4EQKt/4fRJABsk31hDt8ckHkLpHFgJw3/Pq7YUaBSRvAbr/+E4eSPnzbOvYT94xxiZQRu4FlN9tKQJml3lFOlRmmuQs4P1XFwCMvjMGzSR5BHD6ISeA0+zGdYEf+sDBNmmBm1yA5uRvkqtSUGrZ1uEKu3/8Fw7oZX0nxxUhqH2D5BIAZP0j7zW56NpWPiZnouUFVH9TzDEpCLWimEsQKf/28ZyLZ0HDKzJGlGijrj4IAlZQOCDoAAAAMAYAnQEqFAAUAD6RQpxKJaOioagIALASCWwAnTKEdF+AfYBzY2gXc911W4AewBvC4BbbZawnCxBoCABU8sNquhij9cqVOKKOa+ErRgM/LhiFRQj7xhlkzwFDlqt3ucybqv43J+/Gnmn7af+PfAeIxXjXi/f+4zklqT6PjTaLRHNGa96Qm8yi8KNCrS6XUrSX8PDCcjjJ8n5qQNHYw3v3WE3ns6fT0f0WJ+wvL9B5nOdEYGEh3ibwjR/4EEQTnv/wIIgspfGZEh9mWMqecRB1tyvathsR9t9z+yCv1/dmM6PXFPx4lTUAAA==r","url":"http://localhost:4000/assets/linux/grafana/grafana.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/grafana/"},"url":"http://localhost:4000/posts/grafana/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1096,7 +1096,7 @@ wget <span class="nt">-q</span> <span class="nt">-O</span> - https://apt.grafana
 
 <p>This will fetch the latest package information from the newly added Grafana repository.</p>
 
-<h2 id="step-5-install-grafana-oss"><span class="me-2">Step 5: Install Grafana OSS</span><a href="#step-5-install-grafana-oss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="step-5-install-grafana-os"><span class="me-2">Step 5: Install Grafana OS</span><a href="#step-5-install-grafana-os" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Finally, to install the latest open-source release of Grafana, run the following command:</p>
 
@@ -1204,28 +1204,28 @@ Default Login Credentials</p>
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Grafana%20-%20Secsys&url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Grafana%20-%20Secsys&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Grafana%20-%20Secsys&u=https%3A%2F%2Fsecsys.pro%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Grafana%20-%20Secsys&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fgrafana%2F&text=Grafana%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgrafana%2F&text=Grafana%20-%20Secsys" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsecsys.pro%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgrafana%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
@@ -2053,7 +2053,7 @@ Prometheus is a powerful open-source monitoring system and time series database.
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2025</time>
 
     
       <a href="https://www.linkedin.com/in/shaikmuzammil55/">muzammil shaik</a>.
