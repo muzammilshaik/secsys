@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-09T17:23:33+05:30</updated>
+  <updated>2025-01-28T21:14:14+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,122 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Installing Cygwin &amp; the Rsync Package</title>
+    <link href="http://localhost:4000/posts/cygwin/" rel="alternate" type="text/html" title="Installing Cygwin &amp;amp; the Rsync Package" />
+    <published>2025-01-28T00:00:00+05:30</published>
+  
+    <updated>2025-01-28T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/cygwin/</id>
+    <content src="http://localhost:4000/posts/cygwin/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Windows" />
+    
+    <category term="linux packages" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to Install Cygwin on Windows and Add the Rsync Package
+
+If you’re a Windows user and want to access Linux-like tools and packages, Cygwin is a great solution. Cygwin provides a large collection of GNU and Open Source tools, which offer a Linux-like environment on Windows. One such tool is rsync, a powerful utility for file synchronization.
+
+In this post, we’ll walk through the installation ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>OverTheWire Wargames bandit => 2</title>
+    <link href="http://localhost:4000/posts/bandit-2/" rel="alternate" type="text/html" title="OverTheWire Wargames bandit =&amp;gt; 2" />
+    <published>2025-01-25T00:00:00+05:30</published>
+  
+    <updated>2025-01-25T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/bandit-2/</id>
+    <content src="http://localhost:4000/posts/bandit-2/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="CTF" />
+    
+    <category term="community" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      OverTheWire is a platform that provides a collection of wargames designed to help individuals enhance their knowledge of cybersecurity. It’s ideal for both beginners and experienced security enthusiasts looking to expand their skill set in a practical and engaging way.
+
+The platform’s wargames are structured to help users progress step-by-step, starting with basic tasks and advancing to more co...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>OverTheWire Wargames bandit => 1</title>
+    <link href="http://localhost:4000/posts/bandit-1/" rel="alternate" type="text/html" title="OverTheWire Wargames bandit =&amp;gt; 1" />
+    <published>2025-01-24T00:00:00+05:30</published>
+  
+    <updated>2025-01-24T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/bandit-1/</id>
+    <content src="http://localhost:4000/posts/bandit-1/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="CTF" />
+    
+    <category term="community" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      OverTheWire is a platform that provides a collection of wargames designed to help individuals enhance their knowledge of cybersecurity. It’s ideal for both beginners and experienced security enthusiasts looking to expand their skill set in a practical and engaging way.
+
+The platform’s wargames are structured to help users progress step-by-step, starting with basic tasks and advancing to more co...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -104,118 +220,6 @@ Launch a container
 This creates and starts a container.
 lxc launch ubuntu:14.04 CONTAINERNAME   # image and container names are optional 
 lxc launch u...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>lxconsole</title>
-    <link href="http://localhost:4000/posts/lxconsole/" rel="alternate" type="text/html" title="lxconsole" />
-    <published>2024-12-20T00:00:00+05:30</published>
-  
-    <updated>2025-01-08T12:43:41+05:30</updated>
-  
-    <id>http://localhost:4000/posts/lxconsole/</id>
-    <content src="http://localhost:4000/posts/lxconsole/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Virtualization" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      LXConsole is an open-source web-based application designed to simplify the management of LXD servers. It offers a convenient graphical user interface that allows users to manage multiple Incus (LXD’s fork) and LXD containers. In this blog, we will guide you through the entire process of setting up and using LXConsole, from launching a Debian instance to managing LXD containers seamlessly throug...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Disk Management on proxmoxVM</title>
-    <link href="http://localhost:4000/posts/Diskmanagement/" rel="alternate" type="text/html" title="Disk Management on proxmoxVM" />
-    <published>2024-12-09T00:00:00+05:30</published>
-  
-    <updated>2024-12-20T17:33:41+05:30</updated>
-  
-    <id>http://localhost:4000/posts/Diskmanagement/</id>
-    <content src="http://localhost:4000/posts/Diskmanagement/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Virtualization" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      In this blog post, we will explore the process of increasing disk space for a Debian virtual machine (VM) running on Proxmox. This guide will detail the commands used and the output received during the resizing operation, providing a comprehensive overview for users looking to expand their VM’s storage capacity.
-
-Step 1: Resize Disk in Proxmox
-
-First, you need to increase the disk size from the...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Jenkins LXC on proxmox</title>
-    <link href="http://localhost:4000/posts/jenkins/" rel="alternate" type="text/html" title="Jenkins LXC on proxmox" />
-    <published>2024-10-04T00:00:00+05:30</published>
-  
-    <updated>2024-12-20T17:33:41+05:30</updated>
-  
-    <id>http://localhost:4000/posts/jenkins/</id>
-    <content src="http://localhost:4000/posts/jenkins/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Virtualization" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      In this blog post, we will go through the steps to install Jenkins in Proxmox using the TurnKey image. This method is quite simple and efficient for setting up Jenkins in a containerized environment.
-
-Download Jenkins TurnKey Image
-
-First, we need to download the Jenkins TurnKey image for Proxmox. Open your terminal and run the following command:
-
-❯ pveam download $storage debian-12-turnkey-jen...
     </summary>
   
 
