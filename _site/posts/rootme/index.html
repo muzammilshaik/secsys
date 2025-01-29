@@ -1427,7 +1427,7 @@ Enumeration</p>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cygwin/">Installing Cygwin & the Rsync Package</a>
+          <a href="/posts/bandit-1/">OverTheWire Wargames bandit => 1</a>
         </li>
       
         
@@ -1441,7 +1441,14 @@ Enumeration</p>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/bandit-1/">OverTheWire Wargames bandit => 1</a>
+          <a href="/posts/cygwin/">Installing Cygwin & the Rsync Package</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/bandit-3/">OverTheWire Wargames bandit => 3</a>
         </li>
       
         
@@ -1449,13 +1456,6 @@ Enumeration</p>
         
         <li class="text-truncate lh-lg">
           <a href="/posts/lxconsole/">lxconsole</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/grafana/">Grafana</a>
         </li>
       
     </ul>
@@ -2106,6 +2106,18 @@ Enumeration</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -2230,52 +2242,6 @@ Enumeration</p>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/wordpress/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1631730600"
-  data-df="ll"
-  
->
-  Sep 16, 2021
-</time>
-
-              <h4 class="pt-0 my-2">Wordpress</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  scanning
-
-Let’s scan the host to find the open ports
-
-
-
-We have three services open one is being an SSH HTTP &amp;amp; SMB  let’s check the web server
-
-
-
-nothing much interesting hear. we have a billy ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/shellshock/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2357,6 +2323,50 @@ Let’s scan the host to find the open ports with nmap, nikto and gobuster
 
 
 Looking at the results we have two ports open one is being SSH and HTTP....
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/bruteforce/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1637087400"
+  data-df="ll"
+  
+>
+  Nov 17, 2021
+</time>
+
+              <h4 class="pt-0 my-2">Brute Force</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Reconnaissance
+
+let’s do the quick scanning to find the open ports on the box
+
+
+
+nmap -sc -sV -oN file_name ip
+
+nmap -SC for default cripts aand -sV for enumerate version -oN for simple nmap format...
                 </p>
               </div>
             </div>
