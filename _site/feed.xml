@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-30T16:57:08+05:30</updated>
+  <updated>2025-01-30T23:06:05+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -87,6 +87,48 @@
 
   
   <entry>
+    <title>splunk</title>
+    <link href="http://localhost:4000/posts/splunk/" rel="alternate" type="text/html" title="splunk" />
+    <published>2025-01-30T00:00:00+05:30</published>
+  
+    <updated>2025-01-30T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/splunk/</id>
+    <content src="http://localhost:4000/posts/splunk/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Splunk Queries for SOC Analyst
+
+🔍 Advanced Splunk Queries for Security Monitoring
+
+As a System Engineer, monitoring security events is critical for ensuring system integrity and identifying potential threats. Here’s a collection of essential Splunk queries categorized for different scenarios, from failed login attempts to suspicious network traffic.
+
+🔐 Authentication Attempts
+
+🔐 Failed Login At...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>ports</title>
     <link href="http://localhost:4000/posts/ports/" rel="alternate" type="text/html" title="ports" />
     <published>2025-01-30T00:00:00+05:30</published>
@@ -142,6 +184,46 @@ This cheatsheet covers common network ports used in day-to-day operations as a s
       Secure HTTP traffic (encrypted with SSL/TLS).
     
  ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>nuclei</title>
+    <link href="http://localhost:4000/posts/nuclei/" rel="alternate" type="text/html" title="nuclei" />
+    <published>2025-01-30T00:00:00+05:30</published>
+  
+    <updated>2025-01-30T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/nuclei/</id>
+    <content src="http://localhost:4000/posts/nuclei/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Comprehensive Guide to Nuclei Scans
+
+Nuclei is a powerful tool for performing vulnerability scans and security assessments on web applications. This guide walks you through the different modes, templates, and tips for using Nuclei effectively.
+
+🌎 Default Mode
+
+By default, Nuclei uses almost all available templates, making it suitable for comprehensive scans. To perform a complete scan, you can ...
     </summary>
   
 
@@ -211,116 +293,6 @@ Target Specification
     
        
       nma...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>linux</title>
-    <link href="http://localhost:4000/posts/linux/" rel="alternate" type="text/html" title="linux" />
-    <published>2025-01-28T00:00:00+05:30</published>
-  
-    <updated>2025-01-28T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/linux/</id>
-    <content src="http://localhost:4000/posts/linux/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      🖥️ System Info Shortcuts
-
-
-  
-    
-      Shortcut
-      Action
-    
-  
-  
-    
-      date
-      Show date and time
-    
-    
-      uptime
-      Display system uptime
-    
-    
-      cal
-      Show calendar
-    
-    
-      w
-      Display who is logged in
-    
-    
-      whoami
-      Display effective username
-    
-    
-      finger user
-      Show info about user
-    
-    
-      uname -a
-      ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Installing Cygwin &amp; the Rsync Package</title>
-    <link href="http://localhost:4000/posts/cygwin/" rel="alternate" type="text/html" title="Installing Cygwin &amp;amp; the Rsync Package" />
-    <published>2025-01-28T00:00:00+05:30</published>
-  
-    <updated>2025-01-28T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/cygwin/</id>
-    <content src="http://localhost:4000/posts/cygwin/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Windows" />
-    
-    <category term="linux packages" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      How to Install Cygwin on Windows and Add the Rsync Package
-
-If you’re a Windows user and want to access Linux-like tools and packages, Cygwin is a great solution. Cygwin provides a large collection of GNU and Open Source tools, which offer a Linux-like environment on Windows. One such tool is rsync, a powerful utility for file synchronization.
-
-In this post, we’ll walk through the installation ...
     </summary>
   
 
