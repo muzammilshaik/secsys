@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-29T19:40:41+05:30</updated>
+  <updated>2025-01-30T16:57:08+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,274 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>vim</title>
+    <link href="http://localhost:4000/posts/vim/" rel="alternate" type="text/html" title="vim" />
+    <published>2025-01-30T00:00:00+05:30</published>
+  
+    <updated>2025-01-30T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/vim/</id>
+    <content src="http://localhost:4000/posts/vim/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Vim Cheat Sheet
+
+
+
+📍 Basic Cursor Movements
+
+
+  
+    
+      Command
+      Action
+      Description
+    
+  
+  
+    
+      k
+      Move up
+      Moves the cursor one line up.
+    
+    
+      j
+      Move down
+      Moves the cursor one line down.
+    
+    
+      h
+      Move left
+      Moves the cursor one character to the left.
+    
+    
+      l
+      Move right
+      Moves the cursor one charac...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>ports</title>
+    <link href="http://localhost:4000/posts/ports/" rel="alternate" type="text/html" title="ports" />
+    <published>2025-01-30T00:00:00+05:30</published>
+  
+    <updated>2025-01-30T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/ports/</id>
+    <content src="http://localhost:4000/posts/ports/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Network Ports Cheatsheet
+
+This cheatsheet covers common network ports used in day-to-day operations as a system engineer.
+
+🌐 Web Services
+
+
+  
+    
+      Service
+      Port Number
+      Protocol
+      Description
+    
+  
+  
+    
+      HTTP
+      80
+      TCP
+      Standard port for HTTP traffic.
+    
+    
+      HTTPS
+      443
+      TCP
+      Secure HTTP traffic (encrypted with SSL/TLS).
+    
+ ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>nmap</title>
+    <link href="http://localhost:4000/posts/nmap/" rel="alternate" type="text/html" title="nmap" />
+    <published>2025-01-30T00:00:00+05:30</published>
+  
+    <updated>2025-01-30T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/nmap/</id>
+    <content src="http://localhost:4000/posts/nmap/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Nmap Cheat Sheet
+
+Target Specification
+
+
+  
+    
+      Switch
+      Example
+      Description
+    
+  
+  
+    
+       
+      nmap 192.168.1.1
+      Scan a single IP
+    
+    
+       
+      nmap 192.168.1.1 192.168.2.1
+      Scan specific IPs
+    
+    
+       
+      nmap 192.168.1.1-254
+      Scan a range
+    
+    
+       
+      nmap scanme.nmap.org
+      Scan a domain
+    
+    
+       
+      nma...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>linux</title>
+    <link href="http://localhost:4000/posts/linux/" rel="alternate" type="text/html" title="linux" />
+    <published>2025-01-28T00:00:00+05:30</published>
+  
+    <updated>2025-01-28T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/linux/</id>
+    <content src="http://localhost:4000/posts/linux/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      🖥️ System Info Shortcuts
+
+
+  
+    
+      Shortcut
+      Action
+    
+  
+  
+    
+      date
+      Show date and time
+    
+    
+      uptime
+      Display system uptime
+    
+    
+      cal
+      Show calendar
+    
+    
+      w
+      Display who is logged in
+    
+    
+      whoami
+      Display effective username
+    
+    
+      finger user
+      Show info about user
+    
+    
+      uname -a
+      ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -53,168 +321,6 @@
 If you’re a Windows user and want to access Linux-like tools and packages, Cygwin is a great solution. Cygwin provides a large collection of GNU and Open Source tools, which offer a Linux-like environment on Windows. One such tool is rsync, a powerful utility for file synchronization.
 
 In this post, we’ll walk through the installation ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OverTheWire Wargames bandit => 3</title>
-    <link href="http://localhost:4000/posts/bandit-3/" rel="alternate" type="text/html" title="OverTheWire Wargames bandit =&amp;gt; 3" />
-    <published>2025-01-26T00:00:00+05:30</published>
-  
-    <updated>2025-01-26T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/bandit-3/</id>
-    <content src="http://localhost:4000/posts/bandit-3/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-    <category term="community" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      OverTheWire is a platform that provides a collection of wargames designed to help individuals enhance their knowledge of cybersecurity. It’s ideal for both beginners and experienced security enthusiasts looking to expand their skill set in a practical and engaging way.
-
-The platform’s wargames are structured to help users progress step-by-step, starting with basic tasks and advancing to more co...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OverTheWire Wargames bandit => 2</title>
-    <link href="http://localhost:4000/posts/bandit-2/" rel="alternate" type="text/html" title="OverTheWire Wargames bandit =&amp;gt; 2" />
-    <published>2025-01-25T00:00:00+05:30</published>
-  
-    <updated>2025-01-28T21:18:17+05:30</updated>
-  
-    <id>http://localhost:4000/posts/bandit-2/</id>
-    <content src="http://localhost:4000/posts/bandit-2/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-    <category term="community" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      OverTheWire is a platform that provides a collection of wargames designed to help individuals enhance their knowledge of cybersecurity. It’s ideal for both beginners and experienced security enthusiasts looking to expand their skill set in a practical and engaging way.
-
-The platform’s wargames are structured to help users progress step-by-step, starting with basic tasks and advancing to more co...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OverTheWire Wargames bandit => 1</title>
-    <link href="http://localhost:4000/posts/bandit-1/" rel="alternate" type="text/html" title="OverTheWire Wargames bandit =&amp;gt; 1" />
-    <published>2025-01-24T00:00:00+05:30</published>
-  
-    <updated>2025-01-28T21:18:17+05:30</updated>
-  
-    <id>http://localhost:4000/posts/bandit-1/</id>
-    <content src="http://localhost:4000/posts/bandit-1/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-    <category term="community" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      OverTheWire is a platform that provides a collection of wargames designed to help individuals enhance their knowledge of cybersecurity. It’s ideal for both beginners and experienced security enthusiasts looking to expand their skill set in a practical and engaging way.
-
-The platform’s wargames are structured to help users progress step-by-step, starting with basic tasks and advancing to more co...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>sed cheat sheet</title>
-    <link href="http://localhost:4000/posts/sed/" rel="alternate" type="text/html" title="sed cheat sheet" />
-    <published>2024-12-20T00:00:00+05:30</published>
-  
-    <updated>2024-12-20T17:33:41+05:30</updated>
-  
-    <id>http://localhost:4000/posts/sed/</id>
-    <content src="http://localhost:4000/posts/sed/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Regular expressions.
-
-  Replace the first occurrence of a string in a file, and print the result:
-    sed 's/find/replace/' filename
-    
-  
-  Replace only on lines matching the line pattern:
-    sed '/line_pattern/s/find/replace/'
-    
-  
-  Replace all occurrences of a string in a file, overwriting the file (i.e. in-place):
-    sed -i 's/find/replace/g' filename
-    
-  
-  Replace all occurrenc...
     </summary>
   
 
