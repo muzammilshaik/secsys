@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-30T23:06:05+05:30</updated>
+  <updated>2025-01-31T11:44:50+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>DietPi Headless Setup</title>
+    <link href="http://localhost:4000/posts/dietpi/" rel="alternate" type="text/html" title="DietPi Headless Setup" />
+    <published>2025-01-31T00:00:00+05:30</published>
+  
+    <updated>2025-01-31T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/dietpi/</id>
+    <content src="http://localhost:4000/posts/dietpi/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      🍃 What is DietPi?
+
+DietPi is a lightweight and optimized Debian-based operating system specifically designed for single-board computers like Raspberry Pi, as well as other low-powered devices. It focuses on providing a minimal yet highly configurable environment for users who want performance and efficiency in their setups.
+
+🏆 Key Features of DietPi:
+
+
+  Minimal Footprint: DietPi is one of the ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -224,75 +265,6 @@ Nuclei is a powerful tool for performing vulnerability scans and security assess
 🌎 Default Mode
 
 By default, Nuclei uses almost all available templates, making it suitable for comprehensive scans. To perform a complete scan, you can ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>nmap</title>
-    <link href="http://localhost:4000/posts/nmap/" rel="alternate" type="text/html" title="nmap" />
-    <published>2025-01-30T00:00:00+05:30</published>
-  
-    <updated>2025-01-30T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/nmap/</id>
-    <content src="http://localhost:4000/posts/nmap/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Nmap Cheat Sheet
-
-Target Specification
-
-
-  
-    
-      Switch
-      Example
-      Description
-    
-  
-  
-    
-       
-      nmap 192.168.1.1
-      Scan a single IP
-    
-    
-       
-      nmap 192.168.1.1 192.168.2.1
-      Scan specific IPs
-    
-    
-       
-      nmap 192.168.1.1-254
-      Scan a range
-    
-    
-       
-      nmap scanme.nmap.org
-      Scan a domain
-    
-    
-       
-      nma...
     </summary>
   
 
