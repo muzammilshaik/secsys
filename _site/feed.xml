@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-31T11:44:50+05:30</updated>
+  <updated>2025-01-31T11:52:31+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>DietPi Headless Setup</title>
-    <link href="http://localhost:4000/posts/dietpi/" rel="alternate" type="text/html" title="DietPi Headless Setup" />
+    <title>DietPi Headless webmin Setup</title>
+    <link href="http://localhost:4000/posts/dietpi/" rel="alternate" type="text/html" title="DietPi Headless webmin Setup" />
     <published>2025-01-31T00:00:00+05:30</published>
   
     <updated>2025-01-31T00:00:00+05:30</updated>
