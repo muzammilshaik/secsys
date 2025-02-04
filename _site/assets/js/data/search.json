@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Open WebUI & Ollama setup on Windows",
+    "url": "/posts/ollama/",
+    "categories": "Windows",
+    "tags": "docker, ollama, open-webui",
+    "date": "2025-02-01 00:00:00 +0530",
+    
+
+
+
+
+
+    
+    "snippet": "🌐 What is Open WebUI?Open WebUI is an open-source, web-based user interface designed to simplify interactions with backend applications. It provides a sleek interface for handling modules, pulling ...",
+    "content": "🌐 What is Open WebUI?Open WebUI is an open-source, web-based user interface designed to simplify interactions with backend applications. It provides a sleek interface for handling modules, pulling resources, and managing tasks efficiently.🖥️ System RequirementsTo install and use Open WebUI and Ollama on Windows, ensure your system meets the following requirements:  Operating System: Windows 10/11 (64-bit)  RAM: Minimum 8GB (16GB recommended)  Processor: x64-based processor  Storage: At least 20GB of free space  Software: Docker Desktop, Winget, or Chocolatey (for package management)1️⃣ Install OllamaOllama is a prerequisite for running Open WebUI. Follow these steps to install it on Windows:  Visit the official Ollama website and download the installer for Windows.  Run the installer and follow the on-screen instructions to complete the installation.  Verify the installation by opening a terminal and typing:    ollama --version          If the version number appears, Ollama has been installed successfully.2️⃣ Install Open WebUI using pythoninstall using pythonOpen the terminal as administrator and install the python  Open a terminal and install Docker Desktop using Winget:    winget install Python.Python.3.10        Alternatively, use Chocolatey:    choco install python --version=3.10        Once installed, launch terminal and ensure it is running. Verify by typing:    python --version          Default Model DirectoryBy default, Ollama stores models in the following directory: C:\\Users\\%username%\\.ollama\\modelsSteps to Change the Model Directory if neededFollow these steps to change the model directory:            Quit Ollama: Ensure that the Ollama application is not running. You can do this by right-clicking the Ollama icon in the taskbar and selecting ‘Quit’.                  Open Environment Variables:                  For Windows 11, open the Settings app and search for “environment variables”.          For Windows 10, open the Control Panel and search for “environment variables”.                                Edit Environment Variables: Click on “Edit environment variables for your account”.                  Set the OLLAMA_MODELS Variable:                          If the variable already exists, select it and click “Edit”. If it does not exist, click “New” to create it.          Set the variable name to OLLAMA_MODELS and the value to your desired directory path (e.g., D:\\OllamaModels).                                Save Changes: Click OK/Apply to save your changes.                  Restart Ollama: Launch the Ollama application from the Start menu to apply the new settings.        Reboot the system to update the environment variablesinstalling open webui using python uvxuvx is a command-line tool designed to manage Python environments and run Python applications easily. It simplifies version management, package installation, and application execution, especially for Python-based projects like OpenWebUI.   powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"   $env:DATA_DIR=\"D:\\owui\\data\"; uvx --python 3.11 open-webui@latest serve Open your browser and navigate to http://localhost:8080 to access the Open WebUI interface.install using DockerConfiguring Open WebUI with DockerAs my system has s dedicated server so am using the GPU webui if you dont have a GPU you can exclude it check the official ollama quick start guideCreate a docker-compose.yml file with the following configuration:services:  open-webui:    image: ghcr.io/open-webui/open-webui:cuda    container_name: open-webui    ports:      - \"3000:8080\"    deploy:      resources:        reservations:          devices:            - capabilities: [\"gpu\"]    volumes:      - open-webui:/app/backend/data    restart: unless-stopped    extra_hosts:            - 'host.docker.internal:host-gateway'volumes:  open-webui:    driver: localKey Configuration Breakdown:  Image: Specifies the container image from the Open WebUI GitHub Container Registry.  Restart: Ensures the container automatically restarts on failure or reboot.  Volumes: Maps a directory for persistent data storage.  Extra Hosts: Links the container to the host system for seamless communication.  Ports: Maps the internal port 8080 to the external port 3000 for web access.Running the Docker Container  Navigate to the directory containing the docker-compose.yml file.  Run the following command to start the Open WebUI container:    docker-compose up -d        Verify the container is running:    docker ps      3️⃣ Sign In to Open WebUI  Open the browser and go to http://localhost:8080  Create an account or log in using your existing credentials.4️⃣ Pull the ModulesOnce signed in, navigate to the “Admin panel &gt; settings &gt; Modules” section in Open WebUI and:pulling the module via openwebui  Select the module you wish to install.  Click “Pull” to download and install the module. Ensure your internet connection is stable for smooth downloads.5️⃣ Select the Module and Enjoy the ChatAfter the modules are installed:  Go to the “Chat” section.  Select your preferred module from the dropdown.  Start chatting and exploring the capabilities of Open WebUI!🚀 ConclusionBy following this guide, you should now have a fully functional Open WebUI and Ollama setup on your Windows machine. With this setup, you can effortlessly manage modules, interact with backend data, and enjoy the streamlined user interface Open WebUI offers."
+  },
+  
+  {
     "title": "DietPi Headless webmin Setup",
     "url": "/posts/dietpi/",
     "categories": "Linux",
@@ -122,7 +139,7 @@
   {
     "title": "Installing Cygwin & the Rsync Package",
     "url": "/posts/cygwin/",
-    "categories": "Windows, linux packages",
+    "categories": "Windows",
     "tags": "",
     "date": "2025-01-28 00:00:00 +0530",
     

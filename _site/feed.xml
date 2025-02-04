@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-01-31T11:52:31+05:30</updated>
+  <updated>2025-02-04T10:37:26+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,56 @@
 
   
   <entry>
+    <title>Open WebUI &amp; Ollama setup on Windows</title>
+    <link href="http://localhost:4000/posts/ollama/" rel="alternate" type="text/html" title="Open WebUI &amp;amp; Ollama setup on Windows" />
+    <published>2025-02-01T00:00:00+05:30</published>
+  
+    <updated>2025-02-01T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/ollama/</id>
+    <content src="http://localhost:4000/posts/ollama/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Windows" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      🌐 What is Open WebUI?
+
+Open WebUI is an open-source, web-based user interface designed to simplify interactions with backend applications. It provides a sleek interface for handling modules, pulling resources, and managing tasks efficiently.
+
+
+
+🖥️ System Requirements
+
+To install and use Open WebUI and Ollama on Windows, ensure your system meets the following requirements:
+
+
+  Operating System: ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>DietPi Headless webmin Setup</title>
     <link href="http://localhost:4000/posts/dietpi/" rel="alternate" type="text/html" title="DietPi Headless webmin Setup" />
     <published>2025-01-31T00:00:00+05:30</published>
   
-    <updated>2025-01-31T00:00:00+05:30</updated>
+    <updated>2025-01-31T11:52:52+05:30</updated>
   
     <id>http://localhost:4000/posts/dietpi/</id>
     <content src="http://localhost:4000/posts/dietpi/" />
@@ -225,46 +270,6 @@ This cheatsheet covers common network ports used in day-to-day operations as a s
       Secure HTTP traffic (encrypted with SSL/TLS).
     
  ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>nuclei</title>
-    <link href="http://localhost:4000/posts/nuclei/" rel="alternate" type="text/html" title="nuclei" />
-    <published>2025-01-30T00:00:00+05:30</published>
-  
-    <updated>2025-01-30T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/nuclei/</id>
-    <content src="http://localhost:4000/posts/nuclei/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Comprehensive Guide to Nuclei Scans
-
-Nuclei is a powerful tool for performing vulnerability scans and security assessments on web applications. This guide walks you through the different modes, templates, and tips for using Nuclei effectively.
-
-🌎 Default Mode
-
-By default, Nuclei uses almost all available templates, making it suitable for comprehensive scans. To perform a complete scan, you can ...
     </summary>
   
 
