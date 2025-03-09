@@ -81,7 +81,6 @@ tmpfs                                  198M  772K  197M   1% /run
 /dev/mapper/pbs-root                   8.3G  7.7G  125M  99% /
 tmpfs                                  986M  200K  986M   1% /dev/shm
 tmpfs                                  5.0M     0  5.0M   0% /run/lock
-20.20.20.210:/mnt/nasp/proxmox-backup  4.3T  167G  4.1T   4% /mnt/nasp
 tmpfs                                  198M     0  198M   0% /run/user/0
 ```
 
@@ -108,7 +107,6 @@ tmpfs                                  198M  792K  197M   1% /run
 /dev/mapper/pbs-root                    20G  7.8G   11G  43% /
 tmpfs                                  986M  200K  986M   1% /dev/shm
 tmpfs                                  5.0M     0  5.0M   0% /run/lock
-20.20.20.210:/mnt/nasp/proxmox-backup  4.3T  167G  4.1T   4% /mnt/nasp
 tmpfs                                  198M     0  198M   0% /run/user/0
 ```
 

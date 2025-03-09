@@ -3,6 +3,7 @@ author: [muju]
 title: "Prometheus"
 description: "A detailed guide on installing and configuring Prometheus on Linux, setting up users, directories, and configuring services for effective monitoring."
 categories: ["Linux"]
+tags: ["Linux"]
 image:
   path: /assets/linux/prometheus/prometheus.webp
   lqip: data:image/webp;base64,UklGRuwBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSAQBAAABkHPbtrG9wvdn+6vc2/4qW5WtOGVK27Zt20ml1rZtJ6u490lETIBMt6qlF+/fOjEuTv9ZeRPYC/zbHWNzmfYPuJ0Cf+BdoWUG8P7tQV25cA34ViCpHuDe8KUaNegEwNMQeT4wNsQ1Ki+l2WCWmjArvT0UG+J6zfjsv9346inJ3VWTDBruG1dkH2KZ8st46WIbbVn3G94dfltlcb98+TCw4Qn8TXAJt/j4azQwYz9w3lOO8V+A5l6Ap/ccPwI/Qv1eAZlynA2slHqB8d2Ox+B9hOSyEWBkX19f30bgT50keW4GBiS5nYQfLbK6DHrD7wW1befgUqqcAwYffv7nx801pS4yAVZQOCDCAAAA0AUAnQEqFAAUAD6RQJtJJaOioSgKqLASCWwAnTLVNF+d/jNwgXaB1GeoAegB0lnlAABUj3FZ4AD579HYOaNBwh5QVtxEBw4i/2Y4q+RbhWaRCmI//k2U6dxVuvavlpaMZPFOtcs7be+r8PqVKp0I60qk+tUh73rG6KGyc9Z/88pn9E/RqAGTdRDsPACpOKmUvCg19512OKBXEnM0Om+TSQLk7vDztE/6AM//FbmBfcTmgru5c4ZILCbDAUNjlEcbQAA=s

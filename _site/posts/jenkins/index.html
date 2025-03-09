@@ -1691,6 +1691,21 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
 
     <!-- tags -->
     
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/linux/"
+            class="post-tag no-text-decoration"
+          >Linux</a>
+        
+          <a
+            href="/tags/jenkins/"
+            class="post-tag no-text-decoration"
+          >Jenkins</a>
+        
+      </div>
+    
 
     <div
       class="
@@ -1799,6 +1814,27 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/postgresql/">PostgreSQL Replication on Debian</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/psql-cheatsheet/">psql</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/jenkins-backup/">Jenkins Rsync Backup & Discord Alerts</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/cygwin/">Installing Cygwin & the Rsync Package</a>
         </li>
       
@@ -1807,27 +1843,6 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
         
         <li class="text-truncate lh-lg">
           <a href="/posts/ollama/">Open WebUI & Ollama setup on Windows</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/dietpi/">DietPi Headless webmin Setup</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/bandit-1/">OverTheWire Wargames bandit => 1</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/bandit-2/">OverTheWire Wargames bandit => 2</a>
         </li>
       
     </ul>
@@ -1925,142 +1940,6 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2114,90 +1993,6 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2273,6 +2068,440 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2293,79 +2522,6 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2386,6 +2542,9 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
         <a class="post-tag btn btn-outline-primary" href="/tags/cheatsheet/">cheatsheet</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/john/">john</a>
       
         
@@ -2398,19 +2557,16 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
         <a class="post-tag btn btn-outline-primary" href="/tags/find/">find</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/jenkins/">Jenkins</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">metasploit</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/crackmap/">crackmap</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dietpi/">DietPi</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/docker/">docker</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/fcrackzip/">fcrackzip</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/databases/">Databases</a>
       
     </div>
   </section>
@@ -2533,6 +2689,78 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2548,7 +2776,7 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/proxmox/" class="post-preview card h-100">
+          <a href="/posts/jenkins-backup/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2560,14 +2788,14 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
 
 <time
   
-  data-ts="1724783400"
+  data-ts="1740853800"
   data-df="ll"
   
 >
-  Aug 28, 2024
+  Mar  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Post Proxmox</h4>
+              <h4 class="pt-0 my-2">Jenkins Rsync Backup & Discord Alerts</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2576,9 +2804,13 @@ download of 'http://mirror.turnkeylinux.org/turnkeylinux/images/proxmox/debian-1
 
 
 
-                  Introduction
+                  Prerequisites
 
-After installing Proxmox VE (Virtual Environment), there are several essential post-installation steps to ensure that your system is configured correctly and optimized for performance...
+  Ensure Jenkins is installed and running.
+  Install the “Periodic Backup” plugin:
+    
+      Go to Manage Jenkins &amp;gt; Plugin Manager &amp;gt; Available Plugins.
+      Search for “Perio...
                 </p>
               </div>
             </div>
@@ -2586,7 +2818,7 @@ After installing Proxmox VE (Virtual Environment), there are several essential p
         </article>
       
         <article class="col">
-          <a href="/posts/parrot/" class="post-preview card h-100">
+          <a href="/posts/dietpi/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2598,14 +2830,14 @@ After installing Proxmox VE (Virtual Environment), there are several essential p
 
 <time
   
-  data-ts="1725301800"
+  data-ts="1738261800"
   data-df="ll"
   
 >
-  Sep  3, 2024
+  Jan 31, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Installing Parrot OS on Proxmox VM</h4>
+              <h4 class="pt-0 my-2">DietPi Headless webmin Setup</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2614,9 +2846,9 @@ After installing Proxmox VE (Virtual Environment), there are several essential p
 
 
 
-                  Installing Parrot OS on Proxmox
+                  🍃 What is DietPi?
 
-In this guide, we’ll walk through the process of installing Parrot OS on a Proxmox virtual machine. Parrot OS is a popular security-focused operating system, and ru...
+DietPi is a lightweight and optimized Debian-based operating system specifically designed for single-board computers like Raspberry Pi, as well as other low-powered devices. It f...
                 </p>
               </div>
             </div>
@@ -2624,7 +2856,7 @@ In this guide, we’ll walk through the process of installing Parrot OS on a Pro
         </article>
       
         <article class="col">
-          <a href="/posts/ipfire/" class="post-preview card h-100">
+          <a href="/posts/postgresql/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2636,14 +2868,14 @@ In this guide, we’ll walk through the process of installing Parrot OS on a Pro
 
 <time
   
-  data-ts="1726943400"
+  data-ts="1741458600"
   data-df="ll"
   
 >
-  Sep 22, 2024
+  Mar  9, 2025
 </time>
 
-              <h4 class="pt-0 my-2">IPFire Firewall on Proxmox</h4>
+              <h4 class="pt-0 my-2">PostgreSQL Replication on Debian</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2652,9 +2884,7 @@ In this guide, we’ll walk through the process of installing Parrot OS on a Pro
 
 
 
-                  Installing IPFire Firewall on Proxmox
-
-IPFire is a powerful open-source firewall that can be installed on both 32-bit and 64-bit systems. If you have an old PC lying around, you can repurpose it as...
+                  PostgreSQL is a powerful open-source relational database management system (RDBMS) that offers robust replication features. In this guide, we will set up master-slave replication on Debian, ensurin...
                 </p>
               </div>
             </div>
@@ -2829,142 +3059,6 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3018,90 +3112,6 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3177,6 +3187,440 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3197,79 +3641,6 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3290,6 +3661,9 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
         <a class="post-tag btn btn-outline-primary" href="/tags/cheatsheet/">cheatsheet</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/john/">john</a>
       
         
@@ -3302,19 +3676,16 @@ IPFire is a powerful open-source firewall that can be installed on both 32-bit a
         <a class="post-tag btn btn-outline-primary" href="/tags/find/">find</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/jenkins/">Jenkins</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">metasploit</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/crackmap/">crackmap</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dietpi/">DietPi</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/docker/">docker</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/fcrackzip/">fcrackzip</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/databases/">Databases</a>
       
     </div>
   </section>

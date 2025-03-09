@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-02-04T10:56:47+05:30</updated>
+  <updated>2025-03-09T17:19:50+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,135 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>psql</title>
+    <link href="http://localhost:4000/posts/psql-cheatsheet/" rel="alternate" type="text/html" title="psql" />
+    <published>2025-03-09T00:00:00+05:30</published>
+  
+    <updated>2025-03-09T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/psql-cheatsheet/</id>
+    <content src="http://localhost:4000/posts/psql-cheatsheet/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Postgres Cheatsheet
+
+This is a collection of the most common commands I run while administering Postgres databases. The variables shown between the open and closed tags, “&amp;lt;” and “&amp;gt;”, should be replaced with a name you choose. Postgres has multiple shortcut functions, starting with a forward slash, “". Any SQL command that is not a shortcut, must end with a semicolon, “;”. You can use the ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>PostgreSQL Replication on Debian</title>
+    <link href="http://localhost:4000/posts/postgresql/" rel="alternate" type="text/html" title="PostgreSQL Replication on Debian" />
+    <published>2025-03-09T00:00:00+05:30</published>
+  
+    <updated>2025-03-09T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/postgresql/</id>
+    <content src="http://localhost:4000/posts/postgresql/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      PostgreSQL is a powerful open-source relational database management system (RDBMS) that offers robust replication features. In this guide, we will set up master-slave replication on Debian, ensuring data is synchronized across servers for redundancy and high availability.
+
+🛠️ Prerequisites
+
+Before proceeding, ensure you have:
+
+  ✅ Two Debian-based servers (Master &amp;amp; Slave)
+  ✅ PostgreSQL ins...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Jenkins Rsync Backup &amp; Discord Alerts</title>
+    <link href="http://localhost:4000/posts/jenkins-backup/" rel="alternate" type="text/html" title="Jenkins Rsync Backup &amp;amp; Discord Alerts" />
+    <published>2025-03-02T00:00:00+05:30</published>
+  
+    <updated>2025-03-02T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/jenkins-backup/</id>
+    <content src="http://localhost:4000/posts/jenkins-backup/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Prerequisites
+
+  Ensure Jenkins is installed and running.
+  Install the “Periodic Backup” plugin:
+    
+      Go to Manage Jenkins &amp;gt; Plugin Manager &amp;gt; Available Plugins.
+      Search for “Periodic Backup” and install it.
+      Restart Jenkins after installation.
+    
+  
+
+
+
+
+⚙️ Configuration Steps
+
+1️⃣ Access the Periodic Backup Manager
+
+  Navigate to Go to Jenkins Dashboard → Manage Jenkins...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -99,177 +228,6 @@ DietPi is a lightweight and optimized Debian-based operating system specifically
 
 
   Minimal Footprint: DietPi is one of the ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>vim</title>
-    <link href="http://localhost:4000/posts/vim/" rel="alternate" type="text/html" title="vim" />
-    <published>2025-01-30T00:00:00+05:30</published>
-  
-    <updated>2025-01-30T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/vim/</id>
-    <content src="http://localhost:4000/posts/vim/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Vim Cheat Sheet
-
-
-
-📍 Basic Cursor Movements
-
-
-  
-    
-      Command
-      Action
-      Description
-    
-  
-  
-    
-      k
-      Move up
-      Moves the cursor one line up.
-    
-    
-      j
-      Move down
-      Moves the cursor one line down.
-    
-    
-      h
-      Move left
-      Moves the cursor one character to the left.
-    
-    
-      l
-      Move right
-      Moves the cursor one charac...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>splunk</title>
-    <link href="http://localhost:4000/posts/splunk/" rel="alternate" type="text/html" title="splunk" />
-    <published>2025-01-30T00:00:00+05:30</published>
-  
-    <updated>2025-01-30T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/splunk/</id>
-    <content src="http://localhost:4000/posts/splunk/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Splunk Queries for SOC Analyst
-
-🔍 Advanced Splunk Queries for Security Monitoring
-
-As a System Engineer, monitoring security events is critical for ensuring system integrity and identifying potential threats. Here’s a collection of essential Splunk queries categorized for different scenarios, from failed login attempts to suspicious network traffic.
-
-🔐 Authentication Attempts
-
-🔐 Failed Login At...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>ports</title>
-    <link href="http://localhost:4000/posts/ports/" rel="alternate" type="text/html" title="ports" />
-    <published>2025-01-30T00:00:00+05:30</published>
-  
-    <updated>2025-01-30T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/ports/</id>
-    <content src="http://localhost:4000/posts/ports/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Network Ports Cheatsheet
-
-This cheatsheet covers common network ports used in day-to-day operations as a system engineer.
-
-🌐 Web Services
-
-
-  
-    
-      Service
-      Port Number
-      Protocol
-      Description
-    
-  
-  
-    
-      HTTP
-      80
-      TCP
-      Standard port for HTTP traffic.
-    
-    
-      HTTPS
-      443
-      TCP
-      Secure HTTP traffic (encrypted with SSL/TLS).
-    
- ...
     </summary>
   
 
