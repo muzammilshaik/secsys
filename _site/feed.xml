@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-03-09T17:19:50+05:30</updated>
+  <updated>2025-03-14T23:42:17+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,44 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Automating Linux Interactions with Expect</title>
+    <link href="http://localhost:4000/posts/expect/" rel="alternate" type="text/html" title="Automating Linux Interactions with Expect" />
+    <published>2025-03-14T00:00:00+05:30</published>
+  
+    <updated>2025-03-14T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/expect/</id>
+    <content src="http://localhost:4000/posts/expect/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      🛠️ Installing and Using expect in Linux
+
+Introduction
+
+expect is a command-line tool used to automate interactions with programs that require user input. It is particularly useful when dealing with interactive scripts or commands that require user intervention, such as SSH connections, FTP, and database systems. This guide will walk you through the process of installing expect on your Linux mac...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -187,47 +225,6 @@ To install and use Open WebUI and Ollama on Windows, ensure your system meets th
 
 
   Operating System: ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DietPi Headless webmin Setup</title>
-    <link href="http://localhost:4000/posts/dietpi/" rel="alternate" type="text/html" title="DietPi Headless webmin Setup" />
-    <published>2025-01-31T00:00:00+05:30</published>
-  
-    <updated>2025-01-31T11:52:52+05:30</updated>
-  
-    <id>http://localhost:4000/posts/dietpi/</id>
-    <content src="http://localhost:4000/posts/dietpi/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Linux" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      🍃 What is DietPi?
-
-DietPi is a lightweight and optimized Debian-based operating system specifically designed for single-board computers like Raspberry Pi, as well as other low-powered devices. It focuses on providing a minimal yet highly configurable environment for users who want performance and efficiency in their setups.
-
-🏆 Key Features of DietPi:
-
-
-  Minimal Footprint: DietPi is one of the ...
     </summary>
   
 
