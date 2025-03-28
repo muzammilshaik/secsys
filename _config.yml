@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://secsys.pages.dev/"
 
 github:
-  username: github_username # change to your github username
+  username: s3csys # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
@@ -43,8 +43,10 @@ social:
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/shaikmuzammil55/
+    - https://github.com/s3csys
 
-google_site_verification: # fill in to your verification string
+google_site_verification: 6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8 # fill in to your verification string
+#<meta name="google-site-verification" content="6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8" />
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
