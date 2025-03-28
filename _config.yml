@@ -35,7 +35,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: muzammil shaik
-  email: muzammil.shaik55gmail.com # change to your email address
+  email: muzammilshaik55@proton.me # change to your email address
   links:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your twitter homepage
@@ -52,7 +52,7 @@ google_site_verification: 6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8 # fill in 
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: # fill in your Google Analytics ID
+  id: G-31G6Y9SZEM # fill in your Google Analytics ID
 
 goatcounter:
   id: # fill in your Goatcounter ID
