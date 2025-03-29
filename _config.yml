@@ -42,11 +42,21 @@ social:
     #- https://github.com/username # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/shaikmuzammil55/
     - https://github.com/s3csys
+    - https://www.linkedin.com/in/shaikmuzammil55/
 
-google_site_verification: 6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8 # fill in to your verification string
+# depreciated
+#google_site_verification: 6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8 # fill in to your verification string
 #<meta name="google-site-verification" content="6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8" />
+
+# Site Verification Settings
+webmaster_verifications:
+  google: 6oBqgZD-IXSjyjmQXW5Mx4oNt_vFA79x6iRr3ADcWA8 # fill in your Google verification code
+  bing: # fill in your Bing verification code
+  alexa: # fill in your Alexa verification code
+  yandex: # fill in your Yandex verification code
+  baidu: # fill in your Baidu verification code
+  facebook: # fill in your Facebook verification code
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings

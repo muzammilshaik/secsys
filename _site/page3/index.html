@@ -1108,6 +1108,14 @@
 
       
     
+      
+
+      
+      
+      
+
+      
+    
 
     <!-- take out classes -->
     
@@ -1119,6 +1127,13 @@
 
     
       
+      
+
+      
+
+      <!-- add image placeholder -->
+      
+
     
 
     <!-- lazy-load images -->
@@ -1261,6 +1276,86 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  
+    <article class="card-wrapper card">
+      <a href="/posts/ntfy/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+          
+          
+
+          
+
+          
+
+          
+
+          <div class="col-md-5">
+            <div class="preview-img  blur"><img data-src="/assets/docker/ntfy/ntfy.webp" alt="Preview Image" data-lqip="true" src="data:image/webp;base64,UklGRh4BAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSEoAAAABYBIAABIkMoEBvoNIo7HKrXGAFWR3SSxwSNBcckRMAHBf3m0O1hLCrNtxS95ObM0zlnP036OdMalnOPYJBRmsicDSuzEY4FDgRFZQOCCuAAAA8AQAnQEqFAAUAD6RPJhIpaMiISgNULASCWwAygHcAHoA2DfDirztbGOImJnzJmm8AP75QdECSeK1smZrz0B9MKEik9enu7+xvUjn3ZRUMS+O5zIy+lacwH/4f+1Z3tiwh1zaIaCh86JPXt6/wcmpQ3YPv08Rm5lcTSqCc27aMikf/lcj/fRBYuvv31eRs8k/NIzfKZ9nr4ocoJIB2nEMSYoJrMQEHkDZ4GuQgkAA"></div>
+          </div>
+
+          
+        
+
+        <div class="col-md-7">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Ntfy Push Notifications</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                What is Ntfy Push Notifications?
+
+Ntfy is a powerful yet simple server for sending and receiving push notifications. It allows you to publish notifications from any system or service to your device...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1688668200"
+  data-df="ll"
+  
+>
+  Jul  7, 2023
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Docker
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/duplicati/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1976,89 +2071,6 @@ Today we will learn about the server-side request forgery attack. While enumerat
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/allinone/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-          
-          
-
-          
-
-          
-
-          
-
-          <div class="col-md-5">
-            <div class="preview-img  shimmer"><img src="/assets/ctf/allinone/allinonelogo.png" alt="Preview Image"  loading="lazy"></div>
-          </div>
-
-          
-        
-
-        <div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">All in one</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                This is a fun box where we can find many ways where we can exploit let’s see how we can get the root into it let’s begin
-
-Reconnaissance
-
-This phase involves gathering information about the target ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1652812200"
-  data-df="ll"
-  
->
-  May 18, 2022
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CTF,
-                      THM
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
 </div>
 <!-- #post-list -->
 
@@ -2222,6 +2234,27 @@ This phase involves gathering information about the target ...
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kcheat/">Kubernetes</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/terraform/">Terraform Proxmox LXC Containers</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/tfcheat/">Terrafrom</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/expect/">Automating Linux Interactions with Expect</a>
         </li>
       
@@ -2230,27 +2263,6 @@ This phase involves gathering information about the target ...
         
         <li class="text-truncate lh-lg">
           <a href="/posts/traefik/">Traefik</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/prometheus/">Prometheus</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/grafana/">Grafana</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/jenkins/">Jenkins LXC on proxmox</a>
         </li>
       
     </ul>
@@ -2398,90 +2410,6 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2491,103 +2419,6 @@ This phase involves gathering information about the target ...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2702,31 +2533,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2758,31 +2568,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2841,10 +2630,6 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
@@ -2854,18 +2639,6 @@ This phase involves gathering information about the target ...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2897,34 +2670,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2985,6 +2734,320 @@ This phase involves gathering information about the target ...
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -3019,6 +3082,9 @@ This phase involves gathering information about the target ...
         <a class="post-tag btn btn-outline-primary" href="/tags/wpscan/">wpscan</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/automation/">Automation</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/cyberchef/">cyberchef</a>
       
         
@@ -3029,9 +3095,6 @@ This phase involves gathering information about the target ...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">metasploit</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/automation/">Automation</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/crackmap/">crackmap</a>
@@ -3064,7 +3127,7 @@ This phase involves gathering information about the target ...
     <time>2025</time>
 
     
-      <a href="https://www.linkedin.com/in/shaikmuzammil55/">muzammil shaik</a>.
+      <a href="https://github.com/s3csys">muzammil shaik</a>.
     
 
     
@@ -3228,90 +3291,6 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3321,103 +3300,6 @@ This phase involves gathering information about the target ...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3532,31 +3414,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3588,31 +3449,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3671,10 +3511,6 @@ This phase involves gathering information about the target ...
     
     
     
-      
-        
-        
-
   
     
     
@@ -3684,18 +3520,6 @@ This phase involves gathering information about the target ...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3727,34 +3551,10 @@ This phase involves gathering information about the target ...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3815,6 +3615,320 @@ This phase involves gathering information about the target ...
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -3849,6 +3963,9 @@ This phase involves gathering information about the target ...
         <a class="post-tag btn btn-outline-primary" href="/tags/wpscan/">wpscan</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/automation/">Automation</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/cyberchef/">cyberchef</a>
       
         
@@ -3859,9 +3976,6 @@ This phase involves gathering information about the target ...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">metasploit</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/automation/">Automation</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/crackmap/">crackmap</a>

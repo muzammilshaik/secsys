@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-03-28T22:21:53+05:30</updated>
+  <updated>2025-03-30T00:32:01+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,150 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Terrafrom</title>
+    <link href="http://localhost:4000/posts/tfcheat/" rel="alternate" type="text/html" title="Terrafrom" />
+    <published>2025-03-29T00:00:00+05:30</published>
+  
+    <updated>2025-03-29T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/tfcheat/</id>
+    <content src="http://localhost:4000/posts/tfcheat/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      🌱 Terraform Cheatsheet
+
+Terraform is an Infrastructure as Code (IaC) tool that allows you to define and provision infrastructure using declarative configuration files. This cheatsheet covers essential Terraform commands, configurations, and best practices.
+
+
+
+🔄 Installation
+
+Linux / MacOS
+Install Terraform using a package manager:
+brew install terraform  # MacOS
+sudo apt install terraform  # Ub...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Terraform Proxmox LXC Containers</title>
+    <link href="http://localhost:4000/posts/terraform/" rel="alternate" type="text/html" title="Terraform Proxmox LXC Containers" />
+    <published>2025-03-29T00:00:00+05:30</published>
+  
+    <updated>2025-03-29T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/terraform/</id>
+    <content src="http://localhost:4000/posts/terraform/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Infrastructure as Code (IaC) has revolutionized the way we manage and deploy infrastructure. Terraform, one of the most popular IaC tools, enables automation and efficient provisioning of resources. In this guide, we’ll walk through provisioning LXC containers using Terraform on a Debian server.
+
+🏗️ Prerequisites
+
+Creating the user/role for terraform
+
+Log into the Proxmox cluster or host using ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kubernetes</title>
+    <link href="http://localhost:4000/posts/kcheat/" rel="alternate" type="text/html" title="Kubernetes" />
+    <published>2025-03-29T00:00:00+05:30</published>
+  
+    <updated>2025-03-29T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/kcheat/</id>
+    <content src="http://localhost:4000/posts/kcheat/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ☸️ Kubernetes Cheat Sheet
+
+📦 Cluster &amp;amp; Node Management
+
+
+  Get cluster info.
+    kubectl cluster-info
+    
+  
+  List all nodes.
+    kubectl get nodes
+    
+  
+  Get node details.
+    kubectl describe node &amp;lt;node-name&amp;gt;
+    
+  
+  Mark a node as unschedulable.
+    kubectl cordon &amp;lt;node-name&amp;gt;
+    
+  
+  Mark a node as schedulable.
+    kubectl uncordon &amp;lt;node-name&amp;gt;
+    
+  
+  Evict a...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -87,144 +231,6 @@ expect is a command-line tool used to automate interactions with programs that r
       Postgres Cheatsheet
 
 This is a collection of the most common commands I run while administering Postgres databases. The variables shown between the open and closed tags, “&amp;lt;” and “&amp;gt;”, should be replaced with a name you choose. Postgres has multiple shortcut functions, starting with a forward slash, “". Any SQL command that is not a shortcut, must end with a semicolon, “;”. You can use the ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>PostgreSQL Replication on Debian</title>
-    <link href="http://localhost:4000/posts/postgresql/" rel="alternate" type="text/html" title="PostgreSQL Replication on Debian" />
-    <published>2025-03-09T00:00:00+05:30</published>
-  
-    <updated>2025-03-09T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/postgresql/</id>
-    <content src="http://localhost:4000/posts/postgresql/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Linux" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      PostgreSQL is a powerful open-source relational database management system (RDBMS) that offers robust replication features. In this guide, we will set up master-slave replication on Debian, ensuring data is synchronized across servers for redundancy and high availability.
-
-🛠️ Prerequisites
-
-Before proceeding, ensure you have:
-
-  ✅ Two Debian-based servers (Master &amp;amp; Slave)
-  ✅ PostgreSQL ins...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Jenkins Rsync Backup &amp; Discord Alerts</title>
-    <link href="http://localhost:4000/posts/jenkins-backup/" rel="alternate" type="text/html" title="Jenkins Rsync Backup &amp;amp; Discord Alerts" />
-    <published>2025-03-02T00:00:00+05:30</published>
-  
-    <updated>2025-03-02T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/jenkins-backup/</id>
-    <content src="http://localhost:4000/posts/jenkins-backup/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Linux" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prerequisites
-
-  Ensure Jenkins is installed and running.
-  Install the “Periodic Backup” plugin:
-    
-      Go to Manage Jenkins &amp;gt; Plugin Manager &amp;gt; Available Plugins.
-      Search for “Periodic Backup” and install it.
-      Restart Jenkins after installation.
-    
-  
-
-
-
-
-⚙️ Configuration Steps
-
-1️⃣ Access the Periodic Backup Manager
-
-  Navigate to Go to Jenkins Dashboard → Manage Jenkins...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Open WebUI &amp; Ollama setup on Windows</title>
-    <link href="http://localhost:4000/posts/ollama/" rel="alternate" type="text/html" title="Open WebUI &amp;amp; Ollama setup on Windows" />
-    <published>2025-02-04T00:00:00+05:30</published>
-  
-    <updated>2025-02-04T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/ollama/</id>
-    <content src="http://localhost:4000/posts/ollama/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Windows" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      🌐 What is Open WebUI?
-
-Open WebUI is an open-source, web-based user interface designed to simplify interactions with backend applications. It provides a sleek interface for handling modules, pulling resources, and managing tasks efficiently.
-
-
-
-🖥️ System Requirements
-
-To install and use Open WebUI and Ollama on Windows, ensure your system meets the following requirements:
-
-
-  Operating System: ...
     </summary>
   
 
