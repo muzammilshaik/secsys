@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-03-30T00:32:01+05:30</updated>
+  <updated>2025-04-07T10:36:07+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,78 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Terraform + Cloud-Init VM Deploy ☁️</title>
+    <link href="http://localhost:4000/posts/terraform-vm/" rel="alternate" type="text/html" title="Terraform + Cloud-Init VM Deploy ☁️" />
+    <published>2025-04-05T00:00:00+05:30</published>
+  
+    <updated>2025-04-05T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/terraform-vm/</id>
+    <content src="http://localhost:4000/posts/terraform-vm/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Provisioning virtual machines manually every time can get repetitive and error-prone. By using Terraform to automate VM creation and Cloud-Init to configure the VM on boot, we can streamline the process for consistent infrastructure deployments.
+
+In this blog post, we’ll walk through a simple but powerful setup for provisioning a virtual machine with Terraform while injecting a custom Cloud-Ini...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kubernetes Cluster Setup</title>
+    <link href="http://localhost:4000/posts/kubernetes/" rel="alternate" type="text/html" title="Kubernetes Cluster Setup" />
+    <published>2025-04-04T00:00:00+05:30</published>
+  
+    <updated>2025-04-04T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/kubernetes/</id>
+    <content src="http://localhost:4000/posts/kubernetes/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Kubernetes has become the go-to container orchestration platform for managing scalable, containerized applications. Whether you’re running a homelab, setting up a microservices app, or learning DevOps, Kubernetes is worth mastering.
+
+This document provides a step-by-step guide to setting up a Kubernetes cluster using kubeadm on multiple nodes. Kubernetes is an open-source container orchestratio...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -157,80 +229,6 @@ Log into the Proxmox cluster or host using ...
     
   
   Evict a...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Automating Linux Interactions with Expect</title>
-    <link href="http://localhost:4000/posts/expect/" rel="alternate" type="text/html" title="Automating Linux Interactions with Expect" />
-    <published>2025-03-14T00:00:00+05:30</published>
-  
-    <updated>2025-03-14T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/expect/</id>
-    <content src="http://localhost:4000/posts/expect/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Linux" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      🛠️ Installing and Using expect in Linux
-
-Introduction
-
-expect is a command-line tool used to automate interactions with programs that require user input. It is particularly useful when dealing with interactive scripts or commands that require user intervention, such as SSH connections, FTP, and database systems. This guide will walk you through the process of installing expect on your Linux mac...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>psql</title>
-    <link href="http://localhost:4000/posts/psql-cheatsheet/" rel="alternate" type="text/html" title="psql" />
-    <published>2025-03-09T00:00:00+05:30</published>
-  
-    <updated>2025-03-09T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/psql-cheatsheet/</id>
-    <content src="http://localhost:4000/posts/psql-cheatsheet/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Postgres Cheatsheet
-
-This is a collection of the most common commands I run while administering Postgres databases. The variables shown between the open and closed tags, “&amp;lt;” and “&amp;gt;”, should be replaced with a name you choose. Postgres has multiple shortcut functions, starting with a forward slash, “". Any SQL command that is not a shortcut, must end with a semicolon, “;”. You can use the ...
     </summary>
   
 

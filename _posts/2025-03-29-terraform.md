@@ -5,14 +5,13 @@ description: "Learn how to provision and manage LXC containers using Terraform. 
 categories: ["Linux"]
 tags: ["Automation", "Terraform", "LXC", "DevOps"]
 image:
-  path: /assets/dev/tf/tf-logo1.webp
+  path: /assets/dev/tf/tflxc/tf-logo1.webp
   lqip: data:image/webp;base64,UklGRjwBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSJYAAAABgCNJkmqnzY8uMzN/sWShrXczMTMzM1zr4752dl+sbhARE/A3BY3k16gO8rWlg+Zk1dKkhAviuqgY+aSCFGc5AM0XkottBTk4Ct6bJInQWldBzlMKILrd0wAkqgNLHQncxulA0d0Iy8LizLgSnGd/JwZlmBwcGXfThylYDJNkf9cGyxLS839+oQPFK6EBqNyZGoDGswJWUDgggAAAAFAEAJ0BKhQAFAA+kUCYSaWjoiEoCqiwEglsAHjSIG0dt4rTAN5uAzTitYAA2m//Yww3TGemeBdksKYdQkbXNM+CP+XeJRKiT9+lNUmPT/+UF2Ih7KrEQ9lVbc3cpxQwXFTa5Lbxsbdebl/PyU95JuX8/JO7V8a4EOn/Nd6AAAAA
 published: true
 hidden: false
 toc: true
 # ref: https://www.tecmint.com/install-terraform-in-linux/
-# terraform@pve!terraform
-# 4b3953d4-9d3c-4a01-9fae-cd79e22bdc24
+# ref: https://ronamosa.io/docs/engineer/LAB/proxmox-terraform/
 ---
 
 Infrastructure as Code (IaC) has revolutionized the way we manage and deploy infrastructure. Terraform, one of the most popular IaC tools, enables automation and efficient provisioning of resources. In this guide, we'll walk through provisioning LXC containers using Terraform on a Debian server.
@@ -47,7 +46,7 @@ From the proxmox GUI, create an API Token for the `terraform` user.
 > note: ensure `privilege separation` for your API Token is disabled or terraform will error out later on:
 {: .prompt-info }
 
-![Terraform](/assets/dev/tf/tf-api.png){: width="800" height="500" }
+![Terraform](/assets/dev/tf/tflxc/tf-api.png){: width="800" height="500" }
 
 ## 📌 Installing Terraform on Linux
 
@@ -232,7 +231,7 @@ resource "proxmox_lxc" "debain_lxc" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip     = "20.20.20.150/24"
+    ip     = "XX.XX.XX.XXX"
     ip6    = "auto"
   }
 }
@@ -289,7 +288,7 @@ terraform plan
 ```
 This method avoids `storing secrets` in files.
 
-![Terraform](/assets/dev/tf/tf-var-verify.png){: width="800" height="500" }
+![Terraform](/assets/dev/tf/tflxc/tf-var-verify.png){: width="800" height="500" }
 
 🔥 Conclusion
 
