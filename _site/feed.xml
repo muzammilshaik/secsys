@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-04-07T10:36:07+05:30</updated>
+  <updated>2025-04-29T14:07:43+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,47 @@
 
   
   <entry>
+    <title>Windows Server 2025 on VMware Pro 🖥️</title>
+    <link href="http://localhost:4000/posts/windows-iis/" rel="alternate" type="text/html" title="Windows Server 2025 on VMware Pro 🖥️" />
+    <published>2025-04-29T00:00:00+05:30</published>
+  
+    <updated>2025-04-29T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/windows-iis/</id>
+    <content src="http://localhost:4000/posts/windows-iis/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Windows" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Introduction
+
+Windows Server 2025 is the latest long-term servicing release (LTS) from Microsoft, bringing enhancements in performance, security, and hybrid cloud integration. Now that it’s officially released, system administrators and IT professionals can begin deploying it in test or production environments. This guide walks you through installing Windows Server 2025 on VMware Workstation Pr...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Terraform + Cloud-Init VM Deploy ☁️</title>
     <link href="http://localhost:4000/posts/terraform-vm/" rel="alternate" type="text/html" title="Terraform + Cloud-Init VM Deploy ☁️" />
-    <published>2025-04-05T00:00:00+05:30</published>
+    <published>2025-04-07T00:00:00+05:30</published>
   
-    <updated>2025-04-05T00:00:00+05:30</updated>
+    <updated>2025-04-07T00:00:00+05:30</updated>
   
     <id>http://localhost:4000/posts/terraform-vm/</id>
     <content src="http://localhost:4000/posts/terraform-vm/" />
@@ -96,7 +132,7 @@ This document provides a step-by-step guide to setting up a Kubernetes cluster u
     <link href="http://localhost:4000/posts/tfcheat/" rel="alternate" type="text/html" title="Terrafrom" />
     <published>2025-03-29T00:00:00+05:30</published>
   
-    <updated>2025-03-29T00:00:00+05:30</updated>
+    <updated>2025-04-07T10:39:22+05:30</updated>
   
     <id>http://localhost:4000/posts/tfcheat/</id>
     <content src="http://localhost:4000/posts/tfcheat/" />
@@ -141,7 +177,7 @@ sudo apt install terraform  # Ub...
     <link href="http://localhost:4000/posts/terraform/" rel="alternate" type="text/html" title="Terraform Proxmox LXC Containers" />
     <published>2025-03-29T00:00:00+05:30</published>
   
-    <updated>2025-03-29T00:00:00+05:30</updated>
+    <updated>2025-04-07T10:39:22+05:30</updated>
   
     <id>http://localhost:4000/posts/terraform/</id>
     <content src="http://localhost:4000/posts/terraform/" />
@@ -170,65 +206,6 @@ sudo apt install terraform  # Ub...
 Creating the user/role for terraform
 
 Log into the Proxmox cluster or host using ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Kubernetes</title>
-    <link href="http://localhost:4000/posts/kcheat/" rel="alternate" type="text/html" title="Kubernetes" />
-    <published>2025-03-29T00:00:00+05:30</published>
-  
-    <updated>2025-03-29T00:00:00+05:30</updated>
-  
-    <id>http://localhost:4000/posts/kcheat/</id>
-    <content src="http://localhost:4000/posts/kcheat/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      ☸️ Kubernetes Cheat Sheet
-
-📦 Cluster &amp;amp; Node Management
-
-
-  Get cluster info.
-    kubectl cluster-info
-    
-  
-  List all nodes.
-    kubectl get nodes
-    
-  
-  Get node details.
-    kubectl describe node &amp;lt;node-name&amp;gt;
-    
-  
-  Mark a node as unschedulable.
-    kubectl cordon &amp;lt;node-name&amp;gt;
-    
-  
-  Mark a node as schedulable.
-    kubectl uncordon &amp;lt;node-name&amp;gt;
-    
-  
-  Evict a...
     </summary>
   
 
