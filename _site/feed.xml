@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Secsys</title>
   <subtitle>Explore Linux and cybersecurity with homelab adventures, CTF challenges, and detailed walkthroughs. Join me in the pursuit of tech innovation and knowledge sharing. Let's connect and elevate together! 🚀</subtitle>
-  <updated>2025-04-29T14:07:43+05:30</updated>
+  <updated>2025-05-02T11:53:56+05:30</updated>
   <author>
     <name>muzammil shaik</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Install OSTicket with Apache + MySQL</title>
+    <link href="http://localhost:4000/posts/osticket/" rel="alternate" type="text/html" title="Install OSTicket with Apache + MySQL" />
+    <published>2025-05-02T00:00:00+05:30</published>
+  
+    <updated>2025-05-02T00:00:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/osticket/</id>
+    <content src="http://localhost:4000/posts/osticket/" />
+    <author>
+      <name>muju</name>
+    </author>
+
+  
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      osTicket is an open-source support ticket system that seamlessly integrates inquiries created via email, phone, and web-based forms into a simple, easy-to-use multi-user web interface. In this guide, we’ll walk through the complete installation of osTicket v1.18 on an Ubuntu server with Apache, PHP, and MySQL.
+
+Here are some key features of osTicket.
+
+
+  Clean Dashboard Reports
+  Custom Fields
+...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -96,7 +137,7 @@ In this blog post, we’ll walk through a simple but powerful setup for provisio
     <link href="http://localhost:4000/posts/kubernetes/" rel="alternate" type="text/html" title="Kubernetes Cluster Setup" />
     <published>2025-04-04T00:00:00+05:30</published>
   
-    <updated>2025-04-04T00:00:00+05:30</updated>
+    <updated>2025-04-29T14:22:20+05:30</updated>
   
     <id>http://localhost:4000/posts/kubernetes/</id>
     <content src="http://localhost:4000/posts/kubernetes/" />
@@ -166,46 +207,6 @@ Linux / MacOS
 Install Terraform using a package manager:
 brew install terraform  # MacOS
 sudo apt install terraform  # Ub...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Terraform Proxmox LXC Containers</title>
-    <link href="http://localhost:4000/posts/terraform/" rel="alternate" type="text/html" title="Terraform Proxmox LXC Containers" />
-    <published>2025-03-29T00:00:00+05:30</published>
-  
-    <updated>2025-04-07T10:39:22+05:30</updated>
-  
-    <id>http://localhost:4000/posts/terraform/</id>
-    <content src="http://localhost:4000/posts/terraform/" />
-    <author>
-      <name>muju</name>
-    </author>
-
-  
-    
-    <category term="Linux" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Infrastructure as Code (IaC) has revolutionized the way we manage and deploy infrastructure. Terraform, one of the most popular IaC tools, enables automation and efficient provisioning of resources. In this guide, we’ll walk through provisioning LXC containers using Terraform on a Debian server.
-
-🏗️ Prerequisites
-
-Creating the user/role for terraform
-
-Log into the Proxmox cluster or host using ...
     </summary>
   
 
