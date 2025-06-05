@@ -6,7 +6,6 @@ layout: none
 #redirect_to: https://github.com/s3csys
 ---
 
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
