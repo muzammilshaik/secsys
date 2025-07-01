@@ -48,7 +48,7 @@ pipeline {
                 sh '''
                     echo "Deploying ${BRANCH} branch to ${DEPLOY_DIR}"
                     mkdir -p "${DEPLOY_DIR}"
-                    cp -r "$WORKSPACE/_site/"* "${DEPLOY_DIR}/"
+                    rsync -lavz "$WORKSPACE/_site/" "${DEPLOY_DIR}/"
                     echo "Deployment of ${BRANCH} branch to ${DEPLOY_DIR} completed"
                 '''
             }

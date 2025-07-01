@@ -1575,49 +1575,13 @@ pipeline {
 
 ## 🔄 Static vs. Dynamic Jenkins Agents
 
-### Static Agents
-
-Static agents are permanently connected to the Jenkins master and are always available for job execution.
-
-#### Advantages:
-- Always available, no startup delay
-- Predictable environment
-- Easier to troubleshoot
-- No additional infrastructure needed for provisioning
-
-#### Disadvantages:
-- Resource inefficiency (idle when not in use)
-- Manual setup and maintenance
-- Limited scalability
-- Environment drift over time
-
-### Dynamic Agents
-
-Dynamic agents are provisioned on-demand when jobs need to be executed and are terminated when the job completes.
-
-#### Advantages:
-- Cost-efficient (resources used only when needed)
-- Scalable (can handle varying workloads)
-- Consistent environments (fresh agent for each build)
-- Isolation between builds
-
-#### Disadvantages:
-- Startup delay
-- More complex setup
-- Requires additional infrastructure for provisioning
-- Potential network/security considerations
-
-### When to Use Each Type
-
-**Use Static Agents When:**
-- You have a consistent, predictable workload
-- Build environment setup is complex and time-consuming
-- You need immediate job execution without delays
-- You have specialized hardware requirements
-
-**Use Dynamic Agents When:**
-- You have varying or unpredictable workloads
-- You need to scale resources efficiently
-- You want consistent, clean environments for each build
-- You're using cloud infrastructure with pay-as-you-go pricing
-
+| Feature/Aspect              | Static Agents                                              | Dynamic Agents                                                     |
+| --------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Availability**            | Always connected and available                             | Provisioned on-demand, terminated after use                        |
+| **Startup Time**            | No startup delay                                           | Slight delay due to provisioning                                   |
+| **Resource Usage**          | Less efficient – idle resources                            | More efficient – uses resources only when needed                   |
+| **Environment Consistency** | Can drift over time                                        | Fresh and consistent for each build                                |
+| **Scalability**             | Limited – manual effort needed                             | High – can scale automatically based on demand                     |
+| **Maintenance**             | Manual setup and maintenance required                      | Requires infrastructure for provisioning (e.g., cloud, Kubernetes) |
+| **Troubleshooting**         | Easier – persistent environment                            | Harder – ephemeral environments                                    |
+| **Use Case Fit**            | Predictable workloads, complex setup, specialized hardware | Varying workloads, cloud-native environments, CI/CD pipelines      |
