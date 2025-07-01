@@ -1247,3 +1247,377 @@ crontab -e
    ```bash
    systemctl start jenkins
    ```
+
+## 📚 Shared Libraries in Jenkins
+
+Shared Libraries allow you to define reusable code that can be used across multiple Jenkins pipelines.
+
+### What are Shared Libraries?
+
+Shared Libraries are collections of Groovy scripts that can be defined once and used in multiple Jenkins pipelines. They help in:
+
+- Reducing code duplication
+- Standardizing pipeline practices
+- Centralizing common functionality
+- Making pipelines more maintainable
+
+### Setting Up a Shared Library
+
+1. Create a Git repository with the following structure:
+   ```
+   ├── src                     # Groovy source files
+   │   └── org/example/
+   ├── vars                    # Global variables/functions
+   │   ├── buildApp.groovy
+   │   └── deployApp.groovy
+   └── resources               # Non-Groovy files
+   ```
+
+2. Configure the library in Jenkins:
+   - Go to **Manage Jenkins** → **Configure System**
+   - Scroll to **Global Pipeline Libraries**
+   - Click **Add**
+   - Enter a name (e.g., "shared-library")
+   - Set the default version (e.g., "main")
+   - Specify the retrieval method (e.g., "Modern SCM" → Git)
+   - Enter your repository URL
+   - Save the configuration
+
+### Using Shared Libraries in Pipelines
+
+```groovy
+// Import the library
+@Library('shared-library')_
+
+// Use functions from the library
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Call a function from the shared library
+                buildApp()
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Call another function with parameters
+                deployApp(env: 'production', region: 'us-west-2')
+            }
+        }
+    }
+}
+```
+
+### Example Shared Library Function
+
+In your shared library repository, create a file `vars/buildApp.groovy`:
+
+```groovy
+// vars/buildApp.groovy
+def call(Map config = [:]) {
+    // Default configuration
+    def settings = [
+        tool: 'maven',
+        args: '-B clean package'
+    ] << config
+    
+    // Execute the build based on the tool
+    if (settings.tool == 'maven') {
+        sh "mvn ${settings.args}"
+    } else if (settings.tool == 'gradle') {
+        sh "gradle ${settings.args}"
+    } else {
+        error "Unsupported build tool: ${settings.tool}"
+    }
+}
+```
+
+## 🔒 Securing Jenkins
+
+Security is critical for Jenkins as it often has access to sensitive codebases and deployment environments.
+
+### Basic Security Measures
+
+1. **Use HTTPS/SSL**:
+   - Secure your Jenkins instance with SSL certificates
+   - Prevent man-in-the-middle attacks and credential theft
+
+2. **Authentication and Authorization**:
+   - Use Jenkins' built-in user database or integrate with LDAP/AD
+   - Implement role-based access control (RBAC)
+   - Consider using the Role-based Authorization Strategy plugin
+
+3. **Secure Credentials Management**:
+   - Use the Credentials plugin to store sensitive information
+   - Consider using external secret managers like HashiCorp Vault
+   - Never hardcode credentials in pipeline scripts
+
+4. **Keep Jenkins Updated**:
+   - Regularly update Jenkins core and plugins
+   - Subscribe to the Jenkins security mailing list
+
+### Setting Up SSL for Jenkins
+
+1. Generate SSL keys:
+   ```bash
+   openssl genrsa -out jenkins.key 2048
+   openssl req -new -key jenkins.key -out jenkins.csr
+   openssl x509 -req -days 365 -in jenkins.csr -signkey jenkins.key -out jenkins.crt
+   ```
+
+2. Package the keys into a keystore:
+   ```bash
+   openssl pkcs12 -export -out jenkins.p12 -inkey jenkins.key -in jenkins.crt -name jenkins
+   ```
+
+3. Import into a JKS keystore:
+   ```bash
+   keytool -importkeystore -srckeystore jenkins.p12 -srcstoretype PKCS12 -destkeystore jenkins.jks
+   ```
+
+4. Copy the JKS file to the Jenkins directory:
+   ```bash
+   cp jenkins.jks /var/lib/jenkins/
+   ```
+
+5. Configure Jenkins to use HTTPS:
+   - Edit `/etc/default/jenkins` or `/etc/sysconfig/jenkins`
+   - Add/modify these lines:
+     ```
+     JENKINS_ARGS="--httpPort=-1 --httpsPort=8443 --httpsKeyStore=/var/lib/jenkins/jenkins.jks --httpsKeyStorePassword=your_password"
+     ```
+   - Restart Jenkins: `systemctl restart jenkins`
+
+## 🐍 Advanced Python Pipeline Example
+
+Here's a comprehensive Python pipeline that includes environment setup, testing, code quality checks, and reporting:
+
+```groovy
+pipeline {
+    agent {
+        docker {
+            image 'python:3.11-slim'
+            args '-v ${WORKSPACE}:/app -w /app'
+        }
+    }
+    
+    environment {
+        PYTHONPATH = "${WORKSPACE}"
+        VIRTUAL_ENV = "${WORKSPACE}/.venv"
+        PATH = "${VIRTUAL_ENV}/bin:${PATH}"
+    }
+    
+    stages {
+        stage('Checkout code') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Set Up Environment') {
+            steps {
+                sh '''
+                    python -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                    pip install pytest pytest-cov flake8 pylint
+                '''
+            }
+        }
+        
+        stage('Code Review') {
+            steps {
+                sh '''
+                    . .venv/bin/activate
+                    flake8 --max-line-length=100 --exclude=.venv,migrations .
+                '''
+            }
+            post {
+                always {
+                    recordIssues(
+                        tools: [flake8(pattern: 'flake8_report.txt')],
+                        qualityGates: [[threshold: 10, type: 'TOTAL', unstable: true]]
+                    )
+                }
+            }
+        }
+        
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    . .venv/bin/activate
+                    pytest --junitxml=test-results.xml --cov=. --cov-report=xml --cov-report=html
+                '''
+            }
+            post {
+                always {
+                    junit 'test-results.xml'
+                    recordCoverage(
+                        tools: [[parser: 'COBERTURA', pattern: 'coverage.xml']],
+                        qualityGates: [[threshold: 80, metric: 'LINE', unstable: true]]
+                    )
+                }
+            }
+        }
+        
+        stage('Archive Reports') {
+            steps {
+                archiveArtifacts artifacts: 'htmlcov/**', allowEmptyArchive: true
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        always {
+            echo 'Cleaning workspace...'
+            cleanWs()
+        }
+    }
+}
+```
+
+## 🔄 Mini-Project: Integrated Jenkins Pipeline
+
+Here's a comprehensive pipeline that integrates Jenkins with Maven, SonarQube, and Slack notifications:
+
+```groovy
+pipeline {
+  agent any
+
+  parameters {
+    choice(name: 'DEPLOY_ENV', choices: ['dev', 'staging', 'prod'], description: 'Select deployment environment')
+  }
+
+  environment {
+    MVN_CMD = "mvn"
+    SONARQUBE_SERVER = 'SonarQubeServer'
+    SLACK_CHANNEL = '#ci'
+  }
+
+  options {
+    timeout(time: 30, unit: 'MINUTES')
+  }
+
+  triggers {
+    pollSCM('H/5 * * * *')
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/your-org/your-repo.git'
+      }
+    }
+
+    stage('Build & Test') {
+      steps {
+        sh "${MVN_CMD} clean package"
+      }
+    }
+
+    stage('SonarQube Analysis') {
+      steps {
+        withSonarQubeEnv("${SONARQUBE_SERVER}") {
+          sh "${MVN_CMD} sonar:sonar"
+        }
+      }
+    }
+
+    stage('Deploy') {
+      when {
+        expression {
+          // Deploy only for dev, staging, or prod parameter
+          return params.DEPLOY_ENV in ['dev', 'staging', 'prod']
+        }
+      }
+      steps {
+        script {
+          if (params.DEPLOY_ENV == 'dev') {
+            echo "Deploying to Development environment..."
+            // Add your dev deployment commands here, e.g.:
+            // sh 'ssh user@dev-server "deploy-dev-script.sh"'
+          } else if (params.DEPLOY_ENV == 'staging') {
+            echo "Deploying to Staging environment..."
+            // Add your staging deployment commands here, e.g.:
+            // sh 'ssh user@staging-server "deploy-staging-script.sh"'
+          } else if (params.DEPLOY_ENV == 'prod') {
+            echo "Deploying to Production environment..."
+            // Add your production deployment commands here, e.g.:
+            // sh 'ssh user@prod-server "deploy-prod-script.sh"'
+          }
+        }
+      }
+    }
+  }
+
+  post {
+    success {
+      slackSend(channel: "${SLACK_CHANNEL}", message: "Build & Deploy Success: ${env.JOB_NAME} #${env.BUILD_NUMBER} to ${params.DEPLOY_ENV}")
+    }
+    failure {
+      slackSend(channel: "${SLACK_CHANNEL}",  message: "Build or Deploy Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} to ${params.DEPLOY_ENV}")
+    }
+    always {
+      cleanWs()
+    }
+  }
+}
+```
+
+## 🔄 Static vs. Dynamic Jenkins Agents
+
+### Static Agents
+
+Static agents are permanently connected to the Jenkins master and are always available for job execution.
+
+#### Advantages:
+- Always available, no startup delay
+- Predictable environment
+- Easier to troubleshoot
+- No additional infrastructure needed for provisioning
+
+#### Disadvantages:
+- Resource inefficiency (idle when not in use)
+- Manual setup and maintenance
+- Limited scalability
+- Environment drift over time
+
+### Dynamic Agents
+
+Dynamic agents are provisioned on-demand when jobs need to be executed and are terminated when the job completes.
+
+#### Advantages:
+- Cost-efficient (resources used only when needed)
+- Scalable (can handle varying workloads)
+- Consistent environments (fresh agent for each build)
+- Isolation between builds
+
+#### Disadvantages:
+- Startup delay
+- More complex setup
+- Requires additional infrastructure for provisioning
+- Potential network/security considerations
+
+### When to Use Each Type
+
+**Use Static Agents When:**
+- You have a consistent, predictable workload
+- Build environment setup is complex and time-consuming
+- You need immediate job execution without delays
+- You have specialized hardware requirements
+
+**Use Dynamic Agents When:**
+- You have varying or unpredictable workloads
+- You need to scale resources efficiently
+- You want consistent, clean environments for each build
+- You're using cloud infrastructure with pay-as-you-go pricing

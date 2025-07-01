@@ -1,0 +1,169 @@
+pipeline {
+    agent {
+        label 'secsys'
+    }
+
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'dev', description: 'Git branch to build')
+    }
+
+    environment {
+        GIT_REPO = 'git@github.com:muzammilshaik/secsys.git'
+        DEPLOY_DIR = credentials('secsys_path')
+        GIT_CREDENTIALS_ID = 'github'
+        DISCORD_WEBHOOK_URL = credentials('discord-webhook-url')
+        USER = credentials('user')
+        GROUP = credentials('user')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Checking out ${GIT_REPO} repo branch ${params.BRANCH} for deployment"
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    echo "Installing dependencies for ${BRANCH} branch"
+                    "/home/${USER}/gems/bin/bundle" install
+                '''
+            }
+        }
+
+        stage('Build Site') {
+            steps {
+                sh '''
+                    echo "Building site for ${BRANCH} branch"
+                    "/home/${USER}/gems/bin/bundle" exec jekyll build
+                    echo "Build completed successfully"
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    echo "Deploying ${BRANCH} branch to ${DEPLOY_DIR}"
+                    mkdir -p "${DEPLOY_DIR}"
+                    cp -r "$WORKSPACE/_site/"* "${DEPLOY_DIR}/"
+                    echo "Deployment of ${BRANCH} branch to ${DEPLOY_DIR} completed"
+                '''
+            }
+        }
+
+        stage('Setting permissions') {
+            steps {
+                sh '''
+                    echo "Setting ownership and permissions for ${DEPLOY_DIR}"
+                    chown -R "${USER}:${GROUP}" "${DEPLOY_DIR}"
+                    chmod -R 755 "${DEPLOY_DIR}"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Deployment pipeline completed successfully!'
+            script {
+                def deployEnv = ''
+                def deployDetails = ''
+                def deployTime = new Date().format('yyyy-MM-dd HH:mm:ss')
+
+                switch (params.BRANCH) {
+                    case 'dev':
+                        deployEnv = 'Dev'
+                        break
+                    case 'staging':
+                        deployEnv = 'Staging'
+                        break
+                    case 'main':
+                        deployEnv = 'Production'
+                        break
+                }
+
+                deployDetails = "Branch: ${params.BRANCH}\nDeployment Directory: ${DEPLOY_DIR}"
+
+                if (deployEnv) {
+                    try {
+                        discordSend(
+                            webhookURL: env.DISCORD_WEBHOOK_URL,
+                            title: "✅ secsys ${deployEnv} Deployment - SUCCESS",
+                            description: "${deployEnv} deployment completed successfully\n\n**Details:**\n${deployDetails}",
+                            footer: "Build: #${BUILD_NUMBER} | ${deployTime}",
+                            link: env.BUILD_URL,
+                            result: currentBuild.currentResult,
+                            thumbnail: "https://jenkins.io/images/logos/jenkins/jenkins.png",
+                            customUsername: "Jenkins secsys Pipeline"
+                        )
+                    } catch (Exception e) {
+                        echo "Warning: Could not send Discord notification: ${e.message}"
+                    }
+                }
+            }
+        }
+
+        failure {
+            echo 'Deployment pipeline failed. Check logs for details.'
+            script {
+                def deployEnv = ''
+                def deployTime = new Date().format('yyyy-MM-dd HH:mm:ss')
+
+                switch (params.BRANCH) {
+                    case 'dev':
+                        deployEnv = 'Dev'
+                        break
+                    case 'staging':
+                        deployEnv = 'Staging'
+                        break
+                    case 'main':
+                        deployEnv = 'Production'
+                        break
+                }
+
+                if (deployEnv) {
+                    try {
+                        discordSend(
+                            webhookURL: env.DISCORD_WEBHOOK_URL,
+                            title: "❌ secsys ${deployEnv} Deployment - FAILED",
+                            description: "${deployEnv} deployment failed!\n\n**Error Information:**\nCheck build logs\n\n**Branch:** ${params.BRANCH}",
+                            footer: "Build: #${BUILD_NUMBER} | ${deployTime}",
+                            link: env.BUILD_URL,
+                            result: currentBuild.currentResult,
+                            thumbnail: "https://jenkins.io/images/logos/jenkins/jenkins.png",
+                            customUsername: "Jenkins secsys Pipeline"
+                        )
+                    } catch (Exception e) {
+                        echo "Warning: Could not send Discord notification: ${e.message}"
+                    }
+                }
+            }
+        }
+
+        always {
+            echo 'Performing cleanup operations...'
+            cleanWs()
+            echo 'Cleanup completed successfully.'
+
+            script {
+                try {
+                    discordSend(
+                        webhookURL: env.DISCORD_WEBHOOK_URL,
+                        title: "secsys Pipeline - Build #${BUILD_NUMBER} Complete",
+                        description: "Build completed with result: ${currentBuild.currentResult}\nTotal execution time: ${currentBuild.durationString}",
+                        footer: "${new Date().format('yyyy-MM-dd HH:mm:ss')}",
+                        link: env.BUILD_URL,
+                        result: currentBuild.currentResult,
+                        thumbnail: "https://jenkins.io/images/logos/jenkins/jenkins.png",
+                        customUsername: "Jenkins secsys Pipeline"
+                    )
+                } catch (Exception e) {
+                    echo "Warning: Could not send Discord notification: ${e.message}"
+                }
+            }
+        }
+    }
+}
