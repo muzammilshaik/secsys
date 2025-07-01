@@ -12,7 +12,6 @@ hidden: true
 toc: true
 ---
 
-
 # 🧰 What is Jenkins?
 
 Jenkins is an open-source automation server written in Java. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration (CI) and continuous delivery (CD).
@@ -1621,3 +1620,4 @@ Dynamic agents are provisioned on-demand when jobs need to be executed and are t
 - You need to scale resources efficiently
 - You want consistent, clean environments for each build
 - You're using cloud infrastructure with pay-as-you-go pricing
+
