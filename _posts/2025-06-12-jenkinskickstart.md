@@ -706,6 +706,19 @@ pipeline {
 }
 ```
 
+## 🔄 Static vs. Dynamic Jenkins Agents
+
+| Feature/Aspect              | Static Agents                                              | Dynamic Agents                                                     |
+| --------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Availability**            | Always connected and available                             | Provisioned on-demand, terminated after use                        |
+| **Startup Time**            | No startup delay                                           | Slight delay due to provisioning                                   |
+| **Resource Usage**          | Less efficient – idle resources                            | More efficient – uses resources only when needed                   |
+| **Environment Consistency** | Can drift over time                                        | Fresh and consistent for each build                                |
+| **Scalability**             | Limited – manual effort needed                             | High – can scale automatically based on demand                     |
+| **Maintenance**             | Manual setup and maintenance required                      | Requires infrastructure for provisioning (e.g., cloud, Kubernetes) |
+| **Troubleshooting**         | Easier – persistent environment                            | Harder – ephemeral environments                                    |
+| **Use Case Fit**            | Predictable workloads, complex setup, specialized hardware | Varying workloads, cloud-native environments, CI/CD pipelines      |
+
 ## 🐳 Jenkins Pipelines with Docker Agent
 
 Docker agents allow you to run your pipeline steps inside Docker containers, providing isolated and consistent environments for your builds.
@@ -1573,15 +1586,4 @@ pipeline {
 }
 ```
 
-## 🔄 Static vs. Dynamic Jenkins Agents
 
-| Feature/Aspect              | Static Agents                                              | Dynamic Agents                                                     |
-| --------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| **Availability**            | Always connected and available                             | Provisioned on-demand, terminated after use                        |
-| **Startup Time**            | No startup delay                                           | Slight delay due to provisioning                                   |
-| **Resource Usage**          | Less efficient – idle resources                            | More efficient – uses resources only when needed                   |
-| **Environment Consistency** | Can drift over time                                        | Fresh and consistent for each build                                |
-| **Scalability**             | Limited – manual effort needed                             | High – can scale automatically based on demand                     |
-| **Maintenance**             | Manual setup and maintenance required                      | Requires infrastructure for provisioning (e.g., cloud, Kubernetes) |
-| **Troubleshooting**         | Easier – persistent environment                            | Harder – ephemeral environments                                    |
-| **Use Case Fit**            | Predictable workloads, complex setup, specialized hardware | Varying workloads, cloud-native environments, CI/CD pipelines      |
