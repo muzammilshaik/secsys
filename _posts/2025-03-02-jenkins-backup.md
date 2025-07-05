@@ -2,7 +2,7 @@
 author: muju
 title: "Jenkins Rsync Backup & Discord Alerts"
 description: "This guide provides step-by-step instructions to configure the Periodic Backup plugin in Jenkins for automated backups."
-categories: ["Linux"]
+categories: ["Devops"]
 tags: ["Linux", "Jenkins"]
 image:
   path: /assets/vm/ct/jenkins/j.webp

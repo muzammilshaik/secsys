@@ -8,7 +8,7 @@ image:
   path: /assets/vm/ct/jenkins/j.webp
   lqip: data:image/webp;base64,UklGRu4BAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSJ0AAAABgJpt27Lsxp1GYghI1iC6LMEALtndyURrHEzABCT53d3df/x93xEiYgKwVuntn31/7rU02MyLv8zW//g2cOszUsc6y4y4u8Z0SnZrBGD5mlG+m6F+mFHfqKozhqljFpM/Fu+PLC76LNqmf7o/HYp0W1JwS1SzMIAcVQ+A64ngtxkb9LQAIPY0h2t+xyCWP678HYuIEL36+XsbcbEKAFZQOCAqAQAAkAYAnQEqFAAUAD6RQJhJpaOiISgKqLASCWIAUwZN23wLJcIhjdjBr6VyUcPvXfMV3IUqkDGuSED0Gn15QAD+wgdremj5uMHLQ8/JZ3QDRler5lCxn2HSLL2YFDKDXPr08Lo+rLQtkRIazXnr+6ZS6zM6T/79ZTLj/NI3PZ7MkB8Oa5ysX6+WNjVqnXGtKU0q6fOvdPT0VTyDlzbv/zB6lHRg2ZHYg8d/iZwbeaxSzITYC3fxU8rnm2mJ8monz9Z+Wy9LEQCPBrTCfCiTSzJjbzPy3/fZuEvQaMADD+FoKY1TBSuX98WrKKWJ5kh4nQz45I8p0Rb9AmPDiJ8aHo6F2foZBVda3tzm/2fOUzj481foUt7x2xavkoVmVSz9gs0l3fJgKuwlkAAAAA==
 published: true
-hidden: true
+hidden: false
 toc: true
 ---
 
@@ -706,6 +706,19 @@ pipeline {
 }
 ```
 
+## 🔄 Static vs. Dynamic Jenkins Agents
+
+| Feature/Aspect              | Static Agents                                              | Dynamic Agents                                                     |
+| --------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Availability**            | Always connected and available                             | Provisioned on-demand, terminated after use                        |
+| **Startup Time**            | No startup delay                                           | Slight delay due to provisioning                                   |
+| **Resource Usage**          | Less efficient – idle resources                            | More efficient – uses resources only when needed                   |
+| **Environment Consistency** | Can drift over time                                        | Fresh and consistent for each build                                |
+| **Scalability**             | Limited – manual effort needed                             | High – can scale automatically based on demand                     |
+| **Maintenance**             | Manual setup and maintenance required                      | Requires infrastructure for provisioning (e.g., cloud, Kubernetes) |
+| **Troubleshooting**         | Easier – persistent environment                            | Harder – ephemeral environments                                    |
+| **Use Case Fit**            | Predictable workloads, complex setup, specialized hardware | Varying workloads, cloud-native environments, CI/CD pipelines      |
+
 ## 🐳 Jenkins Pipelines with Docker Agent
 
 Docker agents allow you to run your pipeline steps inside Docker containers, providing isolated and consistent environments for your builds.
@@ -805,6 +818,50 @@ pipeline {
     }
 }
 ```
+## Jenkins Pipelines with windows Agent
+
+Follow these easy steps to add and configure a Jenkins slave (agent) on a Windows machine:
+
+### Step 1: Configure Agent on Jenkins Master
+
+1. Go to Manage Jenkins → Nodes → New Node
+2. Enter a Node name, select Permanent Agent, click Create
+3. Fill in:
+    - Remote root directory → Path to an empty folder on agent machine (e.g., C:\Jenkins)
+    - Label → Optional
+    - Launch method → Launch agent by connecting it to the controller
+    - Availability → Keep this agent online as much as possible
+4. save
+
+![jenkins](/assets/devops/jenkins/jenkins_Settings.png){: width="800" height="300" }
+
+### Step 2: Connect Agent from Windows Machine
+
+1. Open the newly created node page → Copy the two Windows command lines under “Run from agent command line”
+2. Open CMD as Administrator and run the command
+```bat
+cd C:\Jenkins
+```
+Paste and execute both commands
+3. This will download agent.jar and connect the agent (temporarily)
+
+### Step 3: Run Agent as a Windows Service
+
+1. Download and setup [WinSW](https://github.com/winsw/winsw){:target="_blank"}
+    - Download WinSW-x64.exe → Rename to jenkins-agent.exe
+    - Download sample jenkins.xml → Rename to jenkins-agent.xml
+    - Place both in the Jenkins folder (path from step 4)
+2. Edit jenkins-agent.xml:
+    - Set <id> and <name> to jenkins-agent
+    - Replace <arguments> content with the second command (excluding java)
+3. In CMD (as Admin), run:
+```bat
+cd C:\Jenkins
+jenkins-agent.exe install
+Get-Service jenkins-agent
+Start-Service jenkins-agent
+```
+![jenkins](/assets/devops/jenkins/jenkins1.png){: width="800" height="300" }
 
 ## Docker Multi-Stage Example
 
@@ -1573,51 +1630,4 @@ pipeline {
 }
 ```
 
-## 🔄 Static vs. Dynamic Jenkins Agents
-
-### Static Agents
-
-Static agents are permanently connected to the Jenkins master and are always available for job execution.
-
-#### Advantages:
-- Always available, no startup delay
-- Predictable environment
-- Easier to troubleshoot
-- No additional infrastructure needed for provisioning
-
-#### Disadvantages:
-- Resource inefficiency (idle when not in use)
-- Manual setup and maintenance
-- Limited scalability
-- Environment drift over time
-
-### Dynamic Agents
-
-Dynamic agents are provisioned on-demand when jobs need to be executed and are terminated when the job completes.
-
-#### Advantages:
-- Cost-efficient (resources used only when needed)
-- Scalable (can handle varying workloads)
-- Consistent environments (fresh agent for each build)
-- Isolation between builds
-
-#### Disadvantages:
-- Startup delay
-- More complex setup
-- Requires additional infrastructure for provisioning
-- Potential network/security considerations
-
-### When to Use Each Type
-
-**Use Static Agents When:**
-- You have a consistent, predictable workload
-- Build environment setup is complex and time-consuming
-- You need immediate job execution without delays
-- You have specialized hardware requirements
-
-**Use Dynamic Agents When:**
-- You have varying or unpredictable workloads
-- You need to scale resources efficiently
-- You want consistent, clean environments for each build
-- You're using cloud infrastructure with pay-as-you-go pricing
 
