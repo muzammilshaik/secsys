@@ -8,7 +8,7 @@ image:
   path: /assets/vm/ct/jenkins/j.webp
   lqip: data:image/webp;base64,UklGRu4BAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSJ0AAAABgJpt27Lsxp1GYghI1iC6LMEALtndyURrHEzABCT53d3df/x93xEiYgKwVuntn31/7rU02MyLv8zW//g2cOszUsc6y4y4u8Z0SnZrBGD5mlG+m6F+mFHfqKozhqljFpM/Fu+PLC76LNqmf7o/HYp0W1JwS1SzMIAcVQ+A64ngtxkb9LQAIPY0h2t+xyCWP678HYuIEL36+XsbcbEKAFZQOCAqAQAAkAYAnQEqFAAUAD6RQJhJpaOiISgKqLASCWIAUwZN23wLJcIhjdjBr6VyUcPvXfMV3IUqkDGuSED0Gn15QAD+wgdremj5uMHLQ8/JZ3QDRler5lCxn2HSLL2YFDKDXPr08Lo+rLQtkRIazXnr+6ZS6zM6T/79ZTLj/NI3PZ7MkB8Oa5ysX6+WNjVqnXGtKU0q6fOvdPT0VTyDlzbv/zB6lHRg2ZHYg8d/iZwbeaxSzITYC3fxU8rnm2mJ8monz9Z+Wy9LEQCPBrTCfCiTSzJjbzPy3/fZuEvQaMADD+FoKY1TBSuX98WrKKWJ5kh4nQz45I8p0Rb9AmPDiJ8aHo6F2foZBVda3tzm/2fOUzj481foUt7x2xavkoVmVSz9gs0l3fJgKuwlkAAAAA==
 published: true
-hidden: true
+hidden: false
 toc: true
 ---
 
@@ -818,6 +818,50 @@ pipeline {
     }
 }
 ```
+## Jenkins Pipelines with windows Agent
+
+Follow these easy steps to add and configure a Jenkins slave (agent) on a Windows machine:
+
+### Step 1: Configure Agent on Jenkins Master
+
+1. Go to Manage Jenkins → Nodes → New Node
+2. Enter a Node name, select Permanent Agent, click Create
+3. Fill in:
+    - Remote root directory → Path to an empty folder on agent machine (e.g., C:\Jenkins)
+    - Label → Optional
+    - Launch method → Launch agent by connecting it to the controller
+    - Availability → Keep this agent online as much as possible
+4. save
+
+![jenkins](/assets/devops/jenkins/jenkins_Settings.png){: width="800" height="300" }
+
+### Step 2: Connect Agent from Windows Machine
+
+1. Open the newly created node page → Copy the two Windows command lines under “Run from agent command line”
+2. Open CMD as Administrator and run the command
+```bat
+cd C:\Jenkins
+```
+Paste and execute both commands
+3. This will download agent.jar and connect the agent (temporarily)
+
+### Step 3: Run Agent as a Windows Service
+
+1. Download and setup [WinSW](https://github.com/winsw/winsw){:target="_blank"}
+    - Download WinSW-x64.exe → Rename to jenkins-agent.exe
+    - Download sample jenkins.xml → Rename to jenkins-agent.xml
+    - Place both in the Jenkins folder (path from step 4)
+2. Edit jenkins-agent.xml:
+    - Set <id> and <name> to jenkins-agent
+    - Replace <arguments> content with the second command (excluding java)
+3. In CMD (as Admin), run:
+```bat
+cd C:\Jenkins
+jenkins-agent.exe install
+Get-Service jenkins-agent
+Start-Service jenkins-agent
+```
+![jenkins](/assets/devops/jenkins/jenkins1.png){: width="800" height="300" }
 
 ## Docker Multi-Stage Example
 

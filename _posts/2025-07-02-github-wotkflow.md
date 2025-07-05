@@ -8,7 +8,7 @@ image:
   path: /assets/devops/gh-actions/actions.webp
   lqip: data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoUABQAPpFAmkmlo6IhKAqosBIJYwC7ABEdGShyt+sx9hg+4UhwgAD++l54Ig5t+pTplW0/+EzAezj7gIGOyTZmXCGzEx6vy+42amWghdMKU6CcQeOKwTnECgC3yrUVI8KhZ0IQgeCxm2TrtB+KhveWjQy90eICU9twNVPa4AYMQAAA
 published: true
-hidden: true
+hidden: false
 toc: true
 ---
 # GH workflow
