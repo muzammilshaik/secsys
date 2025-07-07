@@ -49,7 +49,7 @@
 # Email Contact
 - type: email
   icon: "fas fa-envelope"
-  url: "mailto:muzammilshaik55@proton.me"
+  # url: "mailto:muzammilshaik55@proton.me"
   noblank: true  # opens in current tab (prevents blank tab from JS)
 
 # RSS Feed
