@@ -52,11 +52,11 @@
   url: "mailto:muzammilshaik55@proton.me"
   noblank: true  # opens in current tab (prevents blank tab from JS)
 
-# # RSS Feed
-# - type: rss
-#   icon: "fas fa-rss"
-#   url: "/feed.xml"
-#   noblank: true
+# RSS Feed
+- type: rss
+  icon: "fas fa-rss"
+ # url: "/feed.xml"
+  #noblank: true
 
 # Optional: Twitter Profile
 # - type: twitter
