@@ -5,10 +5,10 @@ description: ""
 categories: ["Devops"]
 tags: ["Docker"]
 image:
-  path: /assets/devops/dockerfile/dockerfile.png
-  lqip: data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoUABQAPpFAmkmlo6IhKAqosBIJYwC7ABEdGShyt+sx9hg+4UhwgAD++l54Ig5t+pTplW0/+EzAezj7gIGOyTZmXCGzEx6vy+42amWghdMKU6CcQeOKwTnECgC3yrUVI8KhZ0IQgeCxm2TrtB+KhveWjQy90eICU9twNVPa4AYMQAAA
+  path: /assets/devops/dockerfile/dockerfile.webp
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoUABQAPpFAmEmlo6IhKAqosBIJYgCnJf/i2Djhq5A0jEA6qX1sAAD++mRkmo/i+j20sk0grwM6dG4YqIAViZFfpMUSryTt2CNZloQMPNRGpL5Xt3l9C8O5dVjPdBKvCwviQeZxWrBKouHafrHMEmUPLfsXB9q8SUuhRrxfVRqlfxyl8JKOugAAj
 published: true
-hidden: true
+hidden: false
 toc: true
 ---
 
@@ -898,20 +898,20 @@ services:
 ## Additional Resources
 
 ### Official Documentation
-- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
-- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
-- [Docker Security Best Practices](https://docs.docker.com/develop/security-best-practices/)
+- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){:target="_blank"}
+- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/){:target="_blank"}
+- [Docker Security Best Practices](https://docs.docker.com/develop/security-best-practices/){:target="_blank"}
 
 ### Tools
-- [Dive - Inspect Docker image layers](https://github.com/wagoodman/dive)
-- [Hadolint - Dockerfile linter](https://github.com/hadolint/hadolint)
-- [Docker Slim - Minify Docker images](https://github.com/docker-slim/docker-slim)
-- [Dockle - Container image linter](https://github.com/goodwithtech/dockle)
+- [Dive - Inspect Docker image layers](https://github.com/wagoodman/dive){:target="_blank"}
+- [Hadolint - Dockerfile linter](https://github.com/hadolint/hadolint){:target="_blank"}
+- [Docker Slim - Minify Docker images](https://github.com/docker-slim/docker-slim){:target="_blank"}
+- [Dockle - Container image linter](https://github.com/goodwithtech/dockle){:target="_blank"}
 
 ### Tutorials and Guides
-- [Docker Multi-Stage Builds](https://docs.docker.com/build/building/multi-stage/)
-- [Docker BuildKit](https://docs.docker.com/build/buildkit/)
-- [Container Security Best Practices](https://snyk.io/blog/10-docker-image-security-best-practices/)
+- [Docker Multi-Stage Builds](https://docs.docker.com/build/building/multi-stage/){:target="_blank"}
+- [Docker BuildKit](https://docs.docker.com/build/buildkit/){:target="_blank"}
+- [Container Security Best Practices](https://snyk.io/blog/10-docker-image-security-best-practices/){:target="_blank"}
 
 ## Conclusion
 
