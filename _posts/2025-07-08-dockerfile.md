@@ -898,20 +898,20 @@ services:
 ## Additional Resources
 
 ### Official Documentation
-- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
-- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
-- [Docker Security Best Practices](https://docs.docker.com/develop/security-best-practices/)
+- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){:target="_blank"}
+- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/){:target="_blank"}
+- [Docker Security Best Practices](https://docs.docker.com/develop/security-best-practices/){:target="_blank"}
 
 ### Tools
-- [Dive - Inspect Docker image layers](https://github.com/wagoodman/dive)
-- [Hadolint - Dockerfile linter](https://github.com/hadolint/hadolint)
-- [Docker Slim - Minify Docker images](https://github.com/docker-slim/docker-slim)
-- [Dockle - Container image linter](https://github.com/goodwithtech/dockle)
+- [Dive - Inspect Docker image layers](https://github.com/wagoodman/dive){:target="_blank"}
+- [Hadolint - Dockerfile linter](https://github.com/hadolint/hadolint){:target="_blank"}
+- [Docker Slim - Minify Docker images](https://github.com/docker-slim/docker-slim){:target="_blank"}
+- [Dockle - Container image linter](https://github.com/goodwithtech/dockle){:target="_blank"}
 
 ### Tutorials and Guides
-- [Docker Multi-Stage Builds](https://docs.docker.com/build/building/multi-stage/)
-- [Docker BuildKit](https://docs.docker.com/build/buildkit/)
-- [Container Security Best Practices](https://snyk.io/blog/10-docker-image-security-best-practices/)
+- [Docker Multi-Stage Builds](https://docs.docker.com/build/building/multi-stage/){:target="_blank"}
+- [Docker BuildKit](https://docs.docker.com/build/buildkit/){:target="_blank"}
+- [Container Security Best Practices](https://snyk.io/blog/10-docker-image-security-best-practices/){:target="_blank"}
 
 ## Conclusion
 
