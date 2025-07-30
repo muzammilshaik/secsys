@@ -8,7 +8,8 @@ pipeline {
     }
 
     environment {
-        GIT_REPO = 'git@github.com:muzammilshaik/secsys.git'
+        // GIT_REPO = 'git@github.com:muzammilshaik/secsys.git'
+        GIT_REPO = 'https://github.com/muzammilshaik/secsys.git'    
         DEPLOY_DIR = credentials('secsys_path')
         GIT_CREDENTIALS_ID = 'github'
         DISCORD_WEBHOOK_URL = credentials('discord-webhook-url')
