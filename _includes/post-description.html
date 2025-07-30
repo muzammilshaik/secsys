@@ -1,0 +1,32 @@
+{%- comment -%}
+  Get post description or generate it from the post content.
+  Only use posts located in the local _posts directory.
+{%- endcomment -%}
+
+{%- assign max_length = include.max_length | default: 200 -%}
+
+{%- capture description -%}
+{%- if post.description -%}
+  {{- post.description -}}
+{%- else -%}
+  {% comment %}
+    Remove the line number of the code snippet.
+  {% endcomment %}
+  {% assign content = post.content %}
+
+  {% if content contains '<td class="rouge-gutter gl"><pre class="lineno">' %}
+    {% assign content = content 
+      | replace: '<td class="rouge-gutter gl"><pre class="lineno">', '<!-- <td class="rouge-gutter gl"><pre class="lineno">' 
+      | replace: '</td><td class="rouge-code">', '</td> --><td class="rouge-code">' %}
+  {% endif %}
+
+  {% comment %}
+    Only use post if its source path contains '_posts', meaning it's from your local project.
+  {% endcomment %}
+  {%- if post.path contains '_posts' -%}
+    {{- content | markdownify | strip_html | newline_to_br | replace: '<br />', ' ' | strip_newlines -}}
+  {%- endif -%}
+{%- endif -%}
+{%- endcapture -%}
+
+{{- description | strip | truncate: max_length | escape -}}
