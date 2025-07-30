@@ -1,6 +1,6 @@
 ---
 author: muju
-title: "☸️ kubernetes kickstart"
+title: "kubernetes kickstart"
 description: "Get hands-on with Kubernetes ConfigMaps, Secrets, and environment variables using practical YAML examples."
 categories: ["Devops"]
 tags: ["Automation", "Kubernetes", "DevOps"]
