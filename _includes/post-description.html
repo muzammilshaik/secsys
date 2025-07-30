@@ -1,6 +1,6 @@
 {%- comment -%}
   Get post description or generate it from the post content.
-  Only use posts located in the local _posts directory.
+  Only use posts located in the local _posts directory — not from theme gems.
 {%- endcomment -%}
 
 {%- assign max_length = include.max_length | default: 200 -%}
@@ -9,11 +9,11 @@
 {%- if post.description -%}
   {{- post.description -}}
 {%- else -%}
-  {% comment %}
-    Remove the line number of the code snippet.
-  {% endcomment %}
   {% assign content = post.content %}
 
+  {% comment %}
+    Remove line numbers in code snippets.
+  {% endcomment %}
   {% if content contains '<td class="rouge-gutter gl"><pre class="lineno">' %}
     {% assign content = content 
       | replace: '<td class="rouge-gutter gl"><pre class="lineno">', '<!-- <td class="rouge-gutter gl"><pre class="lineno">' 
@@ -21,11 +21,11 @@
   {% endif %}
 
   {% comment %}
-    Only use post if its source path contains '_posts', meaning it's from your local project.
+    Only generate description if post is NOT from theme gem path (e.g., /gems/ or /usr/)
   {% endcomment %}
-  {%- if post.path contains '_posts' -%}
+  {%- unless post.path contains '/gems/' or post.path contains '/usr/' -%}
     {{- content | markdownify | strip_html | newline_to_br | replace: '<br />', ' ' | strip_newlines -}}
-  {%- endif -%}
+  {%- endunless -%}
 {%- endif -%}
 {%- endcapture -%}
 
