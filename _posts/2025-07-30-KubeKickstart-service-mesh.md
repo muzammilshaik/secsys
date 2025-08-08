@@ -1,6 +1,6 @@
 ---
 author: muju
-title: "Service Mesh for Kubernetes"
+title: "Kubernetes Service Mesh"
 description: "Implement service mesh architecture in Kubernetes using Istio and Linkerd for enhanced observability, security, and traffic management."
 categories: ["Devops"]
 tags: ["Kubernetes", "DevOps", "Service Mesh", "Istio", "Linkerd", "Microservices", "Cloud Native"]

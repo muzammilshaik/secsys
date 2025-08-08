@@ -1,6 +1,6 @@
 ---
 author: muju
-title: "GitOps with Kubernetes"
+title: "Kubernetes GitOps"
 description: "Implement GitOps workflows for Kubernetes using Flux CD and Argo CD for declarative, version-controlled deployments."
 categories: ["Devops"]
 tags: ["Automation", "Kubernetes", "DevOps", "GitOps", "CI/CD", "Argo CD", "Flux CD"]

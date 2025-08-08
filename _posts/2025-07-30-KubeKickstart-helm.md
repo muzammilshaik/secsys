@@ -95,6 +95,7 @@ resources:
 
 Templates are Kubernetes manifest files with Go templating syntax that allow for dynamic generation of resources based on values:
 
+{% raw %}
 ```yaml
 # templates/deployment.yaml
 apiVersion: apps/v1
@@ -124,6 +125,7 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 ```
+{% endraw %}
 
 ### 🚀 Using Helm
 
@@ -271,6 +273,7 @@ helm dependency build mychart
 
 Helm provides hooks to intervene at certain points in a release's lifecycle:
 
+{% raw %}
 ```yaml
 # templates/pre-install-job.yaml
 apiVersion: batch/v1
@@ -290,6 +293,7 @@ spec:
           command: ["/bin/sh", "-c", "echo Pre-install job running"]
       restartPolicy: Never
 ```
+{% endraw %}
 
 Common hook types include:
 - `pre-install`: Executes before any resources are installed

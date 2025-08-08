@@ -1,6 +1,6 @@
 ---
 author: muju
-title: "Multi-Cluster Kubernetes Management"
+title: "Kubernetes Multi-Cluster Management"
 description: "Strategies and tools for managing multiple Kubernetes clusters across different environments, regions, and cloud providers."
 categories: ["Devops"]
 tags: ["Kubernetes", "DevOps", "Multi-Cluster", "Federation", "Fleet Management", "Cloud Native"]
@@ -182,7 +182,10 @@ clusterctl init --infrastructure aws
 ```
 
 ### Creating a Cluster with Cluster API
-{% include details summary="📜 Show YAML for Creating a Cluster with Cluster API" %}
+
+<details>
+<summary>📜 Show YAML for Creating a Cluster with Cluster API</summary>
+
 ```yaml
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
@@ -260,7 +263,7 @@ spec:
       iamInstanceProfile: control-plane.cluster-api-provider-aws.sigs.k8s.io
       sshKeyName: default
 ```
-{% endinclude %}
+</details>
 
 ## 3. Rancher
 
