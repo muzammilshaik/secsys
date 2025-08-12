@@ -7,6 +7,7 @@ tags: ["Automation", "Kubernetes", "DevOps"]
 image:
   path: /assets/dev/kube/kubernetes.webp
   lqip: data:image/webp;base64,UklGRtQBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSIsAAAABgFNt2/LmycSJBGYwwCACNSQT6uBkZsaik54K6OnI48/4/hIiYgKgGZzOQiBG5owgMMuonsSGFVTZbVItfuAEndwpAcD8JRC/LUBKIGeAFq0DHGln4IP2CbdgoLdqRL1vxPDBiKciQ2NK6NB6gOlIOZsAON/0vbugjP3p+U9Avcxr8VVoN141m1ACAFZQOCAiAQAA8AYAnQEqFAAUAD6RQJpKJaOiIagIALASCWwAnTKEdXem8IZsH33hQHPt6YBvDZKh/GuLZkgF/OkWZ+bNTygMAAD6MfA3/NCO7/ftr7xz71nWzdAYviZtYg+gfdrtg/Tp4hzzy1+pO2kCX7u4nkR6Fk3ZkqICWtz+MTCn9H1ZhMdsmn1btqfkXfNRiyYkHFGKBFBmKYzn8f/9iLH91lHvYiPWd+mLRGD1UhH/jRNx/9jB9qalU9hqU8cN4tj/hMl0TGLIrjwy3tJfq1IYi7OpURv7z9/Qi5lO+41B2kD5EDUE/+zEwCoUer+P3T1kjyZ0JR/1JGnx/zHb+qJb/2Lx9B8P+9UlMJF1/nyvJDtSIRA+78jkMzmAjIZWiCxI2KAAAAA=j
+mermaid: true
 published: true
 hidden: false
 toc: true
@@ -920,6 +921,10 @@ spec:
         cpu: "250m"
 
 ```
+Explanation:
+- `memory: 64Mi` → Minimum RAM needed.
+- `cpu: 250m` → Minimum CPU needed (0.25 vCPU).
+- Pod will only be scheduled to nodes that can fulfill these minimums.
 
 ### 🚦 Resource Limit
 
@@ -941,6 +946,94 @@ spec:
       limits:
         memory: "128Mi"
         cpu: "500m"
+```
+Explanation:
+- `memory: 128Mi` → Max 128Mi RAM allowed.
+- `cpu: 500m` → Max 0.5 vCPU allowed.
+- If usage goes beyond the limit, Kubernetes will throttle or terminate the container.
+
+### 🏷 Resource Quota (Namespace-wide Limits)
+
+A Resource Quota applies at the namespace level and limits the total amount of CPU, memory, and pods that can be created. This ensures fair usage of cluster resources among different teams or projects.
+
+- Controls the total Requests and Limits for all pods in a namespace.
+- Prevents one namespace from consuming all resources.
+- Can also limit the number of pods, services, or persistent volume claims.
+
+```yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dev-quota
+  namespace: dev-quota
+spec:
+  hard:
+    requests.cpu: "2"
+    requests.memory: "2Gi"
+    limits.cpu: "2"
+    limits.memory: "4Gi"
+    pods: "10"
+```
+```bash
+kubectl apply -f $ResourceQuota_file.yml
+kubectl describe quota dev-quota -n dev-quota
+kubectl get events -n dev-quota --sort-by='.lastTimestamp'
+```
+Explanation:
+- `requests.cpu: "2"` → All pods in this namespace can request up to 2 CPU cores in total.
+- `requests.memory: "2Gi"` → Total memory requests can’t exceed 2GiB.
+- `limits.cpu: "2"` → Max total CPU limits = 2 cores.
+- `limits.memory: "4Gi"` → Max total memory limits = 4GiB.
+- `pods: "10"` → No more than 10 pods can exist in the namespace.
+
+### 📏 LimitRanges in Kubernetes
+
+A LimitRange is a Kubernetes resource that defines minimum, maximum, and default CPU/memory requests and limits for containers or pods in a namespace.
+
+It ensures that workloads have sensible resource boundaries to maintain cluster stability and fairness.
+
+#### Purpose of LimitRange
+- 🚫 Avoid pods without resource limits (which could consume excessive resources).
+- ⚖ Provide default CPU/memory requests and limits for a namespace.
+- 🔒 Enforce minimum and maximum resource usage for containers.
+- 🛡 Prevent accidental resource starvation or abuse.
+
+#### Key Behavior:
+- If a container does not specify requests or limits, Kubernetes automatically applies defaults from the LimitRange.
+
+```yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: default-limits
+  namespace: dev-quota
+spec:
+  limits:
+  - type: Container
+    default:
+      cpu: "100m"       # Default CPU limit if none specified
+      memory: "256Mi"   # Default memory limit if none specified
+    defaultRequest:
+      cpu: "50m"        # Default CPU request if none specified
+      memory: "128Mi"   # Default memory request if none specified
+    min:
+      cpu: "10m"        # Minimum CPU request/limit allowed
+      memory: "64Mi"    # Minimum memory request/limit allowed
+    max:
+      cpu: "500m"       # Maximum CPU limit allowed
+      memory: "512Mi"   # Maximum memory limit allowed
+```
+
+Explanation:
+- `default` → Automatically set as the limit if the container doesn't define one.
+- `defaultRequest` → Automatically set as the request if the container doesn't define one.
+- `min` → Minimum allowed CPU/memory for requests and limits.
+- `max` → Maximum allowed CPU/memory for limits.
+
+```bash
+kubectl apply -f limitrange.yml
+kubectl get limitrange -n dev-team
+kubectl describe limitrange default-limits -n dev-team
 ```
 
 ## 🩺 Monitoring Containers in K8S
@@ -1653,8 +1746,45 @@ spec:
 By understanding and properly implementing Kubernetes storage concepts, you can ensure that your applications have reliable, scalable, and manageable storage solutions.
 
 ## 🌐 k8s Services, Ingress, and LB's
-
+   
 Exposing your applications to the outside world or to other services within the cluster is a fundamental aspect of Kubernetes. Let's explore the different ways to expose your applications.
+
+### 🔀 k8s Traffic Flow: user to Pod
+
+```mermaid
+flowchart TB
+    classDef browserStyle fill:#6CC1FF,stroke:#034078,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef dnsStyle fill:#FFD166,stroke:#EF7C00,stroke-width:2px,color:#000,font-weight:bold;
+    classDef lbStyle fill:#06D6A0,stroke:#03543F,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef ingressStyle fill:#118AB2,stroke:#073B4C,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef svcStyle fill:#EF476F,stroke:#9D2449,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef podStyle fill:#FF9F1C,stroke:#B35600,stroke-width:2px,color:#000,font-weight:bold;
+
+    Browser(("Browser"))
+    DNS["DNS Server"]
+    LB["LoadBalancer Service"]
+    Ingress["Ingress Controller"]
+    Service["Service (NodePort / ClusterIP)"]
+    Pod["Pod (App Container)"]
+
+    Browser -->|DNS Lookup| DNS
+    DNS -->|Returns IP| Browser
+    Browser -->|Sends HTTP/HTTPS Request| LB
+    LB -->|Forwards Request| Ingress
+    Ingress -->|Routes Request| Service
+    Service -->|Forwards to| Pod
+    Pod -->|Response| Service
+    Service --> Ingress
+    Ingress --> LB
+    LB --> Browser
+
+    class Browser browserStyle
+    class DNS dnsStyle
+    class LB lbStyle
+    class Ingress ingressStyle
+    class Service svcStyle
+    class Pod podStyle
+```
 
 ### 🔄 Kubernetes Services
 
@@ -2042,6 +2172,40 @@ spec:
   strategy:
     type: Recreate
 ```
+
+#### MatchExpressions in Selectors
+
+Adding MatchExpressions to Deployment or ReplicaSet Selector
+
+You can use `matchExpressions` under the `selector` to define complex label queries with operators such as `In`, `NotIn`, `Exists`, and `DoesNotExist`. This allows fine-grained control over pod selection.
+
+Example snippet to add under `spec.selector` or `spec.template.metadata.labels`:
+
+```yaml
+selector:
+  matchExpressions:
+    - key: environment
+      operator: In
+      values:
+        - production
+        - staging
+    - key: tier
+      operator: NotIn
+      values:
+        - frontend
+    - key: debug
+      operator: Exists
+    - key: deprecated
+      operator: DoesNotExist
+```
+
+Explanation of operators:
+- In: The key's value must be in the specified list.
+- NotIn: The key's value must NOT be in the specified list.
+- Exists: The key must exist, regardless of value.
+- DoesNotExist: The key must NOT exist.
+
+You can combine multiple expressions to build complex selectors for your Deployment or ReplicaSet.
 
 #### Common Deployment Commands
 
