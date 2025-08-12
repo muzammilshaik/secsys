@@ -1761,7 +1761,7 @@ A Service in Kubernetes is an abstraction that defines a logical set of Pods and
 
 Kubernetes offers several types of Services to meet different exposure needs:
 
-1. **ClusterIP (default)**
+1\. **ClusterIP (default)**
    - Exposes the Service on an internal IP within the cluster
    - Only reachable within the cluster
 
@@ -1779,7 +1779,7 @@ spec:
     targetPort: 9376
 ```
 
-2. **NodePort**
+2\. **NodePort**
    - Exposes the Service on each Node's IP at a static port
    - Accessible from outside the cluster using `<NodeIP>:<NodePort>`
 
@@ -1798,7 +1798,7 @@ spec:
     nodePort: 30007  # Optional: if not specified, a port is allocated from the range 30000-32767
 ```
 
-3. **LoadBalancer**
+3\. **LoadBalancer**
    - Exposes the Service externally using a cloud provider's load balancer
    - Automatically creates the necessary NodePort and ClusterIP services
 
@@ -1817,7 +1817,7 @@ spec:
     targetPort: 9376
 ```
 
-4. **ExternalName**
+4\. **ExternalName**
    - Maps the Service to the contents of the `externalName` field (e.g., `foo.bar.example.com`)
    - Returns a CNAME record with the external service's DNS name
 
@@ -1830,6 +1830,46 @@ spec:
   type: ExternalName
   externalName: my.database.example.com
 ```
+
+### 🔄 Ingress Controllers
+
+An Ingress Controller is responsible for fulfilling the Ingress rules. Here's how to deploy the Nginx Ingress Controller:
+
+#### Nginx Ingress Controller
+```bash
+# Using Helm (recommended)
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx
+
+# Or using kubectl
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
+```
+
+#### Traefik Ingress Controller
+
+```bash
+# Using Helm (recommended)
+helm repo add traefik https://helm.traefik.io/traefik
+helm repo update
+helm install traefik traefik/traefik
+
+# Or using kubectl
+kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.13/docs/content/reference/dynamic-configuration/kubernetes-crd.yaml
+```
+
+#### HAProxy Ingress Controller
+```bash
+# Using Helm (recommended)
+helm repo add haproxytech https://haproxytech.github.io/helm-charts
+helm repo update
+helm install haproxy-ingress haproxytech/kubernetes-ingress
+
+# Or using kubectl
+kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/v1.14/deploy/haproxy-ingress.yaml
+```
+
+Each Ingress Controller watches for Ingress resources and routes external traffic to backend services accordingly. Choose the one that fits your needs based on features, performance, and ease of use.
 
 ### 🚪 Ingress Resources
 
@@ -1894,6 +1934,52 @@ spec:
               number: 80
 ```
 
+### Traefik Ingress Middleware Rewrite
+
+Traefik does not use the nginx rewrite annotation (`nginx.ingress.kubernetes.io/rewrite-target`). Instead, you define a Middleware resource to handle path rewriting and reference it in the Ingress.
+
+Middleware for Rewrite
+
+```yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: rewrite-root
+spec:
+  rewrite:
+    regex: "^/foo(/|$)(.*)"
+    replacement: "/$2"
+```
+- This middleware rewrites paths starting with `/foo` to `/`.
+
+Use Middleware in Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: default-rewrite-root@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: myapp.example.com
+    http:
+      paths:
+      - path: /foo
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+```
+
+- The annotation `traefik.ingress.kubernetes.io/router.middlewares` references the middleware you created (`rewrite-root` in the `default` namespace).
+- Adjust `@kubernetescrd` to your middleware namespace if different.
+
 #### Ingress with TLS
 
 ```yaml
@@ -1924,20 +2010,6 @@ To create the TLS secret:
 
 ```bash
 kubectl create secret tls tls-secret --cert=path/to/cert.crt --key=path/to/key.key
-```
-
-### 🔄 Ingress Controllers
-
-An Ingress Controller is responsible for fulfilling the Ingress rules. Here's how to deploy the Nginx Ingress Controller:
-
-```bash
-# Using Helm (recommended)
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm repo update
-helm install nginx-ingress ingress-nginx/ingress-nginx
-
-# Or using kubectl
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
 ```
 
 ### 🌟 Service Mesh
@@ -2121,7 +2193,7 @@ spec:
 
 Deployments support two update strategies:
 
-1. **RollingUpdate (default)**: Gradually replaces old Pods with new ones
+1\. **RollingUpdate (default)**: Gradually replaces old Pods with new ones
 
 ```yaml
 spec:
@@ -2132,7 +2204,7 @@ spec:
       maxUnavailable: 25%
 ```
 
-2. **Recreate**: Terminates all existing Pods before creating new ones
+2\. **Recreate**: Terminates all existing Pods before creating new ones
 
 ```yaml
 spec:
