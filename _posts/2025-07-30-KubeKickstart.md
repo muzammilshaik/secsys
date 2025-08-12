@@ -26,16 +26,6 @@ toc: true
 # https://pswalia2u.medium.com/deploying-kubernetes-cluster-2ef2fbdd233a
 ---
 
-{% raw %}
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    mermaid.initialize({ startOnLoad: true });
-  });
-</script>
-{% endraw %}
-
-
 Setting up a Kubernetes cluster is just the beginning securing it with fine grained access control is what takes your setup from basic to production ready. In this guide, we’ll explore Kubernetes RBAC (Role Based Access Control) from the ground up, including the creation of users, service accounts, roles, and role bindings.
 
 > 🛠️ New to Kubernetes?  If you haven’t set up your `Kubernetes cluster` yet or are unsure about your current setup, I highly recommend checking out my previous [blog post]({% post_url 2025-04-04-kubernetes %}){:target="_blank"} where I walk you through the complete cluster configuration from installing essential tools to running your first kubectl command. This blog builds directly on that foundation.
@@ -1763,13 +1753,6 @@ Exposing your applications to the outside world or to other services within the 
 
 ```mermaid
 flowchart TB
-    classDef browserStyle fill:#6CC1FF,stroke:#034078,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef dnsStyle fill:#FFD166,stroke:#EF7C00,stroke-width:2px,color:#000,font-weight:bold;
-    classDef lbStyle fill:#06D6A0,stroke:#03543F,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef ingressStyle fill:#118AB2,stroke:#073B4C,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef svcStyle fill:#EF476F,stroke:#9D2449,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef podStyle fill:#FF9F1C,stroke:#B35600,stroke-width:2px,color:#000,font-weight:bold;
-
     Browser(("Browser"))
     DNS["DNS Server"]
     LB["LoadBalancer Service"]
