@@ -1,0 +1,32 @@
+flowchart TB
+    Browser(("Browser"))
+    DNS["DNS Server"]
+    LB["LoadBalancer Service"]
+    Ingress["Ingress Controller"]
+    Service["Service (NodePort / ClusterIP)"]
+    Pod["Pod (App Container)"]
+
+    Browser -->|DNS Lookup| DNS
+    DNS -->|Returns IP| Browser
+    Browser -->|Sends HTTP/HTTPS Request| LB
+    LB -->|Forwards Request| Ingress
+    Ingress -->|Routes Request| Service
+    Service -->|Forwards to| Pod
+    Pod -->|Response| Service
+    Service --> Ingress
+    Ingress --> LB
+    LB --> Browser
+
+    class Browser browserStyle
+    class DNS dnsStyle
+    class LB lbStyle
+    class Ingress ingressStyle
+    class Service svcStyle
+    class Pod podStyle
+
+    classDef browserStyle fill:#6CC1FF,stroke:#034078,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef dnsStyle fill:#FFD166,stroke:#EF7C00,stroke-width:2px,color:#000,font-weight:bold;
+    classDef lbStyle fill:#06D6A0,stroke:#03543F,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef ingressStyle fill:#118AB2,stroke:#073B4C,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef svcStyle fill:#EF476F,stroke:#9D2449,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef podStyle fill:#FF9F1C,stroke:#B35600,stroke-width:2px,color:#000,font-weight:bold;
