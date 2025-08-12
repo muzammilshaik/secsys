@@ -1934,9 +1934,9 @@ spec:
               number: 80
 ```
 
-### Traefik Ingress Middleware Rewrite
+### [Traefik Ingress Middleware Rewrite]({% post_url 2025-08-12-KubeKickstart-traefik-middleware %}){:target="_blank"}
 
-Traefik does not use the nginx rewrite annotation (`nginx.ingress.kubernetes.io/rewrite-target`). Instead, you define a Middleware resource to handle path rewriting and reference it in the Ingress.
+[Traefik]({% post_url 2025-08-12-KubeKickstart-traefik-middleware %}){:target="_blank"} does not use the nginx rewrite annotation (`nginx.ingress.kubernetes.io/rewrite-target`). Instead, you define a Middleware resource to handle path rewriting and reference it in the Ingress.
 
 Middleware for Rewrite
 
@@ -1979,6 +1979,8 @@ spec:
 
 - The annotation `traefik.ingress.kubernetes.io/router.middlewares` references the middleware you created (`rewrite-root` in the `default` namespace).
 - Adjust `@kubernetescrd` to your middleware namespace if different.
+
+> For a more comprehensive list of middleware services with detailed insights to help you implement them effectively, please refer [Traefik Ingress Middleware Rules]({% post_url 2025-08-12-KubeKickstart-traefik-middleware %}){:target="_blank"}
 
 #### Ingress with TLS
 
