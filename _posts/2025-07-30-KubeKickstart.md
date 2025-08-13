@@ -1871,6 +1871,53 @@ kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingres
 
 Each Ingress Controller watches for Ingress resources and routes external traffic to backend services accordingly. Choose the one that fits your needs based on features, performance, and ease of use.
 
+### MetalLB Installation (Bare-metal LB's)
+
+MetalLB provides software LoadBalancer functionality for bare-metal/local Kubernetes clusters.
+
+#### Install MetalLB manifests
+
+```bash
+helm repo add metallb https://metallb.github.io/metallb
+helm repo update
+helm install metallb metallb/metallb --namespace metallb-system --create-namespace 
+kubectl get pods -n metallb-system
+```
+
+#### Create IPAddressPool & L2Advertisement config
+
+Create a file `metallb-config.yaml` with your IP range:
+
+```yaml
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  namespace: metallb-system
+  name: my-ip-pool
+spec:
+  addresses:
+  - 192.168.1.240-192.168.1.250   # Adjust to your free IP range
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  namespace: metallb-system
+  name: l2-advertisement
+spec:
+  ipAddressPools:
+  - my-ip-pool
+```
+
+```bash
+# kubectl describe svc traefik | grep -i "type:"
+# kubectl patch svc traefik -p '{"spec": {"type": "LoadBalancer"}}'
+
+kubectl apply -f metallb-config.yaml
+kubectl get svc traefik
+```
+
+
+
 ### 🚪 Ingress Resources
 
 Ingress is an API object that manages external access to services in a cluster, typically HTTP/HTTPS. Ingress can provide load balancing, SSL termination, and name-based virtual hosting.
