@@ -1880,7 +1880,9 @@ MetalLB provides software LoadBalancer functionality for bare-metal/local Kubern
 ```bash
 helm repo add metallb https://metallb.github.io/metallb
 helm repo update
-helm install metallb metallb/metallb --namespace metallb-system --create-namespace 
+helm install metallb metallb/metallb --namespace metallb-system --create-namespac
+kubectl label namespace metallb-system pod-security.kubernetes.io/enforce=privileged --overwrite 
+kubectl rollout restart daemonset metallb-speaker -n metallb-system
 kubectl get pods -n metallb-system
 ```
 
@@ -1915,8 +1917,6 @@ spec:
 kubectl apply -f metallb-config.yaml
 kubectl get svc traefik
 ```
-
-
 
 ### 🚪 Ingress Resources
 
