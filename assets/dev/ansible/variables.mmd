@@ -1,0 +1,20 @@
+graph LR
+    subgraph High Priority
+        A[Extra vars -e] --> B[Task vars] --> C[Block vars]
+    end
+    
+    subgraph Medium Priority
+        C --> D[Role/include vars] --> E[Play vars]
+    end
+    
+    subgraph Lower Priority
+        E --> F[Host facts / cached set_facts] --> G[Host vars] --> H[Group vars]
+    end
+    
+    subgraph Defaults
+        H --> I[Role defaults]
+    end
+    
+    %% Styles
+    style A fill:#ffcdd2,stroke:#333,stroke-width:1px
+    style I fill:#c8e6c9,stroke:#333,stroke-width:1px

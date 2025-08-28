@@ -1,0 +1,36 @@
+graph LR
+    subgraph "Control Node"
+        A[ansible-playbook]
+        B[Inventory Parser]
+        C[Variable Manager]
+        D[Task Queue]
+        E[Connection Plugins]
+    end
+    
+    subgraph "Execution"
+        F[Module Execution]
+        G[Fact Gathering]
+        H[Task Results]
+    end
+    
+    subgraph "Managed Nodes"
+        I[Node 1]
+        J[Node 2]
+        K[Node 3]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    H --> J
+    H --> K
+    
+    style A fill:#4caf50
+    style I fill:#2196f3
+    style J fill:#2196f3
+    style K fill:#2196f3

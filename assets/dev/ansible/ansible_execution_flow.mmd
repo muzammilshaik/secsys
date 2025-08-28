@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant U as User
+    participant AC as Ansible Control
+    participant I as Inventory
+    participant MN as Managed Node
+    
+    U->>AC: Run ansible-playbook
+    AC->>I: Parse inventory
+    I->>AC: Return host list
+    AC->>MN: Establish SSH connection
+    MN->>AC: Authentication success
+    AC->>MN: Gather facts
+    MN->>AC: Return system facts
+    AC->>MN: Execute tasks
+    MN->>AC: Return task results
+    AC->>U: Display results

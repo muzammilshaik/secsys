@@ -1,0 +1,21 @@
+graph TB
+    A[Ansible Control Node] --> B[Inventory]
+    A --> C[Playbooks]
+    A --> D[Modules]
+    A --> E[Plugins]
+    
+    A --> F[Managed Node 1]
+    A --> G[Managed Node 2] 
+    A --> H[Managed Node 3]
+    A --> I[Cloud Provider]
+    
+    F --> J[SSH/WinRM]
+    G --> J
+    H --> J
+    I --> K[API]
+    
+    style A fill:#e1f5fe
+    style F fill:#f3e5f5
+    style G fill:#f3e5f5
+    style H fill:#f3e5f5
+    style I fill:#fff3e0
