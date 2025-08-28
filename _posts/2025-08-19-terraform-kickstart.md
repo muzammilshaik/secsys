@@ -1003,6 +1003,174 @@ resource "aws_instance" "west_instance" {
 }
 ```
 
+## TF Vault Integration
+
+HashiCorp Vault is a tool for securely storing and accessing secrets. Terraform can integrate with Vault to fetch credentials (like database passwords, API keys, SSH keys) dynamically at runtime. This prevents hardcoding secrets inside Terraform configuration.
+
+### Installing Vault (Ubuntu)
+
+SSH into the EC2 instance and install Vault:
+
+```bash
+# Update system
+sudo apt update && sudo apt install -y gpg
+
+# Add HashiCorp GPG key
+wget -O- https://apt.releases.hashicorp.com/gpg \
+ | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+# Verify the key
+gpg --no-default-keyring \
+ --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+
+# Add HashiCorp repo
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+ https://apt.releases.hashicorp.com $(lsb_release -cs) main" \
+ | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+# Install Vault
+sudo apt update && sudo apt install -y vault
+```
+
+### Starting Vault
+
+Run Vault in dev mode for testing (not recommended for production):
+
+```bash
+vault server -dev -dev-listen-address="0.0.0.0:8200"
+```
+
+Export the Vault address and root token:
+
+```bash
+export VAULT_ADDR='http://<EC2_PUBLIC_IP>:8200'
+export VAULT_TOKEN='root'
+```
+
+### Enabling AppRole Authentication
+
+Vault supports multiple authentication methods. Terraform commonly uses AppRole.
+
+Enable AppRole auth method:
+
+```bash
+vault auth enable approle
+```
+
+### Creating Vault Policies
+
+Policies define what secrets Terraform can read/write. Example:
+
+```bash
+vault policy write terraform - <<EOF
+path "*" {
+  capabilities = ["list", "read"]
+}
+
+path "secret/data/*" {
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+path "kv/db_cred/*" {
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+path "auth/token/create" {
+  capabilities = ["create", "read", "update", "list"]
+}
+EOF
+```
+
+### Creating an AppRole
+
+```bash
+vault write auth/approle/role/terraform \
+  secret_id_ttl=10m \
+  token_num_uses=10 \
+  token_ttl=20m \
+  token_max_ttl=30m \
+  secret_id_num_uses=40 \
+  token_policies=terraform
+```
+
+
+### Gen Role & Secret ID
+- Get Role ID:
+```bash
+vault read auth/approle/role/terraform/role-id
+```
+
+- Generate Secret ID:
+```bash
+vault write -f auth/approle/role/terraform/secret-id
+```
+Save both values securely — they will be used in Terraform.
+
+### Adding Secrets in Vault
+Enable KV secrets engine:
+
+```bash
+vault secrets enable -path=kv kv-v2
+```
+
+Add a secret:
+
+```bash
+vault kv put kv/db_cred username="dbadmin" password="dbpassword123"
+```
+### Terraform + Vault Integration Demo
+#### Example 1: Fetch Secret for EC2
+
+```hcl
+provider "vault" {
+  address = "http://<VAULT_SERVER_IP>:8200"
+  skip_child_token = true
+
+  auth_login {
+    path = "auth/approle/login"
+
+    parameters = {
+      role_id   = "<ROLE_ID>"
+      secret_id = "<SECRET_ID>"
+    }
+  }
+}
+
+data "vault_kv_secret_v2" "example" {
+  mount = "kv"
+  name  = "db_cred"
+}
+
+resource "aws_instance" "my_instance" {
+  ami           = "ami-053b0d53c279acc90"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name   = "vault-ec2"
+    Secret = data.vault_kv_secret_v2.example.data["username"]
+  }
+}
+```
+#### Example 2: Fetch Secret for RDS
+
+```hcl
+data "vault_kv_secret_v2" "db_creds" {
+  mount = "kv"
+  name  = "db_cred"
+}
+
+resource "aws_db_instance" "default" {
+  db_name              = "mydb"
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t2.micro"
+  username             = data.vault_kv_secret_v2.db_creds.data["username"]
+  password             = data.vault_kv_secret_v2.db_creds.data["password"]
+  parameter_group_name = "default.mysql5.7"
+  skip_final_snapshot  = true
+}
+```
+
 ## TF Modules
 
 Modules are reusable Terraform configurations that help organize and standardize infrastructure code.
@@ -1180,25 +1348,176 @@ resource "aws_instance" "example" {
 
 Terraform provides various built-in functions for string manipulation, numeric operations, collections, and more.
 
+### Format Function
+
+The `format` and `formatlist` functions are useful for string formatting.
+
+```hcl
+locals {
+  app      = "nginx"
+  env      = "dev"
+  port     = 8080
+
+  message1 = format("Deploying %s on %s environment", local.app, local.env)
+  message2 = format("%s:%d", local.app, local.port)
+  message3 = formatlist("service available: %s", ["mysql", "redis", "mongodb"])
+}
+
+output "format_out1" { value = local.message1 }
+output "format_out2" { value = local.message2 }
+output "format_out3" { value = local.message3 }
+```
+
+Output:
+
+```ini
+format_out1 = "Deploying nginx on dev environment"
+format_out2 = "nginx:8080"
+format_out3 = [
+  "service available: mysql",
+  "service available: redis",
+  "service available: mongodb",
+]
+```
+
+### Length Function
+
+The `length` function is often used for counting resources.
+
+```hcl
+locals {
+  az_list = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  domain  = "terraformcloud"
+}
+
+output "az_count" {
+  value = format("Number of AZs: %d", length(local.az_list))
+}
+
+output "domain_len" {
+  value = format("Domain name has %d characters", length(local.domain))
+}
+```
+
+Output:
+
+```ini
+az_count   = "Number of AZs: 3"
+domain_len = "Domain name has 14 characters"
+```
+
+### Join Function
+
+The `join` function helps create strings, such as CIDR notations or DNS names.
+
+```hcl
+locals {
+  dns_parts = ["app", "example", "com"]
+  cidr_parts = ["192.168.0.0", "24"]
+
+  dns_name = join(".", local.dns_parts)
+  cidr     = join("/", local.cidr_parts)
+}
+
+output "dns_output" { value = local.dns_name }
+output "cidr_output" { value = local.cidr }
+```
+
+Output:
+
+```ini
+dns_output  = "app.example.com"
+cidr_output = "192.168.0.0/24"
+```
+
+### Flatten Function
+
+The `flatten` function is useful when dealing with security group rules or nested lists.
+
+```hcl
+locals {
+  sg_rules = [
+    ["22", "80"],
+    ["443"],
+    ["3306", "5432"]
+  ]
+
+  all_ports = flatten(local.sg_rules)
+}
+
+output "ports" {
+  value = local.all_ports
+}
+```
+
+Output:
+
+```ini
+ports = [
+  "22",
+  "80",
+  "443",
+  "3306",
+  "5432",
+]
+```
+
+### Lookup Function
+
+The `lookup` function is commonly used for environment-based configurations.
+
+```hcl
+variable "instance_type" {
+  default = {
+    dev  = "t3.micro"
+    test = "t3.small"
+    prod = "t3.large"
+  }
+}
+
+resource "aws_instance" "app" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = lookup(var.instance_type, terraform.workspace, "t3.medium")
+}
+```
+
+- If the workspace is `prod`, it picks `t3.large`.
+- If it’s `qa` (not defined), it defaults to `t3.medium`.
+
+### File Function
+
+The `file` function is perfect for reading SSH keys, configs, or templates.
+
+```hcl
+locals {
+  ssh_key = file("~/.ssh/id_rsa.pub")
+}
+
+resource "aws_key_pair" "deployer" {
+  key_name   = "deployer-key"
+  public_key = local.ssh_key
+}
+```
+
 ### String Functions
 
 ```hcl
-local {
-  upper_name = upper("example")         # EXAMPLE
-  lower_name = lower("EXAMPLE")         # example
-  title_name = title("hello world")     # Hello World
-  joined     = join("-", ["a", "b", "c"]) # a-b-c
-  substr     = substr("hello", 1, 3)     # ell
+locals {
+  upper_name = upper("example")            # "EXAMPLE"
+  lower_name = lower("EXAMPLE")            # "example"
+  title_name = title("hello world")        # "Hello World"
+  joined     = join("-", ["a", "b", "c"])  # "a-b-c"
+  substr_ell = substr("hello", 1, 3)       # "ell"
 }
 ```
 
 ### Numeric Functions
 
 ```hcl
-local {
-  max_value = max(5, 12, 9)     # 12
-  min_value = min(5, 12, 9)     # 5
-  ceil_value = ceil(10.1)       # 11
+locals {
+  max_value   = max(5, 12, 9)   # 12
+  min_value   = min(5, 12, 9)   # 5
+  ceil_value  = ceil(10.1)      # 11
   floor_value = floor(10.9)     # 10
 }
 ```
@@ -1206,22 +1525,40 @@ local {
 ### Collection Functions
 
 ```hcl
-local {
-  list_length = length(["a", "b", "c"])                # 3
-  merged_map  = merge({a="1"}, {b="2"})              # {a="1", b="2"}
-  map_keys    = keys({a="1", b="2"})                 # ["a", "b"]
-  map_values  = values({a="1", b="2"})               # ["1", "2"]
-  contains    = contains(["a", "b", "c"], "b")        # true
-  element     = element(["a", "b", "c"], 1)           # "b"
-  lookup      = lookup({a="1", b="2"}, "c", "default") # "default"
+locals {
+  list_length = length(["a", "b", "c"])               # 3
+  merged_map  = merge({ a = "1" }, { b = "2" })       # { a = "1", b = "2" }
+  map_keys    = keys({ a = "1", b = "2" })            # ["a", "b"]
+  map_values  = values({ a = "1", b = "2" })          # ["1", "2"]
+  contains_b  = contains(["a", "b", "c"], "b")        # true
+  second_item = element(["a", "b", "c"], 1)           # "b"
+  looked_up   = lookup({ a = "1", b = "2" }, "c", "default") # "default"
 }
 ```
 
 ### Conditional Expressions
 
 ```hcl
-local {
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+
+locals {
   instance_type = var.environment == "prod" ? "t2.medium" : "t2.micro"
+}
+```
+
+```hcl
+variable "enable_ec2" {
+  type    = bool
+  default = true
+}
+
+resource "aws_instance" "example" {
+  count         = var.enable_ec2 ? 1 : 0
+  ami           = "ami-0123456789abcdef0"
+  instance_type = local.instance_type
 }
 ```
 
