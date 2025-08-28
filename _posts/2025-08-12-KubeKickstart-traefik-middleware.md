@@ -16,7 +16,7 @@ Traefik Middleware is a powerful feature for controlling request and response fl
 
 ---
 
-## Table of Contents
+<!-- ## Table of Contents
 
 - [Redirects](#redirects)
 - [Authentication & Authorization](#authentication--authorization)
@@ -28,7 +28,7 @@ Traefik Middleware is a powerful feature for controlling request and response fl
 - [Observability & Logging](#observability--logging)
 - [Other Useful Middleware](#other-useful-middleware)
 - [Middleware Chaining](#middleware-chaining)
-- [Implementation Notes](#implementation-notes)
+- [Implementation Notes](#implementation-notes) -->
 
 ---
 
@@ -498,6 +498,7 @@ spec:
 
 Modifies HTTP request headers before they reach backend services.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -510,6 +511,7 @@ spec:
       X-API-Version: "v2"                # Add API version for backends
       X-Real-IP: "{{ .ClientIP }}"       # Dynamic value using Traefik templating
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Useful for backend routing and request identification
@@ -718,6 +720,7 @@ spec:
 
 Adds or modifies HTTP headers in the request before forwarding to the backend service.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -732,6 +735,7 @@ spec:
       X-Real-IP: "{{ .ClientIP }}"           # Client's real IP address
       X-Forwarded-Proto: "{{ .Request.Proto }}"  # Original protocol (HTTP/1.1, HTTP/2)
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Adds or replaces headers in the request
@@ -777,6 +781,7 @@ spec:
 
 Adds or modifies HTTP headers in the response sent back to the client.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -791,6 +796,7 @@ spec:
       X-Server-ID: "{{ env "HOSTNAME" }}"           # Environment variable
       Cache-Control: "public, max-age=3600"           # Cache control directives
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Adds or replaces headers in the response
@@ -1560,6 +1566,7 @@ spec:
 
 Adds, modifies, or removes HTTP headers in requests and responses.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -1577,6 +1584,7 @@ spec:
     customResponseHeaders:
       X-Powered-By: ""
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Useful for adding application metadata, security headers, or debugging info
@@ -1833,6 +1841,7 @@ spec:
 
 Forwards specific headers from backend responses to clients.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -1843,6 +1852,7 @@ spec:
     customResponseHeaders:
       X-Custom-Backend-Header: "{{ .ResponseHeader.Get \"X-Backend-Info\" }}"
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Allows selective forwarding of backend headers
@@ -1854,6 +1864,7 @@ spec:
 
 Forwards specific headers from client requests to backend services.
 
+{% raw %}
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -1865,6 +1876,7 @@ spec:
       X-Forwarded-User: "{{ .Request.Header.Get \"User\" }}"
       X-Original-Method: "{{ .Request.Method }}"
 ```
+{% endraw %}
 
 **Usage Notes:**
 - Allows selective forwarding of client headers
