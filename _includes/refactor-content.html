@@ -1,0 +1,17 @@
+{%- comment -%}
+  Refactor the content to make it more beautiful.
+  This include processes the post content and applies various transformations.
+{%- endcomment -%}
+
+{%- assign _content = include.content -%}
+
+{%- comment -%}
+  Convert fenced code blocks with language "mermaid" to div.mermaid
+  Mermaid diagrams need to be in <div class="mermaid"> tags for the JS library to render them.
+{%- endcomment -%}
+{%- if _content contains '```mermaid' -%}
+  {%- assign _content = _content | replace: '```mermaid', '<div class="mermaid">' -%}
+  {%- assign _content = _content | replace: '```', '</div>' -%}
+{%- endif -%}
+
+{{ _content }}
