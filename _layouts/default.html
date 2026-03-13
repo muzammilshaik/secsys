@@ -106,5 +106,15 @@ layout: compress
     {% include js-selector.html lang=lang %}
 
     {% include_cached search-loader.html lang=lang %}
+
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: '{% if site.theme_mode == "dark" %}dark{% else %}default{% endif %}',
+        securityLevel: 'loose',
+      });
+    </script>
   </body>
 </html>
