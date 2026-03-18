@@ -8,10 +8,30 @@
 {%- comment -%}
   Convert fenced code blocks with language "mermaid" to div.mermaid
   Mermaid diagrams need to be in <div class="mermaid"> tags for the JS library to render them.
+  We must be careful to only replace the closing backticks for Mermaid blocks,
+  not all backticks (which would break other code blocks).
 {%- endcomment -%}
 {%- if _content contains '```mermaid' -%}
   {%- assign _content = _content | replace: '```mermaid', '<div class="mermaid">' -%}
-  {%- assign _content = _content | replace: '```', '</div>' -%}
+  {%- comment -%}
+    Split content by Mermaid div markers, process each block separately
+  {%- endcomment -%}
+  {%- assign _parts = _content | split: '<div class="mermaid">' -%}
+  {%- assign _result = '' -%}
+  {%- for _part in _parts -%}
+    {%- if forloop.first -%}
+      {%- assign _result = _part -%}
+    {%- else -%}
+      {%- assign _closing = _part | split: '```' -%}
+      {%- assign _inner = _closing[0] -%}
+      {%- assign _rest = _closing[1] -%}
+      {%- assign _result = _result | append: '<div class="mermaid">' | append: _inner | append: '</div>' -%}
+      {%- if _rest -%}
+        {%- assign _result = _result | append: _rest -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign _content = _result -%}
 {%- endif -%}
 
 {{ _content }}
