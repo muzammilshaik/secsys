@@ -2,7 +2,7 @@
 author: muju
 title: "Kubernetes Cluster Setup"
 description: "Learn how to set up and manage Kubernetes clusters for containerized applications. This guide covers installation, configuration, and best practices."
-categories: ["Linux"]
+categories: ["Virtualization"]
 tags: ["Automation", "Linux", "DevOps"]
 image:
   path: /assets/dev/kube/kubernetes.webp

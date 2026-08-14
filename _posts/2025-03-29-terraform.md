@@ -2,7 +2,7 @@
 author: muju
 title: "Terraform Proxmox LXC Containers"
 description: "Learn how to provision and manage LXC containers using Terraform. This guide covers installation, configuration, and best practices."
-categories: ["Linux"]
+categories: ["Virtualization"]
 tags: ["Automation", "Terraform", "LXC", "DevOps"]
 image:
   path: /assets/dev/tf/tflxc/tf-logo1.webp

@@ -1,6 +1,6 @@
 ---
 author: muju
-title: "🐧 Linux Environment Variables"
+title: "Linux Environment Variables"
 description: "Comprehensive guide on Linux environment variables, from system-wide and user-specific configurations to practical security tips and hacking tricks for power users."
 categories: ["Linux"]
 tags: ["Linux", "Environment Variables", "SysAdmin", "Security"]
@@ -19,7 +19,7 @@ In a **Linux operating system**, **environment variables** are dynamic values th
 
 ## Environment Variables
 
-### 🔒 System-Wide Variables
+### System-Wide Variables
 
 These are available for all users and are set by the system administrator. They are defined in files such as:
 
@@ -27,7 +27,7 @@ These are available for all users and are set by the system administrator. They 
 - `/etc/profile`
 - `/etc/bash.bashrc`
 
-### 👤 User-Specific Variables
+### User-Specific Variables
 
 These are defined per user and stored in:
 
@@ -35,13 +35,13 @@ These are defined per user and stored in:
 - `~/.profile`
 - `~/.bash_profile`
 
-### 🐚 Shell Variables
+### Shell Variables
 
 Shell variables exist only within the running shell session. They can be created and modified within the terminal.
 
-## 📌 Commonly Used Linux Variables
+## Commonly Used Linux Variables
 
-### 📂 File & Directory
+### File & Directory
 **PATH** The `PATH` variable defines directories where the system searches for executable files.
 
 ```bash
@@ -56,7 +56,7 @@ echo $HOME
 echo $PWD
 ```
 
-### 👤 User Information
+### User Information
 
 ```bash
 # USER - Current username
@@ -66,7 +66,7 @@ echo $USER
 echo $HOSTNAME
 ```
 
-### 🐚 Shell Settings
+### Shell Settings
 ```bash
 # SHELL - Default shell
 echo $SHELL
@@ -76,7 +76,7 @@ echo $PS1
 export PS1="[\u@\h \W]\$ "
 ```
 
-### 📝 Editors and Language
+### Editors and Language
 ```bash
 # EDITOR - Default text editor
 export EDITOR=nano
@@ -85,14 +85,14 @@ export EDITOR=nano
 export LANG=en_US.UTF-8
 ```
 
-### 🖥️ GUI and Display
+### GUI and Display
 ```bash
 # DISPLAY - X Window System display
 echo $DISPLAY
 export DISPLAY=:0.0
 ```
 
-### 📜 History
+### History
 ```bash
 # HISTFILESIZE - Max history file size
 echo $HISTFILESIZE
@@ -103,65 +103,65 @@ echo $HISTSIZE
 export HISTSIZE=1000
 ```
 
-### 📬 Mail
+### Mail
 ```bash
 # MAIL - Mail spool location
 echo $MAIL
 ```
 
-### 📚 Documentation
+### Documentation
 ```bash
 # MANPATH - Manual search path
 echo $MANPATH
 export MANPATH=/usr/local/share/man:$MANPATH
 ```
 
-### 🖥️ Terminal 
+### Terminal 
 ```bash
 # TERM - Terminal type
 echo $TERM
 export TERM=xterm-256color
 ```
 
-### 🕒 Time
+### Time
 ```bash
 # TZ - Timezone
 export TZ=Asia/Kolkata
 ```
 
-### 🧠 OS Info
+### OS Info
 ```bash
 # OSTYPE - OS type
 echo $OSTYPE
 ```
 
-## 🔍 Viewing Environment Variables
+## Viewing Environment Variables
 
-### 📦 Using `printenv`
+### Using `printenv`
 ```bash
 printenv
 printenv PATH
 ```
 
-### 🌍 Using `env`
+### Using `env`
 ```bash
 env
 ```
 
-### 📃 Using set
+### Using set
 ```bash
 set | less
 ```
 
-## ✍️ Setting Environment Variables
+## Setting Environment Variables
 
-### 🔄 Temporarily (Current Session Only)
+### Temporarily (Current Session Only)
 ```bash
 export MY_VAR="Hello World"
 echo $MY_VAR
 ```
 
-### 💾 Permanently (Across Sessions)
+### Permanently (Across Sessions)
 
 Add the variable to `~/.bashrc` or `~/.profile`:
 ```bash
@@ -169,15 +169,15 @@ echo 'export MY_VAR="Hello World"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### 🗑️ Unsetting Variables
+### Unsetting Variables
 ```bash
 unset MY_VAR
 echo $MY_VAR  # No output expected
 ```
 
-## 🛠️ Using Variables in Scripts
+## Using Variables in Scripts
 
-### 🧪 Example Bash Script
+### Example Bash Script
 
 ```bash
 #!/bin/bash
@@ -192,7 +192,7 @@ chmod +x script.sh
 ./script.sh
 ```
 
-## 🔐 Security Tips for Env Variables
+## Security Tips for Env Variables
 
 1. Avoid storing sensitive data (e.g., passwords) in environment variables.
 2. Use readonly for critical variables:
@@ -203,78 +203,78 @@ chmod +x script.sh
     ```bash
     chmod 600 ~/.bashrc
     ```
-## 🕵️ Advanced and Offensive Usage
+## Advanced and Offensive Usage
 
-### 📜 History Deletion
+### History Deletion
 ```bash
 export HISTFILESIZE=0
 export HISTSIZE=0
 ```
 
-### 🌐 Proxy Redirection
+### Proxy Redirection
 ```bash
 export http_proxy="http://10.10.10.10:8080"
 export https_proxy="http://10.10.10.10:8080"
 ```
 
-### 🔒 SSL Certificate Trust
+### SSL Certificate Trust
 ```bash
 export SSL_CERT_FILE=/path/to/ca-bundle.pem
 export SSL_CERT_DIR=/path/to/ca-certificates
 ```
 
-### 🧬 Library Injection
+### Library Injection
 ```bash
 export LD_PRELOAD=/tmp/malicious.so
 export LD_LIBRARY_PATH=/tmp/mylib:$LD_LIBRARY_PATH
 ```
 
-### 🪤 PATH Hijacking
+### PATH Hijacking
 ```bash
 export PATH=/tmp/malicious:$PATH
 ```
 
-### ⏱️ Auto-Logout Timeout
+### Auto-Logout Timeout
 ```bash
 export TMOUT=1
 ```
 
-### 🛠️ App Config Hijack
+### App Config Hijack
 ```bash
 export XDG_CONFIG_HOME=/tmp/custom-config
 ```
 
-### 🔁 Field Separator Manipulation
+### Field Separator Manipulation
 ```bash
 export IFS=$'\n'
 ```
 
-### 🧙 PS1 Prompt Manipulation
+### PS1 Prompt Manipulation
 ```bash
 export PS1='[\u@\h \W]# '
 ```
 
-### 🏠 HOME Override
+### HOME Override
 ```bash
 export HOME=/tmp/fakehome
 ```
 
-### 📧 MAIL Redirection
+### MAIL Redirection
 ```bash
 export MAIL=/tmp/mail
 ```
 
-### 🧪 Sudo Askpass Exploit
+### Sudo Askpass Exploit
 ```bash
 export SUDO_ASKPASS=/tmp/fake-pass-prompt
 sudo -A whoami
 ```
 
-### 🐞 GDB Exploitation
+### GDB Exploitation
 ```bash
 export GDBINIT=/tmp/malicious-gdbinit
 ```
 
-## 🧾 Summary
+## Summary
 
 Environment variables are a fundamental aspect of Linux systems. They control how the system and user sessions behave, help in scripting, system management, and even (mis)use in penetration testing. Managing them wisely leads to a more secure and efficient Linux environment.
